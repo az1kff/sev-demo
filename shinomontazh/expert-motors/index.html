@@ -131,6 +131,19 @@ h1{font:800 italic clamp(44px,8.6vw,128px)/.92 var(--fd);letter-spacing:-.02em;t
 .dial.r i{animation-delay:-2s}
 @keyframes needle{to{transform:rotate(230deg)}}
 @media(min-width:760px){.dial{display:block}}
+.wbox{border-radius:28px;padding:clamp(18px,4vw,40px);display:block}
+.wheelbox{position:relative;width:min(100%,440px);aspect-ratio:1;margin:0 auto}
+.tyre{width:100%;height:100%;display:block;will-change:transform;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hs{position:absolute;z-index:2;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(13,15,18,.7);box-shadow:inset 0 0 0 2px #fff;display:grid;place-items:center;transition:transform .2s var(--ease),background .2s}
+.hs i{width:10px;height:10px;border-radius:50%;background:#fff}
+.hs::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--amber);animation:ring 2.2s var(--ease) infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(2);opacity:0}}
+.hs span{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);opacity:0;white-space:nowrap;font:600 12.5px var(--fm);padding:5px 9px;border-radius:6px;background:#fff;color:var(--tx);pointer-events:none;transition:opacity .2s}
+.hs:hover{transform:scale(1.12)}
+.hs:hover span,.hs.on span{opacity:1}
+.hs.on{background:var(--amber);box-shadow:0 0 0 6px rgba(255,178,26,.25),0 0 26px rgba(255,178,26,.6)}
+.hs.on i{background:var(--panel)}
 .lamps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;justify-items:center}
 .lamp{width:min(68px,18vw);aspect-ratio:1;border-radius:50%;border:0;cursor:pointer;background:#111419;color:#3a4049;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);display:grid;place-items:center;transition:color .2s,box-shadow .25s,transform .2s var(--ease)}
 .lamp svg{width:58%;height:58%}
