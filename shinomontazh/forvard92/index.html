@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Форвард92: автосервис в Севастополе</title>
+<meta name="description" content="Ремонт бензиновых и дизельных двигателей во Фруктовом. ул. Ленина, 28А, с. Фруктовое. Телефон +7 (978) 819-06-03.">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600&family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Ночная трасса: тёмный градиентный фон, светящаяся шина, светлые скруглённые «листы» поверх тёмного */
+:root{
+  --accent:#2c55c9;
+  --night:#0b1020; --night2:#121a33; --glass:rgba(255,255,255,.06); --glass-line:rgba(255,255,255,.12);
+  --ink:#121521; --muted:#5d6475; --sheet:#f4f6fa; --paper:#fff; --line:#e2e6ee; --good:#38d39f;
+  --display:"Unbounded",system-ui,sans-serif; --body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:max(18px,env(safe-area-inset-left)); --gutr:max(18px,env(safe-area-inset-right));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--night)}
+body{margin:0;color:#e9ecf4;font:17px/1.55 var(--body);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(1200px 700px at 50% -10%,var(--night2),var(--night) 60%) var(--night);
+  padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+img{max-width:100%;display:block}
+a{color:inherit}
+.w{max-width:1120px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+.demo{color:#8f97ab;font-size:12.5px;line-height:1.4;padding:8px var(--gutr) 8px var(--gut);text-align:center;border-bottom:1px solid var(--glass-line)}
+.demo b{color:#d6dbe6;font-weight:600}
+
+/* шапка-пилюля */
+.top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:30;margin-top:10px}
+.top .w{display:flex;justify-content:center}
+.pill{display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:rgba(16,22,44,.72);backdrop-filter:blur(14px);border:1px solid var(--glass-line);max-width:100%}
+.mono{flex:none;width:38px;height:38px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font:600 17px var(--display);color:#fff;box-shadow:0 0 24px color-mix(in srgb,var(--accent) 60%,transparent)}
+.pill nav{display:flex;gap:2px}
+.pill nav a{padding:9px 14px;border-radius:999px;text-decoration:none;font-size:14.5px;color:#c9cfdc}
+.pill nav a:hover{background:var(--glass)}
+.pill .call{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14.5px;white-space:nowrap}
+.pill .call svg{width:16px;height:16px}
+.pill .call .lbl{display:none}
+.pill .nm{display:none;font:600 14px var(--display);color:#fff;padding:0 6px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+@media(max-width:640px){.pill nav{display:none}.pill{width:100%;justify-content:space-between}.pill .nm{display:block}.pill .call .num{display:none}.pill .call .lbl{display:inline}}
+
+/* первый экран */
+.hero{text-align:center;padding-block:18px 36px;position:relative;overflow:hidden}
+.stage{position:relative;width:min(300px,56vw);aspect-ratio:1;margin:0 auto 6px}
+.stage::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 55%,transparent),transparent 68%);filter:blur(28px);animation:pulse 5s ease-in-out infinite}
+.tire{position:relative;width:100%;height:100%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55));animation:float 6s ease-in-out infinite}
+.tire .spin{transform-origin:200px 200px;animation:spin 14s linear infinite}
+.tire .hub{fill:var(--accent)}
+.stage.wide{width:min(520px,90vw);aspect-ratio:2/1;margin-top:10px}
+.stage.wide::before{inset:10% 4% 0}
+.car{position:relative;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 24px 30px rgba(0,0,0,.5))}
+.car .body{animation:float 6s ease-in-out infinite}
+.car .hub{fill:var(--accent)}
+.car .sweep{animation:sweep 5s cubic-bezier(.5,0,.3,1) infinite}
+.car .drop{transform-box:fill-box;transform-origin:center;opacity:0;animation:dropin 7s ease-in-out infinite}
+@keyframes sweep{0%,15%{transform:skewX(-22deg) translateX(0)}70%,100%{transform:skewX(-22deg) translateX(640px)}}
+@keyframes dropin{0%,8%{opacity:0;transform:scale(.3)}22%,82%{opacity:1;transform:none}100%{opacity:0;transform:scale(.8)}}
+.orb{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,color-mix(in srgb,var(--accent) 70%,#fff) 40%,transparent 72%);opacity:.5;filter:blur(1px);animation:float 7s ease-in-out infinite}
+.orb.a{width:16px;height:16px;left:4%;top:20%}.orb.b{width:10px;height:10px;right:8%;top:12%;animation-delay:-2s}.orb.c{width:22px;height:22px;right:2%;bottom:16%;animation-delay:-4s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes pulse{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;padding:7px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-line);color:#d6dbe6}
+.status i{width:8px;height:8px;border-radius:50%;background:#8a91a3}
+.status.open i{background:var(--good);box-shadow:0 0 0 4px rgba(56,211,159,.2)}
+h1{font:300 clamp(40px,10.5vw,92px)/1 var(--display);letter-spacing:-.03em;margin:18px auto 14px;max-width:14ch;text-wrap:balance;color:#fff}
+.tag{margin:0 auto;max-width:36ch;color:#aab2c5;font-size:clamp(17px,2.4vw,20px)}
+.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:0 26px;border-radius:999px;font:600 17px var(--body);text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn svg{width:19px;height:19px;flex:none}
+.btn.call{background:var(--accent);color:#fff;box-shadow:0 10px 34px -8px color-mix(in srgb,var(--accent) 80%,transparent)}
+.btn.call:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--glass);color:#fff;border:1px solid var(--glass-line)}
+.js .rise{opacity:0;transform:translateY(16px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.js .rise.d1{animation-delay:.08s}.js .rise.d2{animation-delay:.16s}.js .rise.d3{animation-delay:.24s}.js .rise.d4{animation-delay:.32s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* цифры */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:38px;text-align:left}
+@media(min-width:900px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.stat{border-radius:22px;padding:16px 15px 14px;background:var(--glass);border:1px solid var(--glass-line);min-width:0}
+.stat b{display:block;font:300 clamp(22px,5.4vw,42px)/1.08 var(--display);color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.stat span{display:block;margin-top:6px;font-size:14px;color:#9aa3b8;line-height:1.35}
+
+/* светлые листы */
+.sheet{background:var(--sheet);color:var(--ink);border-radius:34px;margin:0 8px;padding-block:52px 56px}
+.sheet+.sheet{margin-top:10px}
+h2{font:300 clamp(30px,6vw,52px)/1.08 var(--display);letter-spacing:-.025em;margin:0 0 26px;text-wrap:balance}
+.sub{color:var(--muted);margin:-12px 0 26px;max-width:60ch}
+.dark h2{color:#fff}.dark .sub{color:#aab2c5}
+section.dark{padding-block:64px}
+
+.prices{display:grid;gap:14px}
+@media(min-width:880px){.prices{grid-template-columns:minmax(0,4fr) minmax(0,7fr);align-items:start}}
+.hot{border-radius:26px;padding:26px;background:linear-gradient(150deg,var(--night2),var(--night));color:#fff;position:relative;overflow:hidden}
+.hot::after{content:"";position:absolute;width:220px;height:220px;right:-70px;bottom:-90px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 60%,transparent),transparent 70%);filter:blur(10px)}
+.hot p{margin:0;color:#aab2c5;position:relative}
+.hot .pr{font:300 clamp(34px,7vw,52px)/1.05 var(--display);margin:10px 0 8px;letter-spacing:-.02em;position:relative}
+.hot .note{font-size:14px;color:#8f97ab;position:relative}
+.svc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(min-width:1000px){.svc{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.svc li{background:var(--paper);border-radius:22px;padding:18px 16px;display:grid;gap:12px;align-content:start;font-weight:500;font-size:15.5px;line-height:1.3;border:1px solid var(--line)}
+.svc svg{width:28px;height:28px;color:var(--accent)}
+.extras{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.extras span{font-size:14px;padding:7px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+
+/* галерея */
+.gal{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,360px);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gutr) 4px var(--gut);margin:30px calc(-1 * var(--gutr)) 0 calc(-1 * var(--gut))}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:26px;scroll-snap-align:center;background:#dfe3ea}
+@media(min-width:1000px){.gal{grid-auto-flow:row;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:240px;overflow:visible;margin:30px 0 0;padding:0}.gal img{aspect-ratio:auto;height:100%}.gal img:first-child{grid-row:span 2}}
+
+/* отзывы на тёмном */
+.rgrid{display:grid;gap:14px}
+@media(min-width:900px){.rgrid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px;align-items:start}}
+.panel{border-radius:26px;padding:24px;background:var(--glass);border:1px solid var(--glass-line)}
+.score{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.score b{font:300 clamp(64px,14vw,110px)/.9 var(--display);color:#fff;letter-spacing:-.04em}
+.score span{color:#aab2c5;font-size:15px;padding-bottom:10px}
+.score a{color:#fff;text-decoration-color:var(--accent);text-underline-offset:3px}
+.stars{display:flex;gap:4px;margin:16px 0 0}
+.stars i{width:20px;height:20px;background:var(--accent);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.stars i.off{background:rgba(255,255,255,.18)}
+.asp{display:grid;gap:16px;margin-top:22px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 14px;align-items:baseline}
+.bar b{font-weight:500;color:#e9ecf4}
+.bar span{color:#9aa3b8;font-size:14.5px;font-variant-numeric:tabular-nums}
+.track{grid-column:1/-1;height:8px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden}
+.track i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--good));transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.js .asp:not(.on) .track i{width:0!important}
+.asp-src{font-size:13.5px;color:#7f879b;margin-top:16px}
+.praise{color:#c9cfdc;margin:18px 0 0}
+.revs{display:grid;gap:12px}
+.rev{margin:0;border-radius:22px;padding:22px;background:var(--glass);border:1px solid var(--glass-line);color:#dfe3ec}
+.rev::before{content:"“";display:block;font:300 54px/.7 var(--display);color:var(--accent);height:26px}
+.rev p{margin:0}
+.src{font-size:15px;margin-top:4px;color:#aab2c5}
+.src a{color:#fff;text-decoration-color:var(--accent);text-underline-offset:3px}
+
+/* контакты */
+.where{display:grid;gap:12px}
+@media(min-width:880px){.where{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.info{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:26px;display:grid;gap:18px;align-content:start}
+.info h3{font:400 24px/1.2 var(--display);margin:0;letter-spacing:-.01em}
+.muted{color:var(--muted)}
+.ph a{display:block;font:400 22px/1.45 var(--display);text-decoration:none;letter-spacing:-.01em}
+.hours{border-collapse:collapse}
+.hours td{padding:3px 22px 3px 0;font-variant-numeric:tabular-nums}
+.hours tr.today td{font-weight:600;color:var(--accent)}
+.msg{display:flex;gap:8px;flex-wrap:wrap}
+.msg a{font-weight:500;font-size:15px;padding:9px 16px;border-radius:999px;background:var(--sheet);border:1px solid var(--line);text-decoration:none}
+.info .btn.call{justify-self:start}
+.map{min-height:360px;border-radius:26px;overflow:hidden;background:#dfe3ea}
+.map iframe{display:block;width:100%;height:100%;min-height:360px;border:0}
+
+/* финал */
+.final{text-align:center;padding-block:80px 70px;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;left:50%;top:40%;width:520px;height:520px;max-width:120vw;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 35%,transparent),transparent 65%);filter:blur(20px);pointer-events:none}
+.final .w{position:relative}
+.final h2{color:#fff;max-width:16ch;margin:0 auto 20px}
+.final .big{display:inline-block;font:300 clamp(30px,8vw,64px)/1 var(--display);color:#fff;text-decoration:none;letter-spacing:-.03em}
+.final p{color:#aab2c5;margin:16px 0 0}
+footer{padding-block:24px 34px;color:#7f879b;font-size:13px;line-height:1.5;border-top:1px solid var(--glass-line)}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;padding:10px var(--gutr) calc(10px + env(safe-area-inset-bottom)) var(--gut);background:rgba(11,16,32,.82);backdrop-filter:blur(14px);border-top:1px solid var(--glass-line)}
+.dock .btn{min-height:52px;flex:1}
+.dock .ghost{flex:0 0 auto;padding:0 20px}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before{animation:none!important;transition:none!important}.js .rise{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Демо-концепт.</b> Не официальный сайт «Форвард92». Сделан для показа владельцу, удалим по первой просьбе.</div>
+
+<div class="top"><div class="w"><div class="pill">
+  <span class="mono" aria-hidden="true">Ф</span>
+  <span class="nm">Форвард92</span>
+  <nav aria-label="Разделы"><a href="#prices">Услуги</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+  <a class="call" href="tel:+79788190603"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">+7 (978) 819-06-03</span><span class="lbl">Позвонить</span></a>
+</div></div></div>
+
+<header class="hero"><div class="w">
+  <div class="stage rise"><span class="orb a"></span><span class="orb b"></span><span class="orb c"></span><svg class="tire" viewBox="0 0 400 400" aria-hidden="true">
+<defs>
+ <radialGradient id="tg" cx="50%" cy="45%" r="55%"><stop offset="70%" stop-color="#2a2e35"/><stop offset="100%" stop-color="#0d0f12"/></radialGradient>
+ <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1f5"/><stop offset=".5" stop-color="#9aa3ae"/><stop offset="1" stop-color="#5b636e"/></linearGradient>
+ <radialGradient id="hl" cx="35%" cy="25%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<g class="spin">
+ <circle cx="200" cy="200" r="186" fill="url(#tg)"/>
+ <g fill="#14171b"><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(0.00 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(8.18 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(16.36 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(24.55 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(32.73 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(40.91 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(49.09 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(57.27 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(65.45 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(73.64 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(81.82 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(90.00 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(98.18 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(106.36 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(114.55 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(122.73 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(130.91 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(139.09 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(147.27 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(155.45 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(163.64 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(171.82 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(180.00 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(188.18 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(196.36 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(204.55 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(212.73 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(220.91 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(229.09 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(237.27 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(245.45 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(253.64 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(261.82 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(270.00 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(278.18 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(286.36 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(294.55 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(302.73 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(310.91 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(319.09 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(327.27 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(335.45 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(343.64 200 200) skewX(-14)"/><rect x="196" y="12" width="9" height="26" rx="2" transform="rotate(351.82 200 200) skewX(-14)"/></g>
+ <g fill="#0b0d10" opacity=".9"><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(4.09 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(12.27 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(20.45 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(28.64 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(36.82 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(45.00 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(53.18 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(61.36 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(69.55 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(77.73 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(85.91 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(94.09 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(102.27 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(110.45 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(118.64 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(126.82 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(135.00 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(143.18 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(151.36 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(159.55 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(167.73 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(175.91 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(184.09 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(192.27 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(200.45 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(208.64 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(216.82 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(225.00 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(233.18 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(241.36 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(249.55 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(257.73 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(265.91 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(274.09 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(282.27 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(290.45 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(298.64 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(306.82 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(315.00 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(323.18 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(331.36 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(339.55 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(347.73 200 200)"/><rect x="198" y="40" width="4" height="14" rx="2" transform="rotate(355.91 200 200)"/></g>
+ <circle cx="200" cy="200" r="132" fill="#0f1114"/>
+ <circle cx="200" cy="200" r="124" fill="url(#rim)"/>
+ <circle cx="200" cy="200" r="112" fill="#1b1f24"/>
+ <g fill="url(#rim)"><path d="M188 170 L180 84 Q200 74 220 84 L212 170 Z" transform="rotate(0 200 200)"/><path d="M188 170 L180 84 Q200 74 220 84 L212 170 Z" transform="rotate(72 200 200)"/><path d="M188 170 L180 84 Q200 74 220 84 L212 170 Z" transform="rotate(144 200 200)"/><path d="M188 170 L180 84 Q200 74 220 84 L212 170 Z" transform="rotate(216 200 200)"/><path d="M188 170 L180 84 Q200 74 220 84 L212 170 Z" transform="rotate(288 200 200)"/></g>
+ <circle cx="200" cy="200" r="40" fill="url(#rim)"/>
+ <circle cx="200" cy="200" r="30" fill="#2a2f36"/>
+ <g fill="#c5ccd5"><circle cx="212.9" cy="182.2" r="4"/><circle cx="220.9" cy="206.8" r="4"/><circle cx="200.0" cy="222.0" r="4"/><circle cx="179.1" cy="206.8" r="4"/><circle cx="187.1" cy="182.2" r="4"/></g>
+ <circle cx="200" cy="200" r="12" class="hub"/>
+ <circle cx="200" cy="200" r="124" fill="none" stroke="var(--accent)" stroke-width="3" opacity=".85"/>
+</g>
+<circle cx="200" cy="200" r="186" fill="url(#hl)"/>
+</svg></div>
+  <span class="status rise d1" id="status"><i></i><span id="statusText">Пн–Сб 08:30–19:00</span></span>
+  <h1 class="rise d2">Форвард92</h1>
+  <p class="tag rise d3">Ремонт бензиновых и дизельных двигателей во Фруктовом</p>
+  <div class="cta rise d4">
+    <a class="btn call" href="tel:+79788190603"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a>
+    <a class="btn ghost" href="https://yandex.ru/maps/?rtext=~44.681143%2C33.601731&amp;rtt=auto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Маршрут</a>
+  </div>
+  <div class="stats"><div class="stat"><b>5,0</b><span>рейтинг на Яндекс Картах</span></div><div class="stat"><b>112</b><span>оценок клиентов</span></div><div class="stat"><b>08:30–19:00</b><span>Пн–Сб, режим работы</span></div><div class="stat"><b>20 из 20</b><span>хвалят: время ожидания</span></div></div>
+</div></header>
+
+<main>
+<section class="sheet" id="prices"><div class="w"><h2>Цены и услуги</h2><div class="prices"><div class="hot"><p>Нормочас</p><div class="pr">1500–2500 ₽</div><div class="note">Цена из карточки на картах. Точную сумму скажут по телефону.</div></div><div><ul class="svc"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>Диагностика и чип-тюнинг</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h3l2-2h5l2 2h2v2h2v4h-2v2h-3l-2 2H9v-2H7l-1-2H4z"/><path d="M9 5h5M11.5 5v3"/></svg>Ремонт и замена двигателя</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h3l2-2h5l2 2h2v2h2v4h-2v2h-3l-2 2H9v-2H7l-1-2H4z"/><path d="M9 5h5M11.5 5v3"/></svg>Дизель: форсунки, ТНВД, турбины</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>КПП, DSG, сцепление</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M9 6h6v2l-6 2 6 2-6 2 6 2v2H9"/></svg>Ходовая и тормоза</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg>Кондиционеры</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v5.8M12 15.2V21M3 12h5.8M15.2 12H21"/></svg>Шиномонтаж</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l7-7M14 4l1 3 3 1-3 1-1 3-1-3-3-1 3-1zM18 13l.6 1.4L20 15l-1.4.6L18 17l-.6-1.4L16 15l1.4-.6z"/></svg>Сварочные работы, фаркопы</li></ul><div class=extras><span>Предварительная запись</span><span>Оплата картой, переводом, СБП</span><span>Wi-Fi</span></div></div></div><div class="gal"><img src="https://avatars.mds.yandex.net/get-altay/13289089/2a000001917ab72b997170944c176e7a9663/XXL" alt="Форвард92, фото 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://avatars.mds.yandex.net/get-altay/14014620/2a000001917ab755f3bce74fc0fba406ebdf/XL" alt="Форвард92, фото 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://avatars.mds.yandex.net/get-altay/16482798/2a00000199246903e3cd0b415ddbfce94a00/XL" alt="Форвард92, фото 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://avatars.mds.yandex.net/get-altay/13212052/2a0000018f8b2946aec8a24fb0719c4a43cc/XL" alt="Форвард92, фото 4" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"><img src="https://avatars.mds.yandex.net/get-altay/14014133/2a0000019449fa2e8b8c04a4860f4aa6bcdb/XL" alt="Форвард92, фото 5" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div></div></section>
+<section class="dark" id="reviews"><div class="w"><h2>Что говорят клиенты</h2><div class="rgrid"><div class="panel"><div class="score"><b>5,0</b><span>112 оценок и 64 отзывов<br>на <a href="https://yandex.ru/maps/org/48598136214/reviews/" target="_blank" rel="noopener">Яндекс Картах</a></span></div><div class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p class=praise>Средняя оценка 5 из 5. Хвалят руководителя и то, что цены на работу и запчасти не завышают.</p><div class=asp><div class="bar"><b>Персонал</b><span>41 из 42 хвалят</span><div class="track"><i style="width:98%"></i></div></div><div class="bar"><b>Ремонт</b><span>26 из 27 хвалят</span><div class="track"><i style="width:96%"></i></div></div><div class="bar"><b>Время ожидания</b><span>20 из 20 хвалят</span><div class="track"><i style="width:100%"></i></div></div><div class="bar"><b>Запчасти</b><span>11 из 13 хвалят</span><div class="track"><i style="width:85%"></i></div></div></div><p class=asp-src>Подсчёт Яндекс Карт по темам отзывов.</p></div><div class="revs"><figure class="rev"><p>Ушёл антифриз, оказалось нужна замена мотора. Подобрали двигатель и заменили.</p></figure><figure class="rev"><p>Отремонтировали компрессор кондиционера, заменили подшипник и заправили систему. Всё сделали в назначенное время.</p></figure><figure class="rev"><p>Даже очень придирчивый клиент остался доволен: всё чётко, по делу и с консультацией.</p></figure><p class="src">Пересказ отзывов, без имён. <a href="https://yandex.ru/maps/org/48598136214/reviews/" target="_blank" rel="noopener">Все отзывы</a></p></div></div></div></section>
+
+<section class="sheet" id="contacts"><div class="w">
+  <h2>Как доехать</h2>
+  <div class="where">
+    <div class="info">
+      <div><h3>ул. Ленина, 28А, с. Фруктовое</h3><div class="muted">Севастополь, село Фруктовое</div></div>
+      <div class="ph"><a href="tel:+79788190603">+7 (978) 819-06-03</a></div>
+      <table class="hours" id="hours"><tbody><tr data-days="1,2,3,4,5,6"><td>Пн–Сб</td><td>08:30–19:00</td></tr></tbody></table>
+      <div class="msg"><a href="https://wa.me/79788190603" target="_blank" rel="noopener">WhatsApp</a></div>
+      <a class="btn call" href="https://yandex.ru/maps/?rtext=~44.681143%2C33.601731&amp;rtt=auto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Построить маршрут</a>
+    </div>
+    <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?ll=33.601731%2C44.681143&z=16&pt=33.601731,44.681143,pm2rdm" title="Форвард92 на карте" loading="lazy"></iframe></div>
+  </div>
+</div></section>
+
+<section class="final"><div class="w">
+  <h2>Позвоните и запишитесь на ремонт</h2>
+  <a class="big" href="tel:+79788190603">+7 (978) 819-06-03</a>
+  <p>Пн–Сб 08:30–19:00</p>
+</div></section>
+</main>
+
+<footer><div class="w">Демо-концепт сайта для «Форвард92». Данные, фото и отзывы взяты из открытой карточки: <a href="https://yandex.ru/maps/org/48598136214/" target="_blank" rel="noopener">Яндекс Карты</a>, <a href="https://2gis.ru/sevastopol/firm/70000001056627446" target="_blank" rel="noopener">2ГИС</a>. Если что-то изменилось, уточняйте по телефону.</div></footer>
+
+<nav class="dock" aria-label="Быстрая связь">
+  <a class="btn call" href="tel:+79788190603"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a>
+  <a class="btn line" href="https://wa.me/79788190603" target="_blank" rel="noopener">WhatsApp</a>
+</nav>
+
+<script>
+(function(){var a=document.querySelector('.asp');if(!a)return;
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){a.classList.add('on');return}
+  var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){a.classList.add('on');o.disconnect()}},{threshold:.3});o.observe(a)})();
+(function(){
+  var W=[null, ["08:30", "19:00"], ["08:30", "19:00"], ["08:30", "19:00"], ["08:30", "19:00"], ["08:30", "19:00"], ["08:30", "19:00"]];
+  try{
+    var parts=new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Moscow',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var dm={'вс':0,'пн':1,'вт':2,'ср':3,'чт':4,'пт':5,'сб':6},d,h,m;
+    parts.forEach(function(x){if(x.type==='weekday')d=dm[x.value.replace('.','').toLowerCase()];if(x.type==='hour')h=+x.value%24;if(x.type==='minute')m=+x.value});
+    var mins=function(s){var a=s.split(':');return a[0]*60+ +a[1]},now=h*60+m,t=W[d];
+    var el=document.getElementById('status'),tx=document.getElementById('statusText');
+    if(t&&now>=mins(t[0])&&now<mins(t[1])){el.classList.add('open');tx.textContent='Открыто до '+t[1]}
+    else{for(var i=0;i<7;i++){var s=W[(d+i)%7];if(s&&(i>0||now<mins(s[0]))){tx.textContent='Закрыто, откроется '+(i===0?'сегодня':i===1?'завтра':'')+' в '+s[0];break}}}
+    document.querySelectorAll('#hours tr[data-days]').forEach(function(r){if(r.dataset.days.split(',').indexOf(String(d))>-1)r.classList.add('today')});
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

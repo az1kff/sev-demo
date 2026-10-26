@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Avta Vata: детейлинг-мойка в Севастополе</title>
+<meta name="description" content="Мойка, детейлинг и шиномонтаж на Вакуленчука">
+<meta name="theme-color" content="#e6f4ff">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap">
+<style>
+/* Свежесть: небо, пена и вода; фото точки под пеной, которую можно стереть; акцент бренда на действиях */
+:root{
+  --accent:#3b82f6; --ink:#ffffff;
+  --bg:#f1f8ff; --paper:#fff; --navy:#08213f; --navy2:#123a66; --mu:#4c6482; --line:#d5e5f4;
+  --aq:#22c1ff; --aq2:#8fe3ff; --aq3:#d9f3ff; --deep:#1677ff;
+  --f:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:max(18px,env(safe-area-inset-left)); --gutr:max(18px,env(safe-area-inset-right));
+  --ease:cubic-bezier(.2,.8,.2,1); --pop:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:74px;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--navy);font:400 17px/1.55 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.w{max-width:1180px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+.kick{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 var(--f);letter-spacing:.12em;text-transform:uppercase;color:var(--deep)}
+.kick::before{content:"";width:10px;height:10px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:linear-gradient(135deg,var(--aq2),var(--deep))}
+h2{font:800 clamp(34px,6.2vw,64px)/1 var(--f);letter-spacing:-.03em;margin:12px 0 0;text-wrap:balance}
+h3{font:700 22px/1.2 var(--f);margin:0}
+.lead{color:var(--mu);font-size:clamp(17px,1.7vw,19.5px);max-width:52ch;margin:14px 0 0}
+.sh{margin-bottom:clamp(26px,4vw,44px)}
+section{padding-block:clamp(60px,9vw,120px)}
+.more{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-weight:600;color:var(--deep);text-decoration:none}
+.more:hover{text-decoration:underline}
+
+.demo{background:var(--navy);color:#a9bdd6;font-size:12.5px;line-height:1.4;padding:8px var(--gutr) 8px var(--gut);text-align:center}
+.demo b{color:#fff}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 28px;border-radius:999px;font:700 17px var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--pop),box-shadow .25s,filter .2s;white-space:nowrap}
+.btn svg{width:19px;height:19px;flex:none}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:scale(.97)}
+.btn.acc{background:var(--accent);color:var(--ink);box-shadow:0 18px 36px -16px var(--accent),inset 0 -3px 0 rgba(0,0,0,.12)}
+.btn.acc:hover{filter:brightness(1.06)}
+.btn.white{background:var(--paper);color:var(--navy);box-shadow:0 10px 26px -16px rgba(8,33,63,.45),inset 0 0 0 1.5px var(--line)}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.line{background:var(--paper);color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line)}
+:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:50;transition:background .3s,box-shadow .3s}
+.top .w{display:flex;align-items:center;gap:16px;height:68px}
+.top.sc{background:rgba(255,255,255,.96);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font:800 21px var(--f);letter-spacing:-.02em;text-decoration:none;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.logo{flex:none;width:30px;height:30px;border-radius:50% 50% 50% 6px;transform:rotate(-45deg);background:linear-gradient(135deg,var(--aq2),var(--deep));box-shadow:inset -4px -4px 0 rgba(255,255,255,.35)}
+.nav{display:none;gap:24px}
+.nav a{text-decoration:none;font-weight:500;font-size:15.5px;color:var(--mu)}
+.nav a:hover{color:var(--navy)}
+.tcall{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;background:var(--accent);color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap}
+.tcall svg{width:16px;height:16px}
+@media(max-width:560px){.tcall span{display:none}.tcall{width:44px;padding:0;justify-content:center}}
+@media(min-width:980px){.nav{display:flex}}
+
+/* первый экран */
+.hero{position:relative;overflow:hidden;margin-top:-68px;padding-top:68px;background:
+  radial-gradient(40% 50% at 85% 20%,rgba(143,227,255,.7),transparent 70%),
+  radial-gradient(50% 60% at 0% 80%,rgba(34,193,255,.25),transparent 70%),
+  linear-gradient(180deg,#d5efff 0%,#e9f6ff 60%,var(--bg) 100%)}
+.bub{position:absolute;bottom:-60px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#fff 0 14%,rgba(255,255,255,.5) 16% 40%,rgba(255,255,255,.06) 70%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),inset -3px -5px 10px rgba(34,193,255,.18);animation:rise linear infinite;pointer-events:none;will-change:transform}
+@keyframes rise{from{transform:translate(0,0)}50%{transform:translate(16px,-55vh)}to{transform:translate(-10px,-120vh);opacity:.1}}
+.hero .w{position:relative;z-index:2;display:grid;gap:30px;padding-block:28px 96px}
+@media(min-width:960px){.hero .w{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:56px;padding-block:56px 130px}}
+.hk{display:flex;flex-wrap:wrap;gap:8px}
+.status,.pill{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:6px 14px;border-radius:999px;background:var(--paper);font-weight:600;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(8,33,63,.5);text-decoration:none}
+.status i{width:9px;height:9px;border-radius:50%;background:#9fb0c3;flex:none}
+.status.on i{background:#16c172;animation:ping 2s infinite}
+.status .stl{color:var(--mu);font-weight:500}
+.status .stl:empty{display:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(22,193,114,.5)}70%,100%{box-shadow:0 0 0 9px rgba(22,193,114,0)}}
+.st{display:inline-flex;gap:2px}
+.st i{width:14px;height:14px;background:#ffb020;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.st i.off{background:#c9d6e3}
+.pill span{color:var(--mu);font-weight:500}
+.kk{display:block;margin-top:22px;color:var(--mu);font-weight:500}
+h1{font:800 clamp(46px,12.5vw,118px)/.92 var(--f);letter-spacing:-.04em;margin:10px 0 16px;background:linear-gradient(180deg,var(--navy) 30%,var(--navy2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+@media(min-width:960px){h1{font-size:93px}}
+.tag{font-size:clamp(18px,2vw,23px);line-height:1.4;color:var(--mu);margin:0 0 28px;max-width:30ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.types{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.types span{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.7);font-weight:600;font-size:14px;box-shadow:inset 0 0 0 1px var(--line)}
+.types span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--aq)}
+@media(max-width:599px){
+  .hero .w{gap:26px;padding-block:18px 92px}
+  .kk{margin-top:16px;font-size:15px}
+  .tag{margin-bottom:22px}
+  .cta{flex-wrap:nowrap}.cta .btn{flex:1;padding:0 14px;min-height:54px;font-size:16px}
+  .types{display:none}
+  .fcard{aspect-ratio:4/3.6}
+  .tag-p{top:-14px;left:-4px;padding:10px 14px 9px}
+}
+
+/* фото под пеной */
+.fw{position:relative;justify-self:center;width:100%;max-width:560px}
+.fcard{position:relative;border-radius:34px;overflow:hidden;aspect-ratio:4/3.4;background:var(--aq3);box-shadow:0 40px 80px -36px rgba(8,33,63,.55),0 0 0 8px rgba(255,255,255,.65);transform:rotate(1.2deg);transition:transform .6s var(--ease)}
+.fcard:hover{transform:rotate(0)}
+.fcard>img{width:100%;height:100%;object-fit:cover}
+#foam{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:grab;transition:opacity .9s var(--ease)}
+.fcard.clean #foam{opacity:0;pointer-events:none}
+.fhint{position:absolute;left:50%;top:50%;margin-top:-22px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:999px;background:var(--navy);color:#fff;font-weight:600;font-size:14.5px;white-space:nowrap;pointer-events:none;box-shadow:0 14px 30px -12px rgba(8,33,63,.6);transition:opacity .4s}
+.fhint svg{width:20px;height:20px;animation:wipe 1.8s ease-in-out infinite}
+@keyframes wipe{0%,100%{transform:translateX(-4px) rotate(-12deg)}50%{transform:translateX(6px) rotate(10deg)}}
+.fcard.wiping .fhint,.fcard.clean .fhint{opacity:0}
+.fdone{position:absolute;left:50%;bottom:18px;transform:translate(-50%,16px) scale(.9);opacity:0;display:inline-flex;align-items:center;gap:10px;padding:8px 8px 8px 18px;border-radius:999px;background:#fff;font-weight:700;font-size:15px;white-space:nowrap;box-shadow:0 16px 36px -14px rgba(8,33,63,.55);transition:.5s var(--pop);pointer-events:none}
+.fdone a{display:inline-flex;align-items:center;height:38px;padding:0 14px;border-radius:999px;background:var(--accent);color:var(--ink);text-decoration:none}
+.fcard.clean .fdone{opacity:1;transform:translate(-50%,0) scale(1);pointer-events:auto}
+.again{position:absolute;top:14px;right:14px;height:36px;padding:0 14px;border-radius:999px;border:0;background:rgba(255,255,255,.9);font-weight:600;font-size:13.5px;cursor:pointer;opacity:0;pointer-events:none;transition:.3s}
+.fcard.clean .again{opacity:1;pointer-events:auto}
+.spark{position:absolute;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 12px #fff,0 0 24px var(--aq);pointer-events:none;animation:sp 1s var(--ease) forwards}
+@keyframes sp{from{transform:translate(0,0) scale(1);opacity:1}to{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}
+.tag-p{position:absolute;z-index:3;top:-18px;left:-10px;transform:rotate(-7deg);display:grid;gap:2px;padding:14px 18px 12px;border-radius:20px;background:var(--navy);color:#fff;box-shadow:0 18px 30px -14px rgba(8,33,63,.7);animation:bob 4s ease-in-out infinite}
+.tag-p small{font-size:12.5px;color:#a9c7ea;font-weight:500}
+.tag-p b{font:800 clamp(22px,3vw,30px)/1 var(--f);letter-spacing:-.02em;white-space:nowrap}
+@keyframes bob{50%{transform:rotate(-5deg) translateY(-6px)}}
+.wave{position:absolute;left:0;right:0;bottom:-1px;z-index:1;height:90px;width:100%}
+.wave path{fill:var(--bg)}
+.wave .w2{fill:rgba(255,255,255,.6)}
+@keyframes sway{to{transform:translateX(-60px)}}
+
+/* факты */
+.facts{position:relative;z-index:3;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:-58px}
+@media(min-width:900px){.facts{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}}
+.fact{background:var(--paper);border-radius:24px;padding:18px;display:grid;gap:4px;align-content:start;box-shadow:0 20px 40px -30px rgba(8,33,63,.5),inset 0 0 0 1px var(--line);min-width:0}
+.fact svg{width:38px;height:38px;padding:8px;border-radius:13px;background:var(--aq3);color:var(--deep);margin-bottom:8px}
+.fact b{font:800 clamp(22px,3.4vw,30px)/1.1 var(--f);letter-spacing:-.02em;overflow-wrap:anywhere}
+.fact b span{font:inherit}
+.fact>span{color:var(--mu);font-size:14.5px;line-height:1.35}
+
+/* выбор мойки и заявка */
+.order .o-grid{display:grid;gap:18px}
+@media(min-width:980px){.order .o-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:30px;align-items:start}}
+.o-form{display:grid;gap:30px;counter-reset:st}
+.o-step{display:grid;gap:14px}
+.o-t{display:flex;align-items:center;gap:12px;font:700 18px var(--f)}
+.o-t::before{counter-increment:st;content:counter(st);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-size:15px}
+.mcs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(min-width:700px){.mcs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.mc{position:relative;display:grid;gap:8px;align-content:start;text-align:left;padding:18px 16px 16px;border-radius:24px;border:0;cursor:pointer;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--line),0 12px 26px -22px rgba(8,33,63,.5);transition:transform .25s var(--pop),box-shadow .2s,background .2s;min-height:120px}
+.mc:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1.5px var(--aq),0 18px 30px -22px rgba(8,33,63,.5)}
+.mc svg{width:40px;height:40px;padding:8px;border-radius:14px;background:var(--aq3);color:var(--deep);transition:.2s}
+.mc b{font-weight:700;font-size:16.5px;line-height:1.25;padding-right:20px}
+.mc span{color:var(--mu);font-size:14px;line-height:1.4}
+.ck{position:absolute;top:14px;right:14px;width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--line);transition:.25s var(--pop)}
+.mc[aria-pressed="true"]{background:linear-gradient(160deg,#fff,#eaf7ff);box-shadow:inset 0 0 0 2px var(--accent),0 18px 30px -20px var(--accent)}
+.mc[aria-pressed="true"] svg{background:var(--accent);color:var(--ink)}
+.mc[aria-pressed="true"] .ck{background:var(--accent);box-shadow:none;transform:scale(1.1)}
+.mc[aria-pressed="true"] .ck::after{content:"";position:absolute;left:8px;top:4px;width:6px;height:11px;border:solid var(--ink);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.o-chips{display:flex;flex-wrap:wrap;gap:8px}
+.oc{min-height:46px;padding:8px 18px;border-radius:999px;border:0;cursor:pointer;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--line);font-weight:600;font-size:15px;transition:.2s}
+.oc:hover{box-shadow:inset 0 0 0 1.5px var(--aq)}
+.oc[aria-pressed="true"]{background:var(--navy);color:#fff;box-shadow:none}
+#ob-car{width:100%;height:56px;padding:0 20px;border-radius:18px;border:0;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--line);color:var(--navy);font:500 16.5px var(--f)}
+#ob-car::placeholder{color:#8aa0b8}
+#ob-car:focus{outline:0;box-shadow:inset 0 0 0 2px var(--deep)}
+.o-out{display:grid;gap:14px;background:var(--navy);color:#fff;border-radius:30px;padding:22px;position:relative;overflow:hidden;box-shadow:0 40px 70px -40px rgba(8,33,63,.8)}
+.o-out::before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(34,193,255,.35),transparent 70%)}
+@media(min-width:980px){.o-out{position:sticky;top:90px}}
+.o-lbl{position:relative;font-size:13.5px;color:#a9c7ea;font-weight:500}
+.o-bubble{position:relative;white-space:pre-wrap;background:#fff;color:var(--navy);border-radius:20px 20px 20px 6px;padding:16px 18px;font-size:15.5px;line-height:1.55;min-height:100px}
+.o-acts{position:relative;display:grid;gap:10px}
+.o-acts .btn{width:100%;white-space:normal;text-align:center;line-height:1.2}
+.o-acts .btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+.o-note{position:relative;margin:0;color:#a9c7ea;font-size:13.5px;line-height:1.45}
+.extras{margin-top:26px;background:var(--paper);border-radius:26px;padding:22px;box-shadow:inset 0 0 0 1.5px var(--line);display:grid;gap:16px}
+.extras ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}
+.extras li{display:flex;align-items:center;gap:9px;font-weight:600;font-size:15px}
+.extras svg{width:24px;height:24px;color:var(--deep)}
+
+/* отзывы */
+.love{background:linear-gradient(180deg,var(--bg),#e3f3ff 50%,var(--bg))}
+.lgrid{display:grid;gap:18px}
+@media(min-width:960px){.lgrid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;align-items:start}}
+.score{background:var(--paper);border-radius:30px;padding:26px;box-shadow:0 30px 60px -40px rgba(8,33,63,.5);display:grid;gap:12px}
+.sc-top{display:flex;align-items:center;gap:16px}
+.sc-top>b{font:800 clamp(70px,10vw,96px)/.9 var(--f);letter-spacing:-.05em}
+.sc-top .st i{width:20px;height:20px}
+.score p{margin:0;color:var(--mu)}
+.score p a{color:var(--navy)}
+.score small{color:var(--mu);font-size:13px}
+.tubes{display:grid;grid-template-columns:repeat(auto-fit,minmax(64px,1fr));gap:12px;margin-top:10px;padding-top:20px;border-top:2px dashed var(--line)}
+.tube{display:grid;justify-items:center;gap:6px;text-align:center}
+.tb{position:relative;width:52px;height:150px;border-radius:26px;background:var(--aq3);overflow:hidden;box-shadow:inset 0 0 0 3px #fff,inset 0 6px 16px rgba(8,33,63,.12)}
+.tb i{position:absolute;left:0;right:0;bottom:0;height:var(--h);background:linear-gradient(180deg,var(--aq),var(--deep));transition:height 1.8s var(--ease)}
+.tb svg{position:absolute;left:0;bottom:calc(100% - 6px);width:200%;height:14px;animation:tw 2.4s linear infinite}
+.tb path{fill:var(--aq)}
+@keyframes tw{to{transform:translateX(-50%)}}
+.js .tubes:not(.on) .tb i{height:0}
+.tube b{font-weight:700;font-size:14px;line-height:1.2}
+.tube span{color:var(--mu);font-size:13px}
+.bubs{display:grid;gap:14px}
+.bq{position:relative;margin:0;background:var(--paper);border-radius:28px 28px 28px 8px;padding:22px 24px;font-size:clamp(17px,1.8vw,19px);line-height:1.5;box-shadow:0 24px 40px -32px rgba(8,33,63,.6)}
+.bq:nth-child(2){border-radius:28px 28px 8px 28px;margin-left:8%;background:linear-gradient(160deg,#fff,#eef8ff)}
+.bq:nth-child(3){margin-right:6%}
+.bq p{margin:0}
+.bq::before{content:"";position:absolute;right:18px;top:-10px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff 0 20%,rgba(255,255,255,.5) 22% 45%,rgba(143,227,255,.4));box-shadow:inset 0 0 0 1px rgba(255,255,255,.9)}
+
+/* фото */
+.pics{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:14px max(var(--gutr),calc((100vw - 1180px)/2 + 18px)) 30px max(var(--gut),calc((100vw - 1180px)/2 + 18px))}
+.pics::-webkit-scrollbar{display:none}
+.pc{flex:0 0 min(74vw,330px);margin:0;scroll-snap-align:center;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:var(--aq3);box-shadow:0 0 0 7px #fff,0 30px 50px -30px rgba(8,33,63,.6);transform:rotate(-1.6deg);transition:transform .4s var(--pop)}
+.pc:nth-child(even){transform:rotate(1.8deg) translateY(10px)}
+.pc:hover{transform:rotate(0) scale(1.03)}
+.pc img{width:100%;height:100%;object-fit:cover}
+
+/* как доехать */
+.go{display:grid;gap:14px}
+@media(min-width:960px){.go{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.info{background:var(--paper);border-radius:30px;padding:26px;display:grid;gap:18px;align-content:start;box-shadow:inset 0 0 0 1.5px var(--line)}
+.info h3{font-size:clamp(23px,2.6vw,28px)}
+.muted{color:var(--mu)}
+.phs a{display:block;font:700 clamp(21px,2.4vw,25px)/1.45 var(--f);text-decoration:none}
+.phs a:hover{color:var(--deep)}
+.hours{border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:4px 22px 4px 0;color:var(--mu)}
+.hours tr.today td{color:var(--navy);font-weight:700}
+.hours tr.today td:first-child::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#16c172;margin-right:8px;vertical-align:middle}
+.msg{display:flex;gap:8px;flex-wrap:wrap}
+.msg a{font-weight:600;font-size:15px;padding:9px 16px;border-radius:999px;background:var(--aq3);text-decoration:none}
+.map{position:relative;min-height:380px;border-radius:30px;overflow:hidden;background:var(--aq3);box-shadow:0 0 0 7px #fff,0 30px 60px -40px rgba(8,33,63,.6)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* финал */
+.final{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--navy2),var(--navy));color:#fff;text-align:center;padding-block:clamp(90px,12vw,150px)}
+.final .wtop{position:absolute;left:0;right:0;top:-1px;height:80px;width:100%;transform:scaleY(-1)}
+.final .wtop path{fill:var(--bg)}
+.final .kick{color:var(--aq2)}
+.final h2{max-width:16ch;margin:14px auto 0}
+.big{display:inline-block;margin:24px 0 28px;font:800 clamp(32px,7vw,68px)/1 var(--f);letter-spacing:-.03em;text-decoration:none;color:#fff}
+.final .cta{justify-content:center}
+.final .btn.white{box-shadow:none}
+footer{padding-block:26px calc(110px + env(safe-area-inset-bottom));background:var(--navy);color:#8ea7c4;font-size:13px;line-height:1.55;border-top:1px solid rgba(255,255,255,.08)}
+footer a{color:#cfe0f3}
+@media(min-width:900px){footer{padding-bottom:30px}}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px var(--gutr) calc(10px + env(safe-area-inset-bottom)) var(--gut);background:rgba(255,255,255,.97);box-shadow:0 -1px 0 var(--line);transform:translateY(110%);transition:transform .4s var(--ease)}
+.dock.show{transform:none}
+.dock .btn{flex:1;min-height:52px;padding:0 12px;font-size:16px}
+.ocn{display:none;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--accent);color:var(--ink);font-size:12.5px;font-weight:700;line-height:22px;text-align:center}
+.has .ocn{display:inline-block}
+@media(min-width:900px){.dock{display:none}}
+
+.toast{position:fixed;left:50%;bottom:calc(94px + env(safe-area-inset-bottom));z-index:90;transform:translate(-50%,20px);opacity:0;max-width:min(92vw,440px);padding:13px 20px;border-radius:18px;background:var(--navy);color:#fff;font-weight:600;font-size:14.5px;line-height:1.35;text-align:center;box-shadow:0 20px 40px -14px rgba(8,33,63,.7);transition:.35s var(--pop);pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:900px){.toast{bottom:30px}}
+.lb{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(8,33,63,.96);color:#fff}
+.lb::backdrop{background:rgba(8,33,63,.8)}
+.lb img{width:100%;height:100%;object-fit:contain;padding:56px 12px}
+.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.14);color:#fff;font-size:24px;line-height:1}
+.lb-x{top:14px;right:14px}.lb-p{left:12px;top:50%}.lb-n{right:12px;top:50%}
+.lb-c{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);font-size:14px;color:#a9c7ea}
+
+[data-anim]:not(.run) *,[data-anim]:not(.run) *::before{animation-play-state:paused!important}
+.js [data-r]{opacity:0;transform:translateY(26px) scale(.98);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.facts .fact:nth-child(2){transition-delay:.07s}.facts .fact:nth-child(3){transition-delay:.14s}.facts .fact:nth-child(4){transition-delay:.21s}
+.bubs .bq:nth-child(2){transition-delay:.1s}.bubs .bq:nth-child(3){transition-delay:.2s}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before{animation:none!important;transition:none!important}.js [data-r]{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Демо-концепт.</b> Не официальный сайт «Avta Vata». Сделан для показа владельцу, удалим по первой просьбе.</div>
+
+<header class="top"><div class="w">
+  <a class="brand" href="#top"><span class="logo" aria-hidden="true"></span>Avta Vata</a>
+  <nav class="nav" aria-label="Разделы"><a href="#order">Выбрать мойку</a><a href="#reviews">Отзывы</a><a href="#photos">Фото</a><a href="#contacts">Как доехать</a></nav>
+  <a class="tcall" href="tel:+79186592009" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>+7 (918) 659-20-09</span></a>
+</div></header>
+
+<section class="hero" id="top" style="padding-bottom:0" data-anim>
+  <div aria-hidden="true"><span class="bub" style="width:22px;height:22px;left:6%;animation-duration:11s;animation-delay:-0s"></span><span class="bub" style="width:38px;height:38px;left:14%;animation-duration:14s;animation-delay:-3s"></span><span class="bub" style="width:14px;height:14px;left:26%;animation-duration:9s;animation-delay:-6s"></span><span class="bub" style="width:54px;height:54px;left:38%;animation-duration:16s;animation-delay:-1s"></span><span class="bub" style="width:18px;height:18px;left:52%;animation-duration:12s;animation-delay:-8s"></span><span class="bub" style="width:30px;height:30px;left:64%;animation-duration:13s;animation-delay:-4s"></span><span class="bub" style="width:46px;height:46px;left:76%;animation-duration:15s;animation-delay:-9s"></span><span class="bub" style="width:12px;height:12px;left:86%;animation-duration:10s;animation-delay:-2s"></span><span class="bub" style="width:26px;height:26px;left:94%;animation-duration:12s;animation-delay:-5s"></span><span class="bub" style="width:60px;height:60px;left:22%;animation-duration:18s;animation-delay:-7s"></span><span class="bub" style="width:20px;height:20px;left:44%;animation-duration:11s;animation-delay:-10s"></span><span class="bub" style="width:34px;height:34px;left:70%;animation-duration:14s;animation-delay:-11s"></span></div>
+  <div class="w">
+    <div>
+      <div class="hk"><span class="status" data-status><i aria-hidden="true"></i><span class="stt">Ежедневно 10:00–18:00</span><span class="stl"></span></span><a class="pill" href="https://yandex.ru/maps/org/123614228133/reviews/" target="_blank" rel="noopener"><span class="st" aria-hidden="true"><i></i><i></i><i></i><i></i><i class=off></i></span><b>4,4</b><span>150 оценок</span></a></div>
+      <span class="kk">Детейлинг-мойка · Гагаринский район</span>
+      <h1>Avta Vata</h1>
+      <p class="tag">Мойка, детейлинг и шиномонтаж на Вакуленчука</p>
+      <div class="cta">
+        <a class="btn acc" href="#order">Выбрать мойку</a>
+        <a class="btn white" href="tel:+79186592009"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a>
+      </div>
+      <div class="types"><span>Ручная мойка</span><span>Бесконтактная мойка</span><span>Комплексная мойка</span></div>
+    </div>
+    <div class="fw">
+      <div class="tag-p"><small>Мойка кузова</small><b>300–1000 ₽</b></div>
+      <div class="fcard" id="fcard">
+        <img src="https://avatars.mds.yandex.net/get-altay/11385489/2a0000018d3016636dd3787f1b55b6b25af1/XXL" alt="Avta Vata, фото с Яндекс Карт" referrerpolicy="no-referrer" fetchpriority="high">
+        <canvas id="foam" aria-label="Пена на фото: проведите пальцем, чтобы стереть" role="img"></canvas>
+        <span class="fhint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12M11 11.5v-2a1.5 1.5 0 0 1 3 0V12M14 10.5a1.5 1.5 0 0 1 3 0V12M17 11.5a1.5 1.5 0 0 1 3 0V16a6 6 0 0 1-6 6h-2a6 6 0 0 1-4.7-2.3L4.5 16a1.6 1.6 0 0 1 2.4-2l1.1 1"/></svg>Сотрите пену пальцем</span>
+        <span class="fdone">Чисто! <a href="#order">Выбрать мойку</a></span>
+        <button type="button" class="again" id="again">Ещё раз</button>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 40 C240 90 480 0 720 40 C960 80 1200 10 1500 46 L1500 90 L0 90 Z"/><path d="M0 58 C260 20 520 90 780 56 C1040 22 1260 80 1440 52 L1440 90 L0 90 Z"/></svg>
+</section>
+
+<div class="w"><div class="facts"><div class="fact" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>10:00–18:00</b><span>ежедневно</span></div><div class="fact" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4v-9zM7 11l4-7a2 2 0 0 1 3 2l-1 4h6a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 20H7"/></svg><b><span class="cu">27</span> из 28</b><span>хвалят время ожидания</span></div><div class="fact" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11v9H4v-9zM7 11l4-7a2 2 0 0 1 3 2l-1 4h6a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 20H7"/></svg><b><span class="cu">45</span> из 50</b><span>довольны мойкой</span></div><div class="fact" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.8z"/></svg><b class="cu">150</b><span>оценок клиентов</span></div></div></div>
+
+<main>
+<section class="order" id="order"><div class="w"><div class="o-head sh" data-r><span class="kick">Выбор мойки</span><h2>Соберите свою мойку</h2><p class="lead">Отметьте, что нужно машине. Сообщение соберётся само, останется отправить или позвонить.</p></div><div class="o-grid" data-r><div class="o-form"><div class="o-step"><b class="o-t">Что сделать</b><div class="mcs"><button type="button" class="mc" data-add="Ручная мойка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Ручная мойка</b><span>Моют вручную, аккуратно по всему кузову.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Бесконтактная мойка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Бесконтактная мойка</b><span>Активная пена и вода под давлением, без касания кузова.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Комплексная мойка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Комплексная мойка</b><span>Кузов и салон за один заезд.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Сухая мойка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Сухая мойка</b><span>Очистка без воды, специальными составами.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Мойка самообслуживания" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Мойка самообслуживания</b><span>Моете сами, в своём темпе.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Химчистка салона" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h5a2 2 0 0 1 2 2l-1 8H9.5L7 5a1.6 1.6 0 0 1 1-2z"/><path d="M9.5 13h8a1.5 1.5 0 0 1 1.5 1.7l-.5 3.3H7.5l2-5zM9 18v3M17 18v3"/></svg><b>Химчистка салона</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Полировка кузова и стёкол" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5a4.5 4.5 0 1 1-4.5 4.5M12 10a2 2 0 1 1-2 2"/><path d="M18.5 3.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg><b>Полировка кузова и стёкол</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Оклейка антигравийной плёнкой" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><b>Оклейка антигравийной плёнкой</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Защитный воск и чернение резины" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><b>Защитный воск и чернение резины</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Шиномонтаж и хранение шин" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l8-5 8 5v11H4z"/><circle cx="12" cy="15" r="3.4"/><circle cx="12" cy="15" r="1"/></svg><b>Шиномонтаж и хранение шин</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Продажа шин и дисков" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="2.6"/><path d="M5 7v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V7M5 11v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4M5 15v2c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-2"/></svg><b>Продажа шин и дисков</b><i class="ck" aria-hidden="true"></i></button></div></div><div class="o-step"><b class="o-t">Машина</b><input id="ob-car" type="text" maxlength="60" autocomplete="off" placeholder="Марка, модель, цвет"></div><div class="o-step"><b class="o-t">Когда удобно</b><div class="o-chips"><button type="button" class="oc" data-when="сегодня" aria-pressed="false">Сегодня</button><button type="button" class="oc" data-when="завтра" aria-pressed="false">Завтра</button><button type="button" class="oc" data-when="на выходных" aria-pressed="false">На выходных</button><button type="button" class="oc" data-when="подберём время вместе" aria-pressed="false">Подберём время вместе</button></div></div></div><div class="o-out"><span class="o-lbl">Ваше сообщение</span><div class="o-bubble" id="ob-msg" aria-live="polite"></div><div class="o-acts"><a class="btn acc" data-wa="https://wa.me/79186592009" href="https://wa.me/79186592009" target="_blank" rel="noopener">Отправить в WhatsApp</a><a class="btn line" href="tel:+79186592009">Позвонить</a></div><p class="o-note">Текст подставится в чат сам, останется нажать «Отправить».</p></div></div></div></section><script type="application/json" id="bd">{"name": "Avta Vata"}</script>
+<div class="w"><div class="extras" data-r><span class="kick">Пока ждёте и при оплате</span><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg><span>Предварительная запись</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></svg><span>Оплата картой и переводом</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.2" r="1"/></svg><span>Wi-Fi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="6.5" r="1.8"/><circle cx="14" cy="6.5" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M12 11c-3 0-5.5 4-5.5 6 0 1.6 1.3 2.5 3 2.2 1-.2 1.7-.5 2.5-.5s1.5.3 2.5.5c1.7.3 3-.6 3-2.2 0-2-2.5-6-5.5-6z"/></svg><span>Можно с собакой</span></li></ul></div></div>
+
+<section class="love" id="reviews"><div class="w"><div class="sh" data-r><span class="kick">Отзывы</span><h2>За что сюда возвращаются</h2><p class=lead>Чаще всего хвалят обслуживание и цену: моют аккуратно и без разводов.</p></div><div class="lgrid"><div class="score" data-r><div class="sc-top"><b class="cu">4,4</b><span class="st" aria-hidden="true"><i></i><i></i><i></i><i></i><i class=off></i></span></div><p>150 оценок и 79 отзывов на <a href="https://yandex.ru/maps/org/123614228133/reviews/" target="_blank" rel="noopener">Яндекс Картах</a></p><div class=tubes data-fill data-anim><div class="tube"><div class="tb"><i style="--h:91%"><svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10 V20 H0Z"/></svg></i></div><b>Обслуживание</b><span>62 из 68</span></div><div class="tube"><div class="tb"><i style="--h:90%"><svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10 V20 H0Z"/></svg></i></div><b>Мойка</b><span>45 из 50</span></div><div class="tube"><div class="tb"><i style="--h:95%"><svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10 V20 H0Z"/></svg></i></div><b>Персонал</b><span>35 из 37</span></div><div class="tube"><div class="tb"><i style="--h:96%"><svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10 V20 H0Z"/></svg></i></div><b>Время ожидания</b><span>27 из 28</span></div></div><small>Сколько отзывов по теме хвалят, по подсчёту Яндекс Карт</small></div><div class="bubs"><figure class="bq" data-r><p>Давно моет здесь машину: цены приемлемые, всё делают аккуратно.</p></figure><figure class="bq" data-r><p>Сделали комплексную мойку и отчистили салон вместе с очень грязным багажником.</p></figure><figure class="bq" data-r><p>Детейлинг-мойка на высоком уровне: машина без разводов, салон без пятен.</p></figure><a class="more" href="https://yandex.ru/maps/org/123614228133/reviews/" target="_blank" rel="noopener">Все отзывы на картах →</a></div></div></div></section>
+
+<section class="pics-s" id="photos"><div class="w"><div class="sh" data-r><span class="kick">Фото</span><h2>Как здесь всё устроено</h2><p class="lead">Листайте и нажимайте, чтобы открыть крупно.</p></div></div><div class="pics" data-lb><figure class="pc"><img src="https://avatars.mds.yandex.net/get-altay/11385489/2a0000018d3016636dd3787f1b55b6b25af1/XXL" data-full="https://avatars.mds.yandex.net/get-altay/11385489/2a0000018d3016636dd3787f1b55b6b25af1/XXL" alt="Avta Vata, фото 1" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="pc"><img src="https://avatars.mds.yandex.net/get-altay/11564583/2a0000018d30165f3d5e0cccead157f98533/XL" data-full="https://avatars.mds.yandex.net/get-altay/11564583/2a0000018d30165f3d5e0cccead157f98533/XXL" alt="Avta Vata, фото 2" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="pc"><img src="https://avatars.mds.yandex.net/get-altay/9691438/2a0000018d30165e99bcf19418f0f47e988c/XL" data-full="https://avatars.mds.yandex.net/get-altay/9691438/2a0000018d30165e99bcf19418f0f47e988c/XXL" alt="Avta Vata, фото 3" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="pc"><img src="https://avatars.mds.yandex.net/get-altay/10267222/2a00000193205e632440807792cc7425ab1d/XL" data-full="https://avatars.mds.yandex.net/get-altay/10267222/2a00000193205e632440807792cc7425ab1d/XXL" alt="Avta Vata, фото 4" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="pc"><img src="https://avatars.mds.yandex.net/get-altay/10963046/2a0000018d3016611d633a5cad44bb4ef3e8/XL" data-full="https://avatars.mds.yandex.net/get-altay/10963046/2a0000018d3016611d633a5cad44bb4ef3e8/XXL" alt="Avta Vata, фото 5" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure></div></section>
+
+<section id="contacts"><div class="w">
+  <div class="sh" data-r><span class="kick">Как доехать</span><h2>Ждём на мойке</h2></div>
+  <div class="go" data-r>
+    <div class="info">
+      <div><h3>ул. Вакуленчука, 45</h3><div class="muted">Севастополь, Гагаринский район</div></div>
+      <div class="phs"><a href="tel:+79186592009">+7 (918) 659-20-09</a><a href="tel:+79787695553">+7 (978) 769-55-53</a></div>
+      <table class="hours"><tbody><tr data-days="0,1,2,3,4,5,6"><td>Ежедневно</td><td>10:00–18:00</td></tr></tbody></table>
+      <div class="msg"><a href="https://wa.me/79186592009" target="_blank" rel="noopener">WhatsApp</a></div>
+      <a class="btn acc" href="https://yandex.ru/maps/?rtext=~44.584801%2C33.477897&amp;rtt=auto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Построить маршрут</a>
+    </div>
+    <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?ll=33.477897%2C44.584801&z=16&pt=33.477897,44.584801,pm2rdm" title="Avta Vata на карте" loading="lazy"></iframe></div>
+  </div>
+</div></section>
+
+<section class="final">
+  <svg class="wtop" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C260 10 520 80 780 46 C1040 12 1260 70 1440 42 L1440 80 L0 80 Z"/></svg>
+  <div class="w" data-r>
+    <span class="kick">Avta Vata</span>
+    <h2>Позвоните или приезжайте</h2>
+    <a class="big" href="tel:+79186592009">+7 (918) 659-20-09</a>
+    <div class="cta"><a class="btn acc" href="tel:+79186592009"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a><a class="btn white" href="https://yandex.ru/maps/?rtext=~44.584801%2C33.477897&amp;rtt=auto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Маршрут</a></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w">Демо-концепт сайта для «Avta Vata». Данные, фото и отзывы взяты из открытой карточки: <a href="https://yandex.ru/maps/org/123614228133/" target="_blank" rel="noopener">Яндекс Карты</a>, <a href="https://2gis.ru/sevastopol/firm/70000001031852719" target="_blank" rel="noopener">2ГИС</a>. Если что-то изменилось, уточняйте по телефону.</div></footer>
+
+<nav class="dock" aria-label="Быстрая связь">
+  <a class="btn acc" href="tel:+79186592009"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a>
+  <a class="btn line" href="#order" data-ocw>Мойка <span class="ocn" data-oc></span></a>
+</nav>
+
+<script type="application/json" id="hw">[["10:00", "18:00"], ["10:00", "18:00"], ["10:00", "18:00"], ["10:00", "18:00"], ["10:00", "18:00"], ["10:00", "18:00"], ["10:00", "18:00"]]</script>
+<script>(function () {
+  var d = document, R = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+
+  /* шапка: фон после прокрутки */
+  var top = d.querySelector('.top');
+  if (top) {
+    var onS = function () { top.classList.toggle('sc', scrollY > 40); };
+    addEventListener('scroll', onS, { passive: true }); onS();
+  }
+
+  /* появление блоков */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' }) : null;
+  $$('[data-r]').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  /* счётчики: в разметке уже финальное число, анимируем от нуля */
+  var cio = 'IntersectionObserver' in window && !R ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      var el = e.target, t = el.dataset.to, dec = (t.split(',')[1] || '').length, to = parseFloat(t.replace(',', '.')), t0 = 0;
+      var step = function (ts) {
+        t0 = t0 || ts; var k = Math.min(1, (ts - t0) / 1300), v = to * (1 - Math.pow(1 - k, 3));
+        el.textContent = dec ? v.toFixed(dec).replace('.', ',') : String(Math.round(v));
+        if (k < 1) requestAnimationFrame(step); else el.textContent = t;
+      };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: .4 }) : null;
+  $$('.cu').forEach(function (el) { el.dataset.to = el.textContent.trim(); if (cio && !isNaN(parseFloat(el.dataset.to))) cio.observe(el); });
+
+  /* бесконечные анимации крутятся, только пока блок виден */
+  if ('IntersectionObserver' in window) {
+    var ao = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('run', e.isIntersecting); }); });
+    $$('[data-anim]').forEach(function (el) { ao.observe(el); });
+  } else $$('[data-anim]').forEach(function (el) { el.classList.add('run'); });
+
+  /* шкалы и кольца заполняются при появлении */
+  $$('[data-fill]').forEach(function (el) { io ? (new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { el.classList.add('on'); o.disconnect(); } }, { threshold: .3 })).observe(el) : el.classList.add('on'); });
+
+  /* открыто / закрыто по московскому времени */
+  var hw = d.getElementById('hw');
+  if (hw) try {
+    var W = JSON.parse(hw.textContent);
+    var parts = new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    var dm = { 'вс': 0, 'пн': 1, 'вт': 2, 'ср': 3, 'чт': 4, 'пт': 5, 'сб': 6 }, day, h, m;
+    parts.forEach(function (x) { if (x.type === 'weekday') day = dm[x.value.replace('.', '').toLowerCase()]; if (x.type === 'hour') h = +x.value % 24; if (x.type === 'minute') m = +x.value; });
+    var mins = function (s) { var a = s.split(':'); return a[0] * 60 + +a[1]; }, now = h * 60 + m, t = W[day];
+    var open = t && now >= mins(t[0]) && now < mins(t[1]), txt, left = '';
+    if (open) { txt = 'Открыто до ' + t[1]; var l = mins(t[1]) - now; left = 'ещё ' + (l >= 60 ? Math.floor(l / 60) + ' ч ' : '') + (l % 60) + ' мин'; }
+    else for (var i = 0; i < 7; i++) { var s = W[(day + i) % 7]; if (s && (i > 0 || now < mins(s[0]))) { txt = 'Откроется ' + (i === 0 ? 'сегодня' : i === 1 ? 'завтра' : ['в вс', 'в пн', 'во вт', 'в ср', 'в чт', 'в пт', 'в сб'][(day + i) % 7]) + ' в ' + s[0]; break; } }
+    $$('[data-status]').forEach(function (el) {
+      el.classList.toggle('on', !!open);
+      var a = el.querySelector('.stt'), b = el.querySelector('.stl');
+      if (a && txt) a.textContent = txt; if (b) b.textContent = left;
+    });
+    $$('tr[data-days]').forEach(function (r) { if (r.dataset.days.split(',').indexOf(String(day)) > -1) r.classList.add('today'); });
+  } catch (e) {}
+
+  /* всплывашка */
+  var toastEl;
+  function toast(msg) {
+    if (!toastEl) { toastEl = d.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); d.body.appendChild(toastEl); }
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastEl._t); toastEl._t = setTimeout(function () { toastEl.classList.remove('show'); }, 2600);
+  }
+  function copy(t) {
+    try { if (navigator.clipboard && isSecureContext) return navigator.clipboard.writeText(t); } catch (e) {}
+    var ta = d.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    d.body.appendChild(ta); ta.select(); try { d.execCommand('copy'); } catch (e) {} ta.remove();
+  }
+
+  /* заявка: услуги, машина, время → готовый текст для мастера */
+  var bd = d.getElementById('bd');
+  if (bd) {
+    var cfg = JSON.parse(bd.textContent), sel = [], when = '', car = d.getElementById('ob-car'), out = d.getElementById('ob-msg');
+    var msg = function () {
+      var s = 'Здравствуйте! Пишу с сайта, хочу записаться в «' + cfg.name + '».';
+      if (sel.length) s += '\nНужно: ' + sel.join(', ').toLowerCase() + '.';
+      if (car && car.value.trim()) s += '\nМашина: ' + car.value.trim() + '.';
+      if (when) s += '\nКогда удобно: ' + when + '.';
+      return s;
+    };
+    var render = function () {
+      var t = msg();
+      if (out) out.textContent = t;
+      $$('[data-add]').forEach(function (b) { b.setAttribute('aria-pressed', sel.indexOf(b.dataset.add) > -1 ? 'true' : 'false'); });
+      $$('[data-when]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.when === when ? 'true' : 'false'); });
+      $$('[data-oc]').forEach(function (el) { el.textContent = sel.length; el.closest('[data-ocw]') && el.closest('[data-ocw]').classList.toggle('has', sel.length > 0); });
+      $$('[data-wa]').forEach(function (a) { a.href = a.dataset.wa + '?text=' + encodeURIComponent(t); });
+    };
+    d.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-add]');
+      if (b) {
+        var v = b.dataset.add, i = sel.indexOf(v);
+        if (i > -1) sel.splice(i, 1); else { sel.push(v); if (!b.closest('#order')) toast('«' + v + '» добавлено в заявку'); }
+        render(); return;
+      }
+      var w = e.target.closest('[data-when]');
+      if (w) { when = when === w.dataset.when ? '' : w.dataset.when; render(); return; }
+      var c = e.target.closest('[data-copy]');
+      if (c) { copy(msg()); toast('Текст заявки скопирован. Вставьте его в чат'); }
+    });
+    car && car.addEventListener('input', render);
+    render();
+  }
+
+  /* вкладки: зоны машины и любые [data-z] → [data-zp] */
+  d.addEventListener('click', function (e) {
+    var z = e.target.closest('[data-z]'); if (!z) return;
+    var k = z.dataset.z;
+    $$('[data-z]').forEach(function (x) { var on = x.dataset.z === k; x.classList.toggle('on', on); if (x.getAttribute('role') === 'tab') x.setAttribute('aria-selected', on); });
+    $$('[data-zp]').forEach(function (p) { p.hidden = p.dataset.zp !== k; });
+  });
+
+  /* карусель отзывов: точки и автопрокрутка */
+  $$('.qs').forEach(function (qs) {
+    var track = qs.querySelector('.qt'), dots = $$('.qd button', qs), n = dots.length, cur = 0, user = false;
+    if (!track || n < 2) return;
+    var go = function (i) { cur = (i + n) % n; track.scrollTo({ left: track.children[cur].offsetLeft - track.offsetLeft, behavior: R ? 'auto' : 'smooth' }); };
+    dots.forEach(function (b, i) { b.addEventListener('click', function () { user = true; go(i); }); });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    }, { passive: true });
+    track.addEventListener('pointerdown', function () { user = true; });
+    if (!R) setInterval(function () { if (!user && !d.hidden) go(cur + 1); }, 6000);
+  });
+
+  /* просмотр фото */
+  $$('[data-lb]').forEach(function (g) {
+    var imgs = $$('img', g); if (!imgs.length) return;
+    var dlg = d.createElement('dialog'); dlg.className = 'lb';
+    dlg.innerHTML = '<img alt=""><button class="lb-x" aria-label="Закрыть">✕</button><button class="lb-p" aria-label="Предыдущее фото">‹</button><button class="lb-n" aria-label="Следующее фото">›</button><span class="lb-c"></span>';
+    d.body.appendChild(dlg);
+    var im = dlg.querySelector('img'), cnt = dlg.querySelector('.lb-c'), i = 0, x0 = null;
+    var show = function (k) { var live = $$('img', g); i = (k + live.length) % live.length; im.src = live[i].dataset.full || live[i].src; im.alt = live[i].alt; im.referrerPolicy = 'no-referrer'; cnt.textContent = (i + 1) + ' / ' + live.length; };
+    imgs.forEach(function (img, k) { img.style.cursor = 'zoom-in'; img.addEventListener('click', function () { show(k); dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); }); });
+    dlg.querySelector('.lb-x').onclick = function () { dlg.close(); };
+    dlg.querySelector('.lb-p').onclick = function () { show(i - 1); };
+    dlg.querySelector('.lb-n').onclick = function () { show(i + 1); };
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+    dlg.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+    dlg.addEventListener('pointerup', function (e) { if (x0 !== null && Math.abs(e.clientX - x0) > 50) show(i + (e.clientX < x0 ? 1 : -1)); x0 = null; });
+  });
+})();
+</script>
+<script>
+/* пена поверх фото: рисуем пузыри на canvas и стираем пальцем */
+(function(){
+  var card=document.getElementById('fcard'),cv=document.getElementById('foam');if(!cv||!cv.getContext)return;
+  var ctx=cv.getContext('2d',{willReadFrequently:true}),dpr=Math.min(2,devicePixelRatio||1),W,H,strokes=0,last=null,done=false;
+  var R=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function paint(){
+    W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.globalCompositeOperation='source-over';
+    var g=ctx.createLinearGradient(0,0,W,H);g.addColorStop(0,'rgba(255,255,255,.97)');g.addColorStop(1,'rgba(225,244,255,.97)');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    var n=Math.round(W*H/900);
+    for(var i=0;i<n;i++){
+      var x=rnd(-10,W+10),y=rnd(-10,H+10),r=Math.pow(Math.random(),2.2)*34+3;
+      var b=ctx.createRadialGradient(x-r*.35,y-r*.35,r*.1,x,y,r);
+      b.addColorStop(0,'rgba(255,255,255,1)');b.addColorStop(.55,'rgba(240,250,255,.95)');b.addColorStop(.9,'rgba(170,215,240,.55)');b.addColorStop(1,'rgba(150,200,235,.25)');
+      ctx.fillStyle=b;ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();
+      if(r>9){ctx.fillStyle='rgba(255,255,255,.95)';ctx.beginPath();ctx.arc(x-r*.38,y-r*.4,r*.16,0,7);ctx.fill()}
+    }
+  }
+  function erase(x,y){
+    ctx.globalCompositeOperation='destination-out';
+    var r=Math.max(38,W*.11),g=ctx.createRadialGradient(x,y,0,x,y,r);
+    g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.6,'rgba(0,0,0,1)');g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();
+    for(var k=0;k<3;k++){ctx.fillStyle='rgba(0,0,0,.9)';ctx.beginPath();ctx.arc(x+rnd(-r,r),y+rnd(-r,r),rnd(3,9),0,7);ctx.fill()}
+  }
+  function line(a,b){var dx=b.x-a.x,dy=b.y-a.y,dist=Math.hypot(dx,dy),st=Math.max(1,Math.ceil(dist/10));for(var i=1;i<=st;i++)erase(a.x+dx*i/st,a.y+dy*i/st)}
+  function cleared(){
+    var img=ctx.getImageData(0,0,cv.width,cv.height).data,step=24*dpr|0,tot=0,cl=0;
+    for(var y=0;y<cv.height;y+=step)for(var x=0;x<cv.width;x+=step){tot++;if(img[(y*cv.width+x)*4+3]<90)cl++}
+    return cl/tot;
+  }
+  function finish(){
+    if(done)return;done=true;card.classList.add('clean');
+    if(R)return;
+    for(var i=0;i<16;i++){var s=document.createElement('span');s.className='spark';s.style.left=rnd(15,85)+'%';s.style.top=rnd(15,85)+'%';
+      s.style.setProperty('--dx',rnd(-60,60)+'px');s.style.setProperty('--dy',rnd(-70,20)+'px');s.style.animationDelay=rnd(0,.4)+'s';card.appendChild(s);setTimeout(function(e){e.remove()},1600,s)}
+  }
+  function pos(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+  cv.addEventListener('pointerdown',function(e){last=pos(e);erase(last.x,last.y);card.classList.add('wiping');cv.setPointerCapture(e.pointerId)});
+  cv.addEventListener('pointermove',function(e){
+    if(!last){if(e.pointerType==='mouse'){var p=pos(e);last=p;card.classList.add('wiping')}else return}
+    var p=pos(e);line(last,p);last=p;
+    if(++strokes%14===0&&cleared()>.35)finish();
+  });
+  ['pointerup','pointercancel'].forEach(function(t){cv.addEventListener(t,function(e){if(e.pointerType!=='mouse')last=null;if(cleared()>.35)finish()})});
+  cv.addEventListener('pointerleave',function(){last=null});
+  document.getElementById('again').addEventListener('click',function(){done=false;strokes=0;card.classList.remove('clean','wiping');paint()});
+  paint();
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(!done)paint()},200)});
+  /* подсказка: сама протирает полосу, если человек ещё не трогал */
+  if(!R)setTimeout(function(){
+    if(card.classList.contains('wiping'))return;
+    var t0=null;(function sweep(t){t0=t0||t;var k=Math.min(1,(t-t0)/900),x=W*(.18+.64*k),y=H*(.62-.24*Math.sin(k*Math.PI));
+      if(card.classList.contains('wiping'))return;erase(x,y);if(k<1)requestAnimationFrame(sweep)})(performance.now());
+  },1400);
+})();
+(function(){var dk=document.querySelector('.dock');if(!dk)return;var f=function(){dk.classList.toggle('show',scrollY>innerHeight*.6)};addEventListener('scroll',f,{passive:true});f()})();
+</script>
+</body>
+</html>

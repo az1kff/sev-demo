@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>LS Detailing: детейлинг-студия в Севастополе</title>
+<meta name="description" content="Тонировка, защитная плёнка и уход за машиной на Хрусталёва">
+<meta name="theme-color" content="#09090b">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;300;400;600;700&family=Onest:wght@400;500;600;700&display=swap">
+<style>
+/* Глянец: чёрный бокс детейлинга, свет лампы по фото, акцент бренда только на действиях */
+:root{
+  --accent:#22c55e; --ink:#0b0b0d;
+  --bg:#09090b; --s1:#111114; --s2:#17171b; --s3:#1f1f24; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.16);
+  --tx:#f4f4f5; --mu:#a1a1aa; --mu2:#71717a;
+  --fd:"Geologica",system-ui,sans-serif; --fb:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:max(20px,env(safe-area-inset-left)); --gutr:max(20px,env(safe-area-inset-right));
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16.5px/1.6 var(--fb);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.w{max-width:1240px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+.kick{display:inline-flex;align-items:center;gap:10px;font:600 12.5px/1 var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.kick::before{content:"";width:22px;height:1.5px;background:var(--accent)}
+h2{font:700 clamp(36px,6.4vw,78px)/.98 var(--fd);letter-spacing:-.035em;margin:14px 0 0;text-wrap:balance}
+h3{font:600 22px/1.2 var(--fd);letter-spacing:-.015em;margin:0}
+.lead{color:var(--mu);font-size:clamp(16.5px,1.6vw,19px);max-width:52ch;margin:16px 0 0}
+.sh{margin-bottom:clamp(28px,4vw,52px)}
+section{padding-block:clamp(64px,10vw,140px)}
+.more{display:inline-block;margin-top:22px;color:var(--tx);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:3px;transition:border-color .2s}
+.more:hover{border-color:var(--accent)}
+
+.demo{position:relative;z-index:60;background:#000;color:#9ca3af;font-size:12.5px;line-height:1.4;padding:8px var(--gutr) 8px var(--gut);text-align:center;border-bottom:1px solid var(--line)}
+.demo b{color:#fff}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;font:600 16.5px var(--fb);text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s,background .2s,filter .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.acc{background:var(--accent);color:var(--ink);box-shadow:0 16px 40px -14px var(--accent)}
+.btn.acc:hover{filter:brightness(1.08);box-shadow:0 22px 50px -14px var(--accent)}
+.btn.glass{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);}
+.btn.glass:hover{background:rgba(255,255,255,.14)}
+.btn.line{background:transparent;color:var(--tx);box-shadow:inset 0 0 0 1px var(--line2)}
+.btn.line:hover{box-shadow:inset 0 0 0 1px var(--tx)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:50;margin-bottom:-72px;transition:background .3s,box-shadow .3s}
+.top .w{display:flex;align-items:center;gap:18px;height:72px}
+.top.sc{background:rgba(9,9,11,.94);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font:700 20px var(--fd);letter-spacing:-.02em;text-decoration:none;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent);flex:none}
+.nav{display:none;gap:26px}
+.nav a{text-decoration:none;color:var(--mu);font-weight:500;font-size:15px;transition:color .2s}
+.nav a:hover{color:var(--tx)}
+.tcall{display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 18px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.tcall svg{width:16px;height:16px;color:var(--accent)}
+@media(max-width:560px){.tcall span{display:none}.tcall{width:44px;padding:0;justify-content:center}}
+@media(min-width:980px){.nav{display:flex}}
+
+/* первый экран: фото в полумраке, свет лампы */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;touch-action:pan-y;--r:200px}
+.hp{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dim{filter:brightness(.34) saturate(.6) contrast(1.05)}
+.spot{position:absolute;left:0;top:0;width:calc(var(--r) * 2);height:calc(var(--r) * 2);border-radius:50%;overflow:hidden;will-change:transform;transform:translate3d(-9999px,0,0);-webkit-mask-image:radial-gradient(closest-side,#000 30%,rgba(0,0,0,.8) 55%,transparent 100%);mask-image:radial-gradient(closest-side,#000 30%,rgba(0,0,0,.8) 55%,transparent 100%)}
+.spot .lit{inset:auto;left:0;top:0;width:100vw;height:100vh;max-width:none;filter:brightness(1.12) contrast(1.08) saturate(1.15);will-change:transform}
+.hshade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(9,9,11,.75) 0%,rgba(9,9,11,0) 22%,rgba(9,9,11,0) 45%,rgba(9,9,11,.75) 78%,var(--bg) 100%)}
+.hc{position:relative;width:100%;padding-top:120px;padding-bottom:clamp(120px,14vh,150px)}
+.hk{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.status{display:inline-flex;align-items:center;gap:9px;height:36px;padding:0 14px;border-radius:999px;background:rgba(0,0,0,.45);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-weight:600;font-size:14px}
+.status i{width:8px;height:8px;border-radius:50%;background:#71717a}
+.status.on i{background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
+.status .stl{color:var(--mu);font-weight:500}
+.status .stl:empty{display:none}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.kk{font-size:14px;color:rgba(255,255,255,.75);letter-spacing:.04em}
+h1{font:700 clamp(46px,10.4vw,168px)/.9 var(--fd);letter-spacing:-.05em;margin:22px 0 28px;text-shadow:0 10px 60px rgba(0,0,0,.5)}
+.tag{font-size:clamp(17px,1.9vw,22px);line-height:1.45;color:rgba(255,255,255,.82);max-width:34ch;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hb{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:34px}
+.rcard{display:inline-flex;align-items:center;gap:14px;padding:12px 18px 12px 14px;border-radius:20px;background:rgba(0,0,0,.42);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);text-decoration:none;transition:background .2s}
+.rcard:hover{background:rgba(0,0,0,.6)}
+.rcard b{font:300 40px/1 var(--fd);letter-spacing:-.03em}
+.rcard>span{display:grid;gap:6px}
+.rcard small{font-size:13px;color:var(--mu)}
+.stars{display:inline-flex;gap:3px}
+.stars i{width:15px;height:15px;background:var(--accent);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.stars i.off{background:rgba(255,255,255,.2)}
+.hint{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.6)}
+.hint svg{width:20px;height:20px;color:var(--accent);animation:sway 2.4s ease-in-out infinite}
+@keyframes sway{50%{transform:translateX(5px) rotate(8deg)}}
+.hero.touched .hint{opacity:0;transition:opacity .6s}
+
+/* полоса доверия */
+.trust{border-block:1px solid var(--line);background:linear-gradient(180deg,var(--bg),#0c0c0f)}
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.ti{padding:28px 0 26px;display:grid;gap:8px;align-content:start;min-width:0}
+.ti:nth-child(odd){padding-right:16px;border-right:1px solid var(--line)}
+.ti:nth-child(even){padding-left:20px}
+.ti:nth-child(n+3){border-top:1px solid var(--line)}
+.ti b{font:200 clamp(38px,6.4vw,68px)/1 var(--fd);letter-spacing:-.04em;white-space:nowrap}
+.ti b span{font:inherit}
+.ti b.sm{font-size:clamp(26px,4.2vw,46px);padding-top:.25em}
+.ti>span{color:var(--mu);font-size:14px;line-height:1.35}
+@media(min-width:900px){.tgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .ti,.ti:nth-child(odd),.ti:nth-child(even){padding:40px 28px 36px;border:0;border-left:1px solid var(--line)}
+  .ti:first-child{border-left:0;padding-left:0}}
+
+/* бегущая строка */
+.band{overflow:hidden;white-space:nowrap;padding-block:26px;border-bottom:1px solid var(--line);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.band .bt{display:inline-flex;animation:mar 50s linear infinite;will-change:transform}
+.band span{font:300 clamp(30px,4.4vw,52px)/1 var(--fd);letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.4);padding-right:46px;display:inline-flex;align-items:center;gap:46px}
+.band span::after{content:"";width:12px;height:12px;background:var(--accent);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+@keyframes mar{to{transform:translateX(-50%)}}
+
+/* подбор по схеме машины */
+.zones{background:radial-gradient(70% 55% at 28% 42%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 70%)}
+.zgrid{display:grid;gap:28px}
+@media(min-width:980px){.zgrid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;gap:48px}}
+.stage{min-width:0}
+.carbox{position:relative;margin:10px -6px 0}
+.carbox::before{content:"";position:absolute;left:8%;right:8%;top:-18%;height:120%;background:radial-gradient(50% 50% at 50% 30%,rgba(255,255,255,.09),transparent 70%);pointer-events:none}
+.car{position:relative;width:100%;height:auto;overflow:visible}
+.car .body{animation:float 6s ease-in-out infinite}
+.car .hub{fill:var(--accent)}
+.car .sweep{animation:sweep 5s cubic-bezier(.5,0,.3,1) infinite}
+.car .drop{transform-box:fill-box;transform-origin:center;opacity:0;animation:dropin 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-5px)}}
+@keyframes sweep{0%,15%{transform:skewX(-22deg) translateX(0)}70%,100%{transform:skewX(-22deg) translateX(640px)}}
+@keyframes dropin{0%,8%{opacity:0;transform:scale(.3)}22%,82%{opacity:1;transform:none}100%{opacity:0;transform:scale(.8)}}
+.hs{position:absolute;z-index:2;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(9,9,11,.55);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85);display:grid;place-items:center;transition:transform .2s var(--ease),background .2s}
+.hs i{width:10px;height:10px;border-radius:50%;background:#fff;transition:background .2s}
+.hs::before{content:"";position:absolute;inset:-1px;border-radius:50%;border:1.5px solid var(--accent);animation:ring 2.2s var(--ease) infinite}
+.hs span{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);opacity:0;white-space:nowrap;font-size:13px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--tx);color:var(--bg);pointer-events:none;transition:.2s}
+.hs:hover{transform:scale(1.12)}
+.hs:hover span,.hs.on span{opacity:1;transform:translateX(-50%)}
+.hs.on{background:var(--accent);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 25%,transparent),0 0 30px var(--accent)}
+.hs.on i{background:var(--ink)}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(2);opacity:0}}
+.zts{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:46px calc(-1 * var(--gutr)) 0 calc(-1 * var(--gut));padding:0 var(--gutr) 4px var(--gut)}
+.zts::-webkit-scrollbar{display:none}
+.zt{flex:none;height:42px;padding:0 18px;border-radius:999px;border:0;cursor:pointer;background:var(--s2);box-shadow:inset 0 0 0 1px var(--line);font-weight:600;font-size:14.5px;transition:.2s}
+.zt:hover{box-shadow:inset 0 0 0 1px var(--line2)}
+.zt.on{background:var(--tx);color:var(--bg)}
+@media(min-width:980px){.zts{margin:40px 0 0;padding:0;flex-wrap:wrap}}
+.zp{background:linear-gradient(180deg,var(--s2),var(--s1));border-radius:28px;padding:clamp(22px,3vw,34px);box-shadow:inset 0 0 0 1px var(--line),0 40px 80px -40px rgba(0,0,0,.8);animation:pin .45s var(--ease)}
+@keyframes pin{from{opacity:0;transform:translateY(12px)}}
+.zp h3{margin:12px 0 18px}
+.zp ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.zp li{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--line);font-weight:500}
+.zp li>span{flex:1;min-width:0;line-height:1.35}
+.zp li svg{width:26px;height:26px;color:var(--accent);flex:none}
+.zp blockquote{margin:18px 0 0;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.85);font-size:15.5px;line-height:1.5}
+.zp cite{display:block;margin-top:8px;font-style:normal;font-size:12.5px;color:var(--mu2)}
+.add{flex:none;height:36px;padding:0 14px;border-radius:999px;border:0;cursor:pointer;background:transparent;box-shadow:inset 0 0 0 1px var(--line2);font-weight:600;font-size:13.5px;transition:.2s;white-space:nowrap}
+.add:hover{box-shadow:inset 0 0 0 1px var(--accent);color:var(--accent)}
+.add em{font-style:normal}
+.add .a2,.add[aria-pressed="true"] .a1{display:none}
+.add[aria-pressed="true"] .a2{display:inline}
+.add[aria-pressed="true"]{background:var(--accent);color:var(--ink);box-shadow:none}
+
+/* фото: бенто */
+.bento{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.bx{margin:0;position:relative;overflow:hidden;border-radius:20px;background:var(--s2);aspect-ratio:1}
+.bx.b0{grid-column:1/-1;aspect-ratio:4/3}
+.bx img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .5s}
+.bx::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);pointer-events:none}
+.bx:hover img{transform:scale(1.06);filter:brightness(1.08)}
+@media(min-width:900px){.bento{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,250px));gap:14px}
+  .bx,.bx.b0{aspect-ratio:auto}.bx.b0{grid-column:span 2;grid-row:span 2}}
+
+/* отзывы */
+.rep{background:linear-gradient(180deg,var(--bg),#0d0d10 40%,var(--bg))}
+.rgrid{display:grid;gap:20px}
+@media(min-width:980px){.rgrid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;align-items:stretch}}
+.rbig{background:var(--s1);border-radius:28px;padding:clamp(24px,3vw,36px);box-shadow:inset 0 0 0 1px var(--line);display:grid;gap:14px;align-content:start}
+.rbig>b{font:200 clamp(96px,14vw,150px)/.85 var(--fd);letter-spacing:-.06em}
+.rbig .stars i{width:20px;height:20px}
+.rbig p{margin:0;color:var(--mu)}
+.rbig p a{color:var(--tx)}
+.abs{display:grid;gap:16px;margin-top:12px;padding-top:22px;border-top:1px solid var(--line)}
+.ab-h{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:15px}
+.ab-h span{color:var(--mu)}
+.ab-t{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden}
+.ab-t i{display:block;height:100%;width:var(--w);border-radius:3px;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 50%,transparent),var(--accent));transition:width 1.4s var(--ease)}
+.js .abs:not(.on) .ab-t i{width:0}
+.abs small{color:var(--mu2);font-size:12.5px}
+.qs{background:var(--s1);border-radius:28px;padding:clamp(24px,3vw,44px);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;min-width:0;position:relative;overflow:hidden}
+.qs::before{content:"“";position:absolute;right:22px;top:8px;font:200 150px/1 var(--fd);color:var(--accent);opacity:.14;pointer-events:none}
+.qt{display:grid;grid-auto-flow:column;grid-auto-columns:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;flex:1}
+.qt::-webkit-scrollbar{display:none}
+.q{margin:0;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;gap:20px;padding-right:6px}
+.q p{margin:0;font:400 clamp(22px,2.8vw,34px)/1.3 var(--fd);letter-spacing:-.015em;text-wrap:pretty}
+.q figcaption{color:var(--mu2);font-size:13.5px}
+.qd{display:flex;gap:8px;margin-top:26px}
+.qd button{width:8px;height:8px;border-radius:4px;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.25);transition:width .3s,background .3s}
+.qd button[aria-current="true"]{width:28px;background:var(--accent)}
+.qs .more{align-self:flex-start}
+
+/* услуги */
+.sgrid{display:grid;gap:20px}
+@media(min-width:980px){.sgrid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;align-items:start}}
+.scs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media(min-width:620px){.scs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sc{position:relative;display:grid;grid-template-columns:auto 1fr;grid-template-rows:1fr auto;gap:14px 14px;align-items:start;padding:20px;border-radius:22px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .3s,transform .3s var(--ease),background .3s;overflow:hidden}
+.sc::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 0 0,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%);opacity:0;transition:opacity .3s}
+.sc:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--line2)}
+.sc:hover::before{opacity:1}
+.sc svg{position:relative;width:44px;height:44px;padding:10px;border-radius:14px;background:rgba(255,255,255,.05);color:var(--accent)}
+.sc b{position:relative;font:600 17px/1.3 var(--fd);letter-spacing:-.01em;align-self:center}
+.sc .add{position:relative;grid-column:2;justify-self:start}
+@media(max-width:619px){.sc{grid-template-columns:auto 1fr auto;grid-template-rows:auto;align-items:center;padding:14px 14px 14px 16px;gap:14px}
+  .sc .add{grid-column:auto;width:40px;height:40px;padding:0;font-size:17px}.sc .add em{display:none}}
+.side{display:grid;gap:16px}
+@media(min-width:980px){.side{position:sticky;top:96px}}
+.prices,.extras{background:var(--s1);border-radius:24px;padding:24px;box-shadow:inset 0 0 0 1px var(--line);display:grid;gap:14px}
+.pr{display:flex;align-items:baseline;gap:12px}
+.pr span{color:var(--mu)}
+.pr::after{content:"";order:1;flex:1;border-bottom:1px dotted rgba(255,255,255,.2);transform:translateY(-4px)}
+.pr b{order:2;font:600 20px var(--fd);white-space:nowrap;font-variant-numeric:tabular-nums}
+.prices small{color:var(--mu2);font-size:13px;line-height:1.45}
+.extras ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
+.extras li{display:flex;align-items:center;gap:10px;font-size:14.5px;line-height:1.3}
+.extras svg{width:22px;height:22px;color:var(--accent);flex:none}
+
+/* заявка */
+.order .w>.o-grid{display:grid;gap:16px;background:linear-gradient(160deg,#141418,#0d0d10);border-radius:32px;padding:clamp(18px,3vw,36px);box-shadow:inset 0 0 0 1px var(--line),0 60px 120px -60px color-mix(in srgb,var(--accent) 40%,transparent)}
+@media(min-width:980px){.order .w>.o-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:36px}}
+.o-form{display:grid;gap:28px;counter-reset:st;padding:6px 4px}
+.o-step{display:grid;gap:14px}
+.o-t{display:flex;align-items:center;gap:12px;font:600 15px var(--fb)}
+.o-t::before{counter-increment:st;content:counter(st,decimal-leading-zero);font:300 13px var(--fd);color:var(--accent);letter-spacing:.06em}
+.o-chips{display:flex;flex-wrap:wrap;gap:8px}
+.oc{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;border:0;cursor:pointer;background:var(--s3);box-shadow:inset 0 0 0 1px var(--line);font-weight:500;font-size:14.5px;line-height:1.25;text-align:left;transition:.2s}
+.oc svg{width:18px;height:18px;color:var(--accent);flex:none}
+.oc:hover{box-shadow:inset 0 0 0 1px var(--line2)}
+.oc[aria-pressed="true"]{background:var(--accent);color:var(--ink);box-shadow:none}
+.oc[aria-pressed="true"] svg{color:currentColor}
+#ob-car{width:100%;height:54px;padding:0 18px;border-radius:16px;border:0;background:var(--s3);box-shadow:inset 0 0 0 1px var(--line);color:var(--tx);font:500 16px var(--fb);transition:box-shadow .2s}
+#ob-car::placeholder{color:var(--mu2)}
+#ob-car:focus{outline:0;box-shadow:inset 0 0 0 1.5px var(--accent)}
+.o-out{display:grid;gap:14px;align-content:start;background:rgba(0,0,0,.35);border-radius:24px;padding:20px;box-shadow:inset 0 0 0 1px var(--line)}
+@media(min-width:980px){.o-out{position:sticky;top:96px}}
+.o-lbl{font-size:13px;color:var(--mu);display:flex;align-items:center;gap:8px}
+.o-lbl::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e}
+.o-bubble{white-space:pre-wrap;background:var(--s3);border-radius:18px 18px 18px 6px;padding:16px 18px;font-size:15px;line-height:1.55;min-height:96px;box-shadow:inset 0 0 0 1px var(--line)}
+.o-acts{display:grid;gap:10px}
+.o-acts .btn{width:100%;white-space:normal;text-align:center;line-height:1.2}
+.o-note{margin:0;color:var(--mu2);font-size:13px;line-height:1.45}
+
+/* контакты */
+.cgrid{display:grid;gap:16px}
+@media(min-width:980px){.cgrid{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.info{background:var(--s1);border-radius:28px;padding:clamp(22px,3vw,34px);box-shadow:inset 0 0 0 1px var(--line);display:grid;gap:22px;align-content:start}
+.info h3{font-size:clamp(24px,3vw,30px)}
+.muted{color:var(--mu)}
+.phs a{display:block;font:300 clamp(24px,3vw,30px)/1.35 var(--fd);text-decoration:none;letter-spacing:-.01em;transition:color .2s}
+.phs a:hover{color:var(--accent)}
+.hours{border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:4px 22px 4px 0;color:var(--mu)}
+.hours tr.today td{color:var(--tx);font-weight:600}
+.hours tr.today td:first-child::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle}
+.msg{display:flex;flex-wrap:wrap;gap:8px}
+.msg a{font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;background:var(--s3);text-decoration:none;box-shadow:inset 0 0 0 1px var(--line);transition:.2s}
+.msg a:hover{box-shadow:inset 0 0 0 1px var(--accent)}
+.map{position:relative;min-height:380px;border-radius:28px;overflow:hidden;background:var(--s2);box-shadow:inset 0 0 0 1px var(--line)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) contrast(.88) brightness(.95)}
+
+/* финал */
+.final{position:relative;min-height:clamp(560px,86svh,900px);display:grid;place-items:center;text-align:center;overflow:hidden;isolation:isolate}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:brightness(.3) saturate(.7)}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 60% at 50% 50%,transparent,var(--bg) 95%),linear-gradient(180deg,var(--bg),transparent 25%,transparent 75%,var(--bg))}
+.final h2{max-width:15ch;margin:16px auto 0}
+.big{display:inline-block;margin:28px 0 30px;font:200 clamp(34px,7vw,84px)/1 var(--fd);letter-spacing:-.04em;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease)}
+.big:hover{background-size:100% 1px}
+.final .cta{justify-content:center}
+footer{padding-block:28px calc(110px + env(safe-area-inset-bottom));color:var(--mu2);font-size:13px;line-height:1.55;border-top:1px solid var(--line)}
+footer a{color:var(--mu)}
+@media(min-width:900px){footer{padding-bottom:32px}}
+
+/* нижняя панель на телефоне */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px var(--gutr) calc(10px + env(safe-area-inset-bottom)) var(--gut);background:rgba(9,9,11,.96);box-shadow:0 -1px 0 var(--line);transform:translateY(110%);transition:transform .4s var(--ease)}
+.dock.show{transform:none}
+.dock .btn{flex:1;min-height:52px;padding:0 14px}
+.ocn{display:none;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--accent);color:var(--ink);font-size:12.5px;font-weight:700;line-height:22px;text-align:center}
+.has .ocn{display:inline-block}
+@media(min-width:900px){.dock{display:none}}
+
+.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom));z-index:90;transform:translate(-50%,20px);opacity:0;max-width:min(92vw,440px);padding:13px 20px;border-radius:16px;background:#fff;color:#09090b;font-weight:600;font-size:14.5px;line-height:1.35;text-align:center;box-shadow:0 20px 50px -10px rgba(0,0,0,.6);transition:.35s var(--ease);pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:900px){.toast{bottom:32px}}
+
+.lb{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(0,0,0,.95);color:#fff}
+.lb::backdrop{background:rgba(0,0,0,.8)}
+.lb img{width:100%;height:100%;object-fit:contain;padding:56px 12px}
+.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1}
+.lb-x{top:14px;right:14px}.lb-p{left:12px;top:50%}.lb-n{right:12px;top:50%}
+.lb-c{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);font-size:14px;color:#aaa}
+
+[data-anim]:not(.run) *,[data-anim]:not(.run) *::before{animation-play-state:paused!important}
+.js [data-r]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.scs .sc:nth-child(2n){transition-delay:.06s}
+.tgrid .ti:nth-child(2){transition-delay:.08s}.tgrid .ti:nth-child(3){transition-delay:.16s}.tgrid .ti:nth-child(4){transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before{animation:none!important;transition:none!important}.js [data-r]{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Демо-концепт.</b> Не официальный сайт «LS Detailing». Сделан для показа владельцу, удалим по первой просьбе.</div>
+
+<header class="top"><div class="w">
+  <a class="brand" href="#top"><i aria-hidden="true"></i>LS Detailing</a>
+  <nav class="nav" aria-label="Разделы"><a href="#zones">Подбор</a><a href="#works">Фото</a><a href="#reviews">Отзывы</a><a href="#services">Услуги</a><a href="#contacts">Контакты</a></nav>
+  <a class="tcall" href="tel:+79787971095" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>+7 (978) 797-10-95</span></a>
+</div></header>
+
+<section class="hero" id="top">
+  <div class="hp" aria-hidden="true">
+    <img class="ph dim" src="https://avatars.mds.yandex.net/get-altay/14676222/2a000001954245df6d17f2b4d3d99761d579/XXL" alt="" referrerpolicy="no-referrer" fetchpriority="high">
+    <div class="spot"><img class="ph lit" src="https://avatars.mds.yandex.net/get-altay/14676222/2a000001954245df6d17f2b4d3d99761d579/XXL" alt="" referrerpolicy="no-referrer"></div>
+  </div>
+  <div class="hshade" aria-hidden="true"></div>
+  <div class="w hc">
+    <div class="hk"><span class="status" data-status><i aria-hidden="true"></i><span class="stt">Пн–Пт 09:00–18:00, Сб 09:00–15:00</span><span class="stl"></span></span><span class="kk">Детейлинг-студия · Гагаринский район</span></div>
+    <h1>LS Detailing</h1>
+    <p class="tag">Тонировка, защитная плёнка и уход за машиной на Хрусталёва</p>
+    <div class="cta"><a class="btn acc" href="tel:+79787971095"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a><a class="btn glass" href="#order">Собрать заявку</a></div>
+    <div class="hb"><a class="rcard" href="https://yandex.ru/maps/org/84623531280/reviews/" target="_blank" rel="noopener"><b>5,0</b><span><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><small>67 оценок на Яндекс Картах</small></span></a><span class="hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span id="hintText">Проведите по фото, как лампой мастера</span></span></div>
+  </div>
+</section>
+
+<div class="trust"><div class="w tgrid"><div class="ti" data-r><b class="cu">5,0</b><span>рейтинг на Яндекс Картах</span></div><div class="ti" data-r><b class="cu">67</b><span>оценок клиентов</span></div><div class="ti" data-r><b class="cu">60</b><span>отзывов с текстом</span></div><div class="ti" data-r><b><span class="cu">29</span> из 29</b><span>хвалят: персонал</span></div></div></div>
+<div class="band" aria-hidden="true" data-anim><div class="bt"><span>Химчистка салона</span><span>Полировка стёкол</span><span>Оклейка антигравийной плёнкой</span><span>Бронирование фар</span><span>Тонировка стёкол</span><span>Оклейка винилом</span><span>Удаление вмятин без покраски</span><span>Предпродажная подготовка</span><span>Оклейка такси</span><span>Химчистка салона</span><span>Полировка стёкол</span><span>Оклейка антигравийной плёнкой</span><span>Бронирование фар</span><span>Тонировка стёкол</span><span>Оклейка винилом</span><span>Удаление вмятин без покраски</span><span>Предпродажная подготовка</span><span>Оклейка такси</span></div></div>
+
+<main>
+<section class="zones" id="zones" data-anim><div class="w"><div class="sh" data-r><span class="kick">Подбор услуги</span><h2>Нажмите, где проблема</h2><p class="lead">Покажем, что с этим делают в «LS Detailing». Нужное можно сразу добавить в заявку.</p></div><div class="zgrid" data-r><div class="stage"><div class="carbox"><svg class="car" viewBox="0 0 400 200" aria-hidden="true">
+<defs>
+ <linearGradient id="paint" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#7c8491"/><stop offset=".28" stop-color="#363b45"/><stop offset=".62" stop-color="#1b1e24"/><stop offset="1" stop-color="#0b0c0f"/></linearGradient>
+ <linearGradient id="refl" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" style="stop-color:var(--accent);stop-opacity:0"/><stop offset=".35" style="stop-color:var(--accent);stop-opacity:.55"/>
+  <stop offset=".7" style="stop-color:var(--accent);stop-opacity:.2"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient>
+ <radialGradient id="under" cx="50%" cy="50%" r="50%"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.75"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a5466"/><stop offset=".5" stop-color="#151a24"/><stop offset="1" stop-color="#07090d"/></linearGradient>
+ <linearGradient id="rimc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f4f8"/><stop offset="1" stop-color="#6b737e"/></linearGradient>
+ <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/>
+  <stop offset=".5" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <clipPath id="bodyclip"><path d="M16 138 C16 124 27 116 46 112 L104 103 C130 85 162 70 202 66 C238 63 270 68 298 86 L332 103 C358 107 379 114 385 126 C389 134 387 146 378 148 L343 148 A31 31 0 0 0 281 148 L129 148 A31 31 0 0 0 67 148 L25 148 C19 148 16 144 16 138 Z"/></clipPath>
+</defs>
+<ellipse cx="202" cy="166" rx="190" ry="22" fill="url(#under)"/>
+<ellipse cx="202" cy="176" rx="170" ry="7" fill="rgba(0,0,0,.6)"/>
+<g class="body">
+ <path d="M16 138 C16 124 27 116 46 112 L104 103 C130 85 162 70 202 66 C238 63 270 68 298 86 L332 103 C358 107 379 114 385 126 C389 134 387 146 378 148 L343 148 A31 31 0 0 0 281 148 L129 148 A31 31 0 0 0 67 148 L25 148 C19 148 16 144 16 138 Z" fill="url(#paint)"/>
+ <g clip-path="url(#bodyclip)">
+  <rect x="0" y="112" width="400" height="22" fill="url(#refl)"/>
+  <path d="M30 120 C140 109 270 108 384 121" stroke="rgba(255,255,255,.45)" stroke-width="1.2" fill="none"/>
+  <path d="M40 140 C150 134 270 134 380 140" stroke="var(--accent)" stroke-opacity=".7" stroke-width="1.4" fill="none"/>
+  <rect class="sweep" x="-120" y="40" width="70" height="120" fill="url(#shine)" transform="skewX(-22)"/>
+ </g>
+ <path d="M124 101 C148 85 172 76 204 74 L206 101 Z" fill="url(#glass)"/>
+ <path d="M214 74 C240 74 262 80 284 96 L288 101 L216 101 Z" fill="url(#glass)"/>
+ <path d="M130 99 C152 86 172 79 196 77" stroke="rgba(255,255,255,.35)" stroke-width="1.2" fill="none"/>
+ <path d="M356 112 L382 118 L380 123 L352 118 Z" style="fill:color-mix(in srgb,var(--accent) 30%,#fff)"/>
+ <path d="M20 126 L36 123 L36 128 L19 131 Z" fill="#ff3b3b"/>
+ <g class="drop" style="animation-delay:0.00s"><circle cx="64" cy="118" r="2.6" fill="rgba(255,255,255,.28)"/><circle cx="63.1" cy="117.1" r="1.0" fill="#fff"/></g><g class="drop" style="animation-delay:0.35s"><circle cx="78" cy="116" r="1.8" fill="rgba(255,255,255,.28)"/><circle cx="77.4" cy="115.4" r="0.7" fill="#fff"/></g><g class="drop" style="animation-delay:0.70s"><circle cx="92" cy="113" r="2.4" fill="rgba(255,255,255,.28)"/><circle cx="91.2" cy="112.2" r="0.9" fill="#fff"/></g><g class="drop" style="animation-delay:1.05s"><circle cx="52" cy="122" r="1.6" fill="rgba(255,255,255,.28)"/><circle cx="51.4" cy="121.4" r="0.6" fill="#fff"/></g><g class="drop" style="animation-delay:1.40s"><circle cx="106" cy="111" r="1.7" fill="rgba(255,255,255,.28)"/><circle cx="105.4" cy="110.4" r="0.6" fill="#fff"/></g><g class="drop" style="animation-delay:1.75s"><circle cx="84" cy="122" r="1.4" fill="rgba(255,255,255,.28)"/><circle cx="83.5" cy="121.5" r="0.5" fill="#fff"/></g><g class="drop" style="animation-delay:2.10s"><circle cx="340" cy="111" r="2.2" fill="rgba(255,255,255,.28)"/><circle cx="339.2" cy="110.2" r="0.8" fill="#fff"/></g><g class="drop" style="animation-delay:2.45s"><circle cx="354" cy="114" r="1.6" fill="rgba(255,255,255,.28)"/><circle cx="353.4" cy="113.4" r="0.6" fill="#fff"/></g><g class="drop" style="animation-delay:2.80s"><circle cx="366" cy="118" r="2" fill="rgba(255,255,255,.28)"/><circle cx="365.3" cy="117.3" r="0.8" fill="#fff"/></g><g class="drop" style="animation-delay:3.15s"><circle cx="346" cy="119" r="1.4" fill="rgba(255,255,255,.28)"/><circle cx="345.5" cy="118.5" r="0.5" fill="#fff"/></g>
+ <g transform="translate(98 148)"><circle r="28" fill="#08090c"/><circle r="21" fill="#15181d"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(0)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(36)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(72)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(108)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(144)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(180)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(216)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(252)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(288)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(324)"/><circle r="21" fill="none" stroke="url(#rimc)" stroke-width="2"/><circle r="6" fill="#2a2f37"/><circle r="3" class="hub"/></g><g transform="translate(312 148)"><circle r="28" fill="#08090c"/><circle r="21" fill="#15181d"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(0)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(36)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(72)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(108)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(144)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(180)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(216)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(252)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(288)"/><path d="M-2 -6 L-4.5 -19 L4.5 -19 L2 -6 Z" fill="url(#rimc)" transform="rotate(324)"/><circle r="21" fill="none" stroke="url(#rimc)" stroke-width="2"/><circle r="6" fill="#2a2f37"/><circle r="3" class="hub"/></g>
+</g>
+</svg><button type="button" class="hs on" data-z="salon" style="left:41.0%;top:45.0%" aria-label="Салон"><i></i><span>Салон</span></button><button type="button" class="hs" data-z="glass" style="left:63.0%;top:44.0%" aria-label="Стёкла"><i></i><span>Стёкла</span></button><button type="button" class="hs" data-z="body" style="left:51.0%;top:64.0%" aria-label="Кузов"><i></i><span>Кузов</span></button><button type="button" class="hs" data-z="lights" style="left:92.5%;top:59.0%" aria-label="Фары"><i></i><span>Фары</span></button></div><div class="zts" role="tablist" aria-label="Зоны машины"><button type="button" class="zt on" role="tab" aria-selected="true" data-z="salon">Салон</button><button type="button" class="zt" role="tab" aria-selected="false" data-z="glass">Стёкла</button><button type="button" class="zt" role="tab" aria-selected="false" data-z="body">Кузов</button><button type="button" class="zt" role="tab" aria-selected="false" data-z="lights">Фары</button></div></div><div class="zpw"><div class="zp" data-zp="salon"><span class="kick">Салон</span><h3>Что сделают в «LS Detailing»</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h5a2 2 0 0 1 2 2l-1 8H9.5L7 5a1.6 1.6 0 0 1 1-2z"/><path d="M9.5 13h8a1.5 1.5 0 0 1 1.5 1.7l-.5 3.3H7.5l2-5zM9 18v3M17 18v3"/></svg><span>Химчистка салона</span><button type="button" class="add" data-add="Химчистка салона" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><blockquote>«В новом помещении появилась уютная зона отдыха: кресла, кофейный аппарат и белки за стеклом.»<cite>из отзывов на картах</cite></blockquote></div><div class="zp" data-zp="glass" hidden><span class="kick">Стёкла</span><h3>Что сделают в «LS Detailing»</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5a4.5 4.5 0 1 1-4.5 4.5M12 10a2 2 0 1 1-2 2"/><path d="M18.5 3.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg><span>Полировка стёкол</span><button type="button" class="add" data-add="Полировка стёкол" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16l3-8h12l3 8z"/><path d="M6 8l3 8M10 8l3 8M14 8l3 8" opacity=".6"/><path d="M3 16v3h18v-3"/></svg><span>Тонировка стёкол</span><button type="button" class="add" data-add="Тонировка стёкол" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><blockquote>«Не первый раз приезжает за тонировкой и полировкой фар, каждый раз доволен результатом.»<cite>из отзывов на картах</cite></blockquote></div><div class="zp" data-zp="body" hidden><span class="kick">Кузов</span><h3>Что сделают в «LS Detailing»</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><span>Оклейка антигравийной плёнкой</span><button type="button" class="add" data-add="Оклейка антигравийной плёнкой" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><span>Оклейка винилом</span><button type="button" class="add" data-add="Оклейка винилом" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg><span>Удаление вмятин без покраски</span><button type="button" class="add" data-add="Удаление вмятин без покраски" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="2.6"/><path d="M5 7v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V7M5 11v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4M5 15v2c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-2"/></svg><span>Предпродажная подготовка</span><button type="button" class="add" data-add="Предпродажная подготовка" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><span>Оклейка такси</span><button type="button" class="add" data-add="Оклейка такси" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><blockquote>«Не первый раз приезжает за тонировкой и полировкой фар, каждый раз доволен результатом.»<cite>из отзывов на картах</cite></blockquote></div><div class="zp" data-zp="lights" hidden><span class="kick">Фары</span><h3>Что сделают в «LS Detailing»</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span>Бронирование фар</span><button type="button" class="add" data-add="Бронирование фар" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><blockquote>«Сделали детейлинг фар и поставили новые лампы: фары стали прозрачными, свет ярким.»<cite>из отзывов на картах</cite></blockquote></div></div></div></div></section>
+<section class="works" id="works"><div class="w"><div class="sh" data-r><span class="kick">Фото</span><h2>Как это выглядит</h2><p class="lead">Снимки из карточки «LS Detailing» на Яндекс Картах. Нажмите, чтобы открыть крупно.</p></div><div class="bento" data-lb data-r><figure class="bx b0"><img src="https://avatars.mds.yandex.net/get-altay/15223195/2a00000196f25de325f57de90ccd4b40a504/XL" data-full="https://avatars.mds.yandex.net/get-altay/15223195/2a00000196f25de325f57de90ccd4b40a504/XXL" alt="LS Detailing, фото 1" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="bx b1"><img src="https://avatars.mds.yandex.net/get-altay/16330083/2a00000199527e9e24315260ff2afd62ca5b/XL" data-full="https://avatars.mds.yandex.net/get-altay/16330083/2a00000199527e9e24315260ff2afd62ca5b/XXL" alt="LS Detailing, фото 2" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="bx b2"><img src="https://avatars.mds.yandex.net/get-altay/14907426/2a00000199527e9460aae470ff6e1b059f50/XL" data-full="https://avatars.mds.yandex.net/get-altay/14907426/2a00000199527e9460aae470ff6e1b059f50/XXL" alt="LS Detailing, фото 3" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="bx b3"><img src="https://avatars.mds.yandex.net/get-altay/15286626/2a00000199527e9f8bb47d8ee5ee11f75a39/XL" data-full="https://avatars.mds.yandex.net/get-altay/15286626/2a00000199527e9f8bb47d8ee5ee11f75a39/XXL" alt="LS Detailing, фото 4" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure class="bx b4"><img src="https://avatars.mds.yandex.net/get-altay/14676222/2a000001954245df6d17f2b4d3d99761d579/XXL" data-full="https://avatars.mds.yandex.net/get-altay/14676222/2a000001954245df6d17f2b4d3d99761d579/XXL" alt="LS Detailing, фото 5" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure></div><a class="more" href="https://yandex.ru/maps/org/84623531280/gallery/" target="_blank" rel="noopener">Все фото на Яндекс Картах →</a></div></section>
+<section class="rep" id="reviews"><div class="w"><div class="sh" data-r><span class="kick">Отзывы</span><h2>Что говорят клиенты</h2><p class=lead>По всем темам отзывов ни одной жалобы. Хвалят материалы и зону ожидания.</p></div><div class="rgrid" data-r><div class="rbig"><b class="cu">5,0</b><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><p>67 оценок и 60 отзывов на <a href="https://yandex.ru/maps/org/84623531280/reviews/" target="_blank" rel="noopener">Яндекс Картах</a></p><div class=abs data-fill><div class="ab"><div class="ab-h"><b>Персонал</b><span>29 из 29 хвалят</span></div><div class="ab-t"><i style="--w:100%"></i></div></div><div class="ab"><div class="ab-h"><b>Тонировка стёкол</b><span>24 из 24 хвалят</span></div><div class="ab-t"><i style="--w:100%"></i></div></div><div class="ab"><div class="ab-h"><b>Полировка</b><span>22 из 22 хвалят</span></div><div class="ab-t"><i style="--w:100%"></i></div></div><div class="ab"><div class="ab-h"><b>Тюнинг</b><span>19 из 19 хвалят</span></div><div class="ab-t"><i style="--w:100%"></i></div></div><small>Подсчёт Яндекс Карт по темам отзывов</small></div></div><div class="qs"><div class="qt"><figure class="q"><p>«Сделали детейлинг фар и поставили новые лампы: фары стали прозрачными, свет ярким.»</p><figcaption>Пересказ отзыва с Яндекс Карт</figcaption></figure><figure class="q"><p>«Не первый раз приезжает за тонировкой и полировкой фар, каждый раз доволен результатом.»</p><figcaption>Пересказ отзыва с Яндекс Карт</figcaption></figure><figure class="q"><p>«В новом помещении появилась уютная зона отдыха: кресла, кофейный аппарат и белки за стеклом.»</p><figcaption>Пересказ отзыва с Яндекс Карт</figcaption></figure></div><div class=qd><button type="button" aria-label="Показать отзыв" aria-current="true"></button><button type="button" aria-label="Показать отзыв" aria-current="false"></button><button type="button" aria-label="Показать отзыв" aria-current="false"></button></div><a class="more" href="https://yandex.ru/maps/org/84623531280/reviews/" target="_blank" rel="noopener">Читать все отзывы →</a></div></div></div></section>
+<section class="svc" id="services"><div class="w"><div class="sh" data-r><span class="kick">Услуги</span><h2>Услуги и цены</h2></div><div class="sgrid"><ul class="scs"><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h5a2 2 0 0 1 2 2l-1 8H9.5L7 5a1.6 1.6 0 0 1 1-2z"/><path d="M9.5 13h8a1.5 1.5 0 0 1 1.5 1.7l-.5 3.3H7.5l2-5zM9 18v3M17 18v3"/></svg><b>Химчистка салона</b><button type="button" class="add" data-add="Химчистка салона" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5a4.5 4.5 0 1 1-4.5 4.5M12 10a2 2 0 1 1-2 2"/><path d="M18.5 3.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg><b>Полировка стёкол</b><button type="button" class="add" data-add="Полировка стёкол" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><b>Оклейка антигравийной плёнкой</b><button type="button" class="add" data-add="Оклейка антигравийной плёнкой" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><b>Бронирование фар</b><button type="button" class="add" data-add="Бронирование фар" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16l3-8h12l3 8z"/><path d="M6 8l3 8M10 8l3 8M14 8l3 8" opacity=".6"/><path d="M3 16v3h18v-3"/></svg><b>Тонировка стёкол</b><button type="button" class="add" data-add="Тонировка стёкол" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><b>Оклейка винилом</b><button type="button" class="add" data-add="Оклейка винилом" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg><b>Удаление вмятин без покраски</b><button type="button" class="add" data-add="Удаление вмятин без покраски" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="2.6"/><path d="M5 7v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V7M5 11v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4M5 15v2c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-2"/></svg><b>Предпродажная подготовка</b><button type="button" class="add" data-add="Предпродажная подготовка" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li class="sc" data-r><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><b>Оклейка такси</b><button type="button" class="add" data-add="Оклейка такси" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><div class="side"><div class="prices" data-r><span class="kick">Цены</span><div class="pr"><span>Стоимость</span><b>по телефону</b></div><small>Назовут сразу, под вашу машину и задачу.</small></div><div class=extras data-r><span class=kick>Удобства</span><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg><span>Предварительная запись</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="12" rx="2"/><path d="M3.5 12h17M12 8v12M12 8c-1.5-3-5-3.5-5-1.2C7 8 9.5 8 12 8zm0 0c1.5-3 5-3.5 5-1.2C17 8 14.5 8 12 8z"/></svg><span>Подарочный сертификат</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></svg><span>Оплата картой</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.2" r="1"/></svg><span>Wi-Fi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="6.5" r="1.8"/><circle cx="14" cy="6.5" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M12 11c-3 0-5.5 4-5.5 6 0 1.6 1.3 2.5 3 2.2 1-.2 1.7-.5 2.5-.5s1.5.3 2.5.5c1.7.3 3-.6 3-2.2 0-2-2.5-6-5.5-6z"/></svg><span>Можно с собакой</span></li></ul></div></div></div></div></section>
+<section class="order" id="order"><div class="w"><div class="o-head sh" data-r><span class="kick">Заявка</span><h2>Соберите заявку за полминуты</h2><p class="lead">Отметьте, что нужно. Текст для мастера соберётся сам, останется отправить.</p></div><div class="o-grid" data-r><div class="o-form"><div class="o-step"><b class="o-t">Что сделать</b><div class="o-chips"><button type="button" class="oc" data-add="Химчистка салона" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h5a2 2 0 0 1 2 2l-1 8H9.5L7 5a1.6 1.6 0 0 1 1-2z"/><path d="M9.5 13h8a1.5 1.5 0 0 1 1.5 1.7l-.5 3.3H7.5l2-5zM9 18v3M17 18v3"/></svg>Химчистка салона</button><button type="button" class="oc" data-add="Полировка стёкол" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5a4.5 4.5 0 1 1-4.5 4.5M12 10a2 2 0 1 1-2 2"/><path d="M18.5 3.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg>Полировка стёкол</button><button type="button" class="oc" data-add="Оклейка антигравийной плёнкой" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg>Оклейка антигравийной плёнкой</button><button type="button" class="oc" data-add="Бронирование фар" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>Бронирование фар</button><button type="button" class="oc" data-add="Тонировка стёкол" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16l3-8h12l3 8z"/><path d="M6 8l3 8M10 8l3 8M14 8l3 8" opacity=".6"/><path d="M3 16v3h18v-3"/></svg>Тонировка стёкол</button><button type="button" class="oc" data-add="Оклейка винилом" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg>Оклейка винилом</button><button type="button" class="oc" data-add="Удаление вмятин без покраски" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg>Удаление вмятин без покраски</button><button type="button" class="oc" data-add="Предпродажная подготовка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="2.6"/><path d="M5 7v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V7M5 11v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4M5 15v2c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-2"/></svg>Предпродажная подготовка</button><button type="button" class="oc" data-add="Оклейка такси" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg>Оклейка такси</button></div></div><div class="o-step"><b class="o-t">Машина</b><input id="ob-car" type="text" maxlength="60" autocomplete="off" placeholder="Марка, модель, цвет"></div><div class="o-step"><b class="o-t">Когда удобно</b><div class="o-chips"><button type="button" class="oc" data-when="сегодня" aria-pressed="false">Сегодня</button><button type="button" class="oc" data-when="завтра" aria-pressed="false">Завтра</button><button type="button" class="oc" data-when="на выходных" aria-pressed="false">На выходных</button><button type="button" class="oc" data-when="подберём время вместе" aria-pressed="false">Подберём время вместе</button></div></div></div><div class="o-out"><span class="o-lbl">Так увидит мастер</span><div class="o-bubble" id="ob-msg" aria-live="polite"></div><div class="o-acts"><a class="btn acc" data-wa="https://wa.me/79787971095" href="https://wa.me/79787971095" target="_blank" rel="noopener">Отправить в WhatsApp</a><a class="btn line" data-copy href="https://t.me/+79787971095" target="_blank" rel="noopener">Скопировать и открыть Telegram</a><a class="btn line" href="tel:+79787971095">Позвонить</a></div><p class="o-note">Telegram не умеет подставлять текст сам: мы скопируем его, останется вставить в чат.</p></div></div></div></section><script type="application/json" id="bd">{"name": "LS Detailing"}</script>
+
+<section class="contacts" id="contacts"><div class="w">
+  <div class="sh" data-r><span class="kick">Контакты</span><h2>Как добраться</h2></div>
+  <div class="cgrid" data-r>
+    <div class="info">
+      <div><h3>ул. Хрусталёва, 76И, стр. 10</h3><div class="muted">Севастополь, Гагаринский район</div></div>
+      <div class="phs"><a href="tel:+79787971095">+7 (978) 797-10-95</a><a href="tel:+79786456219">+7 (978) 645-62-19</a></div>
+      <table class="hours"><tbody><tr data-days="1,2,3,4,5"><td>Пн–Пт</td><td>09:00–18:00</td></tr><tr data-days="6"><td>Сб</td><td>09:00–15:00</td></tr></tbody></table>
+      <div class="msg"><a href="https://wa.me/79787971095" target="_blank" rel="noopener">WhatsApp</a><a href="https://t.me/+79787971095" target="_blank" rel="noopener">Telegram</a></div>
+      <a class="btn acc" href="https://yandex.ru/maps/?rtext=~44.559017%2C33.517637&amp;rtt=auto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Построить маршрут</a>
+    </div>
+    <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?ll=33.517637%2C44.559017&z=16&pt=33.517637,44.559017,pm2rdm" title="LS Detailing на карте" loading="lazy"></iframe></div>
+  </div>
+</div></section>
+
+<section class="final">
+  <img src="https://avatars.mds.yandex.net/get-altay/15223195/2a00000196f25de325f57de90ccd4b40a504/XL" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  <div class="w" data-r>
+    <span class="kick">LS Detailing</span>
+    <h2>Позвоните или напишите в WhatsApp</h2>
+    <a class="big" href="tel:+79787971095">+7 (978) 797-10-95</a>
+    <div class="cta"><a class="btn acc" href="tel:+79787971095"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a><a class="btn glass" href="#order">Собрать заявку</a></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="w">Демо-концепт сайта для «LS Detailing». Данные, фото и отзывы взяты из открытой карточки: <a href="https://yandex.ru/maps/org/84623531280/" target="_blank" rel="noopener">Яндекс Карты</a>, <a href="https://2gis.ru/sevastopol/firm/70000001112817092" target="_blank" rel="noopener">2ГИС</a>. Если что-то изменилось, уточняйте по телефону.</div></footer>
+
+<nav class="dock" aria-label="Быстрая связь">
+  <a class="btn acc" href="tel:+79787971095"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a>
+  <a class="btn glass" href="#order" data-ocw>Заявка <span class="ocn" data-oc></span></a>
+</nav>
+
+<script type="application/json" id="hw">[null, ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "15:00"]]</script>
+<script>(function () {
+  var d = document, R = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+
+  /* шапка: фон после прокрутки */
+  var top = d.querySelector('.top');
+  if (top) {
+    var onS = function () { top.classList.toggle('sc', scrollY > 40); };
+    addEventListener('scroll', onS, { passive: true }); onS();
+  }
+
+  /* появление блоков */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' }) : null;
+  $$('[data-r]').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  /* счётчики: в разметке уже финальное число, анимируем от нуля */
+  var cio = 'IntersectionObserver' in window && !R ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      var el = e.target, t = el.dataset.to, dec = (t.split(',')[1] || '').length, to = parseFloat(t.replace(',', '.')), t0 = 0;
+      var step = function (ts) {
+        t0 = t0 || ts; var k = Math.min(1, (ts - t0) / 1300), v = to * (1 - Math.pow(1 - k, 3));
+        el.textContent = dec ? v.toFixed(dec).replace('.', ',') : String(Math.round(v));
+        if (k < 1) requestAnimationFrame(step); else el.textContent = t;
+      };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: .4 }) : null;
+  $$('.cu').forEach(function (el) { el.dataset.to = el.textContent.trim(); if (cio && !isNaN(parseFloat(el.dataset.to))) cio.observe(el); });
+
+  /* бесконечные анимации крутятся, только пока блок виден */
+  if ('IntersectionObserver' in window) {
+    var ao = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('run', e.isIntersecting); }); });
+    $$('[data-anim]').forEach(function (el) { ao.observe(el); });
+  } else $$('[data-anim]').forEach(function (el) { el.classList.add('run'); });
+
+  /* шкалы и кольца заполняются при появлении */
+  $$('[data-fill]').forEach(function (el) { io ? (new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { el.classList.add('on'); o.disconnect(); } }, { threshold: .3 })).observe(el) : el.classList.add('on'); });
+
+  /* открыто / закрыто по московскому времени */
+  var hw = d.getElementById('hw');
+  if (hw) try {
+    var W = JSON.parse(hw.textContent);
+    var parts = new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    var dm = { 'вс': 0, 'пн': 1, 'вт': 2, 'ср': 3, 'чт': 4, 'пт': 5, 'сб': 6 }, day, h, m;
+    parts.forEach(function (x) { if (x.type === 'weekday') day = dm[x.value.replace('.', '').toLowerCase()]; if (x.type === 'hour') h = +x.value % 24; if (x.type === 'minute') m = +x.value; });
+    var mins = function (s) { var a = s.split(':'); return a[0] * 60 + +a[1]; }, now = h * 60 + m, t = W[day];
+    var open = t && now >= mins(t[0]) && now < mins(t[1]), txt, left = '';
+    if (open) { txt = 'Открыто до ' + t[1]; var l = mins(t[1]) - now; left = 'ещё ' + (l >= 60 ? Math.floor(l / 60) + ' ч ' : '') + (l % 60) + ' мин'; }
+    else for (var i = 0; i < 7; i++) { var s = W[(day + i) % 7]; if (s && (i > 0 || now < mins(s[0]))) { txt = 'Откроется ' + (i === 0 ? 'сегодня' : i === 1 ? 'завтра' : ['в вс', 'в пн', 'во вт', 'в ср', 'в чт', 'в пт', 'в сб'][(day + i) % 7]) + ' в ' + s[0]; break; } }
+    $$('[data-status]').forEach(function (el) {
+      el.classList.toggle('on', !!open);
+      var a = el.querySelector('.stt'), b = el.querySelector('.stl');
+      if (a && txt) a.textContent = txt; if (b) b.textContent = left;
+    });
+    $$('tr[data-days]').forEach(function (r) { if (r.dataset.days.split(',').indexOf(String(day)) > -1) r.classList.add('today'); });
+  } catch (e) {}
+
+  /* всплывашка */
+  var toastEl;
+  function toast(msg) {
+    if (!toastEl) { toastEl = d.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); d.body.appendChild(toastEl); }
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastEl._t); toastEl._t = setTimeout(function () { toastEl.classList.remove('show'); }, 2600);
+  }
+  function copy(t) {
+    try { if (navigator.clipboard && isSecureContext) return navigator.clipboard.writeText(t); } catch (e) {}
+    var ta = d.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    d.body.appendChild(ta); ta.select(); try { d.execCommand('copy'); } catch (e) {} ta.remove();
+  }
+
+  /* заявка: услуги, машина, время → готовый текст для мастера */
+  var bd = d.getElementById('bd');
+  if (bd) {
+    var cfg = JSON.parse(bd.textContent), sel = [], when = '', car = d.getElementById('ob-car'), out = d.getElementById('ob-msg');
+    var msg = function () {
+      var s = 'Здравствуйте! Пишу с сайта, хочу записаться в «' + cfg.name + '».';
+      if (sel.length) s += '\nНужно: ' + sel.join(', ').toLowerCase() + '.';
+      if (car && car.value.trim()) s += '\nМашина: ' + car.value.trim() + '.';
+      if (when) s += '\nКогда удобно: ' + when + '.';
+      return s;
+    };
+    var render = function () {
+      var t = msg();
+      if (out) out.textContent = t;
+      $$('[data-add]').forEach(function (b) { b.setAttribute('aria-pressed', sel.indexOf(b.dataset.add) > -1 ? 'true' : 'false'); });
+      $$('[data-when]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.when === when ? 'true' : 'false'); });
+      $$('[data-oc]').forEach(function (el) { el.textContent = sel.length; el.closest('[data-ocw]') && el.closest('[data-ocw]').classList.toggle('has', sel.length > 0); });
+      $$('[data-wa]').forEach(function (a) { a.href = a.dataset.wa + '?text=' + encodeURIComponent(t); });
+    };
+    d.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-add]');
+      if (b) {
+        var v = b.dataset.add, i = sel.indexOf(v);
+        if (i > -1) sel.splice(i, 1); else { sel.push(v); if (!b.closest('#order')) toast('«' + v + '» добавлено в заявку'); }
+        render(); return;
+      }
+      var w = e.target.closest('[data-when]');
+      if (w) { when = when === w.dataset.when ? '' : w.dataset.when; render(); return; }
+      var c = e.target.closest('[data-copy]');
+      if (c) { copy(msg()); toast('Текст заявки скопирован. Вставьте его в чат'); }
+    });
+    car && car.addEventListener('input', render);
+    render();
+  }
+
+  /* вкладки: зоны машины и любые [data-z] → [data-zp] */
+  d.addEventListener('click', function (e) {
+    var z = e.target.closest('[data-z]'); if (!z) return;
+    var k = z.dataset.z;
+    $$('[data-z]').forEach(function (x) { var on = x.dataset.z === k; x.classList.toggle('on', on); if (x.getAttribute('role') === 'tab') x.setAttribute('aria-selected', on); });
+    $$('[data-zp]').forEach(function (p) { p.hidden = p.dataset.zp !== k; });
+  });
+
+  /* карусель отзывов: точки и автопрокрутка */
+  $$('.qs').forEach(function (qs) {
+    var track = qs.querySelector('.qt'), dots = $$('.qd button', qs), n = dots.length, cur = 0, user = false;
+    if (!track || n < 2) return;
+    var go = function (i) { cur = (i + n) % n; track.scrollTo({ left: track.children[cur].offsetLeft - track.offsetLeft, behavior: R ? 'auto' : 'smooth' }); };
+    dots.forEach(function (b, i) { b.addEventListener('click', function () { user = true; go(i); }); });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    }, { passive: true });
+    track.addEventListener('pointerdown', function () { user = true; });
+    if (!R) setInterval(function () { if (!user && !d.hidden) go(cur + 1); }, 6000);
+  });
+
+  /* просмотр фото */
+  $$('[data-lb]').forEach(function (g) {
+    var imgs = $$('img', g); if (!imgs.length) return;
+    var dlg = d.createElement('dialog'); dlg.className = 'lb';
+    dlg.innerHTML = '<img alt=""><button class="lb-x" aria-label="Закрыть">✕</button><button class="lb-p" aria-label="Предыдущее фото">‹</button><button class="lb-n" aria-label="Следующее фото">›</button><span class="lb-c"></span>';
+    d.body.appendChild(dlg);
+    var im = dlg.querySelector('img'), cnt = dlg.querySelector('.lb-c'), i = 0, x0 = null;
+    var show = function (k) { var live = $$('img', g); i = (k + live.length) % live.length; im.src = live[i].dataset.full || live[i].src; im.alt = live[i].alt; im.referrerPolicy = 'no-referrer'; cnt.textContent = (i + 1) + ' / ' + live.length; };
+    imgs.forEach(function (img, k) { img.style.cursor = 'zoom-in'; img.addEventListener('click', function () { show(k); dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); }); });
+    dlg.querySelector('.lb-x').onclick = function () { dlg.close(); };
+    dlg.querySelector('.lb-p').onclick = function () { show(i - 1); };
+    dlg.querySelector('.lb-n').onclick = function () { show(i + 1); };
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+    dlg.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+    dlg.addEventListener('pointerup', function (e) { if (x0 !== null && Math.abs(e.clientX - x0) > 50) show(i + (e.clientX < x0 ? 1 : -1)); x0 = null; });
+  });
+})();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('.hero'),d=document;if(!h)return;
+  var sp=h.querySelector('.spot'),li=sp&&sp.querySelector('.lit');if(!li)return;
+  var R=matchMedia('(prefers-reduced-motion: reduce)').matches,user=0,t0=performance.now(),W,H,r,vis=true;
+  var size=function(){W=h.clientWidth;H=h.clientHeight;r=Math.max(140,Math.min(320,W*.26));h.style.setProperty('--r',r+'px');li.style.width=W+'px';li.style.height=H+'px'};
+  var set=function(x,y){sp.style.transform='translate3d('+(x-r)+'px,'+(y-r)+'px,0)';li.style.transform='translate3d('+(r-x)+'px,'+(r-y)+'px,0)'};
+  var mv=function(e){var b=h.getBoundingClientRect();set(e.clientX-b.left,e.clientY-b.top);user=performance.now();h.classList.add('touched')};
+  size();set(W*.62,H*.4);
+  addEventListener('resize',function(){size();set(W*.62,H*.4)});
+  h.addEventListener('pointermove',mv);h.addEventListener('pointerdown',mv);
+  if(matchMedia('(hover:hover)').matches){var ht=d.getElementById('hintText');if(ht)ht.textContent='Подвигайте курсором, как лампой мастера'}
+  if(R)return;
+  new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(h);
+  (function loop(t){if(vis&&!d.hidden&&t-user>2600){var k=(t-t0)/1000;set(W*(.56+.3*Math.sin(k*.45)),H*(.42+.16*Math.sin(k*.77)))}requestAnimationFrame(loop)})(t0);
+})();
+(function(){var dk=document.querySelector('.dock');if(!dk)return;var f=function(){dk.classList.toggle('show',scrollY>innerHeight*.6)};addEventListener('scroll',f,{passive:true});f()})();
+</script>
+</body>
+</html>
