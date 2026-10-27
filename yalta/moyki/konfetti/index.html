@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Конфетти: автомойка и детейлинг в Ялте</title>
+<meta name="description" content="Мойка и уход за машиной в центре, на Большевистской">
+<meta name="theme-color" content="#f1f7f9">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
+<style>
+/* «Бриз»: морской воздух Южного берега и лобовое стекло. Фото мойки за стеклом в каплях, дворник протирает его при входе
+   и по нажатию. Светлая морская палитра, округлый Nunito; цвет бренда только на действиях. */
+:root{
+  --accent:#e7337a; --ink:#ffffff;
+  --foam:#f1f7f9; --white:#fff; --sea:#0b3a52; --sea2:#114c69; --aqua:#7cc9e0; --tx:#0f2a3a; --mu:#527082; --line:#d3e3ea; --sand:#f4ecdc;
+  --gut:max(18px,env(safe-area-inset-left)); --gutr:max(18px,env(safe-area-inset-right));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:64px}
+body{font:400 17px/1.6 Nunito,system-ui,sans-serif;color:var(--tx);background:var(--foam);overflow-x:hidden}
+img{display:block;max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--sea2);outline-offset:3px;border-radius:8px}
+h1,h2,h3{font-weight:900;line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(34px,8.6vw,58px)}
+h3{font-size:24px;font-weight:800}
+.w{max-width:1160px;margin:0 auto;padding:0 var(--gutr) 0 var(--gut)}
+.lead{color:var(--mu);font-size:18.5px;max-width:56ch;margin-top:12px}
+section{padding:72px 0}
+.demo{background:var(--sea);color:#a9c6d5;font-size:12.5px;line-height:1.4;padding:8px var(--gutr) 8px var(--gut);text-align:center}
+.demo b{color:#fff}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:0 24px;border-radius:18px;font:800 17px/1 Nunito,sans-serif;text-decoration:none;transition:transform .15s,background .15s;text-align:center}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:active{transform:scale(.97)}
+.btn.acc{background:var(--accent);color:var(--ink);box-shadow:0 6px 18px -8px var(--accent)}
+.btn.line{background:var(--white);color:var(--sea);box-shadow:inset 0 0 0 2px var(--line)}
+.btn.line:hover{box-shadow:inset 0 0 0 2px var(--sea)}
+
+.top{position:sticky;top:0;z-index:30;background:rgba(241,247,249,.96);transition:box-shadow .2s}
+.top.sc{box-shadow:0 1px 0 var(--line)}
+.top .w{display:flex;align-items:center;gap:16px;height:58px}
+.brand{font:900 21px/1 Nunito;text-decoration:none;display:flex;align-items:center;gap:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--sea)}
+.brand i{width:16px;height:21px;flex:none;background:var(--aqua);border-radius:50% 50% 50% 50%/62% 62% 38% 38%;transform:rotate(180deg);clip-path:polygon(50% 100%,100% 45%,100% 0,0 0,0 45%)}
+.brand i{clip-path:none;border-radius:0 50% 50% 50%;transform:rotate(45deg) scale(.82)}
+.nav{display:none;gap:24px;margin-left:auto;font-size:15.5px;font-weight:700}
+.nav a{text-decoration:none;color:var(--mu)}
+.nav a:hover{color:var(--sea)}
+.tcall{margin-left:auto;display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;background:var(--sea);color:#fff;border-radius:14px;height:40px;padding:0 14px}
+.tcall svg{width:16px;height:16px}
+.tcall span{display:none}
+
+/* первый экран: стекло, капли, дворник */
+.hero{padding:22px 0 0;position:relative}
+.hgrid{display:grid;gap:26px}
+.hk{color:var(--mu);font-weight:700;font-size:16px}
+.hero h1{color:var(--sea);margin-top:6px;font-size:clamp(54px,16vw,120px);line-height:.92;word-break:break-word}
+.hero h1.mid{font-size:clamp(44px,12.4vw,96px)}
+.hero h1.small{font-size:clamp(36px,9.6vw,76px)}
+.screen{position:relative;aspect-ratio:16/11;border-radius:46% 46% 26px 26px/15% 15% 26px 26px;overflow:hidden;background:var(--sea2);box-shadow:0 0 0 6px var(--white),0 0 0 7px var(--line),0 24px 50px -24px rgba(11,58,82,.45)}
+.screen img{width:100%;height:100%;object-fit:cover}
+.drops{position:absolute;inset:0;pointer-events:none}
+.drops span{position:absolute;width:var(--s);height:calc(var(--s)*1.12);margin:calc(var(--s)/-2) 0 0 calc(var(--s)/-2);border-radius:50% 50% 48% 52%/46% 46% 56% 56%;
+  background:radial-gradient(circle at 34% 30%,rgba(255,255,255,.95) 0 14%,rgba(255,255,255,.28) 32%,rgba(255,255,255,.06) 62%);
+  box-shadow:0 1px 1px rgba(5,25,40,.35),inset 0 -1px 2px rgba(255,255,255,.4)}
+.js .screen.go .drops span{animation:dry .18s ease-out forwards;animation-delay:calc(.25s + var(--k)*.62s)}
+@keyframes dry{to{opacity:0;transform:scale(.4) translateY(-6px)}}
+.wiper{position:absolute;left:50%;bottom:-6%;width:7px;height:118%;margin-left:-3.5px;transform-origin:50% 100%;transform:rotate(-78deg);pointer-events:none}
+.wiper i{position:absolute;inset:0;border-radius:4px;background:#14202a;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.wiper i::after{content:"";position:absolute;left:-5px;right:-5px;bottom:0;height:28%;border-radius:6px;background:#2a3a46}
+.js .screen.go .wiper{animation:wipe 1.25s cubic-bezier(.45,.05,.4,1) forwards}
+@keyframes wipe{0%{transform:rotate(-78deg)}50%{transform:rotate(78deg)}100%{transform:rotate(-78deg)}}
+.wipe{position:absolute;right:12px;bottom:12px;background:rgba(255,255,255,.92);color:var(--sea);font-weight:800;font-size:14px;border-radius:999px;padding:8px 14px;display:flex;align-items:center;gap:7px}
+.wipe svg{width:16px;height:16px}
+.cap{position:absolute;left:12px;bottom:12px;font-size:12px;color:#fff;background:rgba(5,25,40,.5);padding:4px 10px;border-radius:999px}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;background:var(--white);border-radius:999px;padding:9px 16px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.status i{width:10px;height:10px;border-radius:50%;background:#9db0bb}
+.status.on i{background:#22b573;box-shadow:0 0 0 4px rgba(34,181,115,.18)}
+.status .stl{color:var(--mu);font-weight:400}
+.tag{font-size:20px;line-height:1.45;margin-top:16px;max-width:34ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cta .btn{flex:1 1 170px}
+.rmini{display:inline-flex;align-items:center;gap:10px;margin-top:20px;text-decoration:none;color:var(--mu);font-size:15px;flex-wrap:wrap}
+.rmini b{font-size:24px;font-weight:900;color:var(--sea)}
+.stars{display:inline-flex;gap:2px}
+.stars i{width:15px;height:15px;background:#f6b40e;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.stars i.off{background:#c3d2da}
+.sea{display:block;width:100%;height:70px;margin-top:40px}
+.sea path{fill:var(--white)}
+
+/* выбор мойки */
+.order{background:var(--white);padding-top:40px}
+.o-head .kick{display:none}
+.o-grid{display:grid;gap:24px;margin-top:28px}
+.o-step+.o-step{margin-top:24px}
+.o-t{display:block;font-size:19px;font-weight:800;margin-bottom:12px;color:var(--sea)}
+.mcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.mc{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:16px 16px 18px;border-radius:20px;background:var(--foam);box-shadow:inset 0 0 0 1.5px var(--line);transition:box-shadow .15s,background .15s}
+.mc svg{width:28px;height:28px;color:var(--sea2)}
+.mc b{font-weight:800;font-size:16.5px;line-height:1.2}
+.mc span{font-size:14px;line-height:1.35;color:var(--mu)}
+.mc .ck{position:absolute;top:12px;right:12px;width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--line);background:var(--white)}
+.mc[aria-pressed=true]{background:#e4f4f9;box-shadow:inset 0 0 0 2px var(--sea2)}
+.mc[aria-pressed=true] .ck{background:var(--sea2);box-shadow:none}
+.mc[aria-pressed=true] .ck::after{content:"";position:absolute;left:8px;top:5px;width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.o-chips{display:flex;flex-wrap:wrap;gap:8px}
+.oc{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;background:var(--foam);font-weight:700;font-size:15.5px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.oc[aria-pressed=true]{background:var(--sea);color:#fff;box-shadow:none}
+#ob-car{width:100%;height:54px;border-radius:16px;border:0;background:var(--foam);font:inherit;padding:0 18px;box-shadow:inset 0 0 0 1.5px var(--line);color:var(--tx)}
+.o-out{background:var(--sea);color:#e7f2f7;border-radius:26px;padding:22px}
+.o-lbl{font-weight:800;color:var(--aqua)}
+.o-bubble{margin-top:12px;background:var(--white);color:var(--tx);border-radius:6px 20px 20px 20px;padding:14px 16px;white-space:pre-line;min-height:96px;font-size:16px}
+.o-acts{display:grid;gap:8px;margin-top:16px}
+.o-acts .btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.o-note{color:#a7c5d4;font-size:14px;margin-top:10px}
+
+/* цены и ожидание */
+.info{padding-top:24px;background:var(--white)}
+.igrid{display:grid;gap:18px}
+.menu{background:var(--foam);border-radius:26px;padding:24px 20px}
+.menu ul{list-style:none;margin-top:10px}
+.menu li{display:flex;align-items:baseline;gap:8px;padding:10px 0;border-bottom:1.5px dashed var(--line)}
+.menu li:last-child{border-bottom:0}
+.pn{display:flex;flex-direction:column;font-weight:700}
+.pn small{color:var(--mu);font-weight:400;font-size:14px;line-height:1.35}
+.menu li i{flex:1}
+.menu li b{font-weight:900;font-size:18px;white-space:nowrap;color:var(--sea)}
+.pnote{color:var(--mu);font-size:14.5px;margin-top:10px}
+.wait{position:relative;overflow:hidden;background:var(--sea);color:#fff;border-radius:26px;padding:26px 22px 30px}
+.wait h3{font-size:30px;font-weight:900}
+.wait p{font-size:19px;margin-top:10px;color:#d9ecf4;max-width:36ch}
+.wait .extras{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;position:relative}
+.wait .extras li{display:flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--sea2);font-size:15px;font-weight:700}
+.wait .extras svg{width:17px;height:17px;color:var(--aqua)}
+.wait svg.wv{position:absolute;left:0;right:0;bottom:0;width:100%;height:46px;opacity:.35}
+.wait svg.wv path{fill:none;stroke:var(--aqua);stroke-width:2}
+
+/* отзывы */
+.rgrid{display:grid;gap:26px;margin-top:30px}
+.score{background:var(--white);border-radius:26px;padding:24px 22px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.sc-n{display:flex;align-items:center;gap:14px}
+.sc-n b{font-size:74px;font-weight:900;line-height:1;color:var(--sea);letter-spacing:-.04em}
+.sc-n .stars i{width:21px;height:21px}
+.score>p{color:var(--mu);margin-top:6px}
+.abs{margin-top:20px;display:grid;gap:14px}
+.ab-h{display:flex;justify-content:space-between;gap:10px;font-size:15.5px}
+.ab-h b{font-weight:800}
+.ab-h span{color:var(--mu)}
+.ab-t{height:10px;border-radius:6px;background:var(--foam);margin-top:6px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
+.ab-t i{display:block;height:100%;width:0;background:var(--aqua);border-radius:6px;transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.abs.on .ab-t i{width:var(--w)}
+.abs small{color:var(--mu);font-size:13px}
+.rvs{display:grid;gap:12px}
+.rv{background:var(--white);border-radius:6px 26px 26px 26px;padding:20px 22px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.rv blockquote{font-size:18.5px;line-height:1.5}
+.rsrc{color:var(--mu);font-size:14px;margin-top:4px}
+
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px var(--gutr) 8px max(var(--gut),calc((100vw - 1160px)/2 + 18px));scroll-padding-left:max(var(--gut),calc((100vw - 1160px)/2 + 18px));scrollbar-width:thin}
+.strip figure{flex:0 0 min(78vw,380px);aspect-ratio:4/3;scroll-snap-align:start;border-radius:22px;overflow:hidden;background:var(--sea2)}
+.strip img{width:100%;height:100%;object-fit:cover}
+.more{display:inline-block;margin-top:14px;font-weight:800;color:var(--sea2)}
+.photos{background:var(--white)}
+
+.cgrid{display:grid;gap:24px;margin-top:28px}
+.cinfo h3{font-size:30px;font-weight:900;color:var(--sea)}
+.cinfo .muted{color:var(--mu)}
+.phs{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.phs a{font-size:24px;font-weight:900;text-decoration:none}
+.hours{margin-top:16px;border-collapse:collapse;font-size:16px}
+.hours td{padding:6px 18px 6px 0}
+.hours tr.today td{font-weight:800}
+.hours tr.today td:first-child::after{content:", сегодня";font-weight:400;color:var(--mu)}
+.msgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.msgs a{padding:9px 15px;border-radius:999px;background:var(--white);box-shadow:inset 0 0 0 1.5px var(--line);text-decoration:none;font-weight:800;font-size:15px}
+.msgs:empty{display:none}
+.cinfo .btn{margin-top:22px}
+.map{position:relative;min-height:320px;border-radius:26px;overflow:hidden;background:#d4e4ea}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.final{background:var(--sea);color:#fff}
+.final .w{display:grid;gap:18px}
+.final p{color:#b8d5e2;font-size:18px}
+.final .btn{justify-self:start}
+footer{padding:28px 0 110px;color:var(--mu);font-size:14px;line-height:1.5}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px var(--gutr) calc(10px + env(safe-area-inset-bottom)) var(--gut);background:rgba(255,255,255,.97);box-shadow:0 -1px 0 var(--line)}
+.dock .btn{min-height:48px}
+.toast{position:fixed;left:50%;bottom:86px;transform:translate(-50%,20px);background:var(--sea);color:#fff;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh}
+.lb::backdrop{background:rgba(5,25,40,.92)}
+.lb img{position:absolute;inset:0;margin:auto;max-width:94vw;max-height:84vh;object-fit:contain;border-radius:12px}
+.lb button{position:absolute;color:#fff;font-size:30px;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.14)}
+.lb-x{top:14px;right:14px}.lb-p{left:10px;top:50%}.lb-n{right:10px;top:50%}
+.lb-c{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#cfe;font-size:14px}
+
+.js [data-r]{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.js [data-r].in{opacity:1;transform:none}
+
+@media (min-width:760px){
+  section{padding:96px 0}
+  .tcall span{display:inline}
+  .rgrid{grid-template-columns:minmax(300px,.8fr) 1.2fr;gap:44px;align-items:start}
+  .o-grid{grid-template-columns:1.15fr .85fr;gap:40px;align-items:start}
+  .o-out{position:sticky;top:80px}
+  .igrid{grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+  .cgrid{grid-template-columns:.9fr 1.1fr;gap:40px}
+  .map{min-height:420px}
+  .dock{display:none}
+  footer{padding-bottom:40px}
+  .final .w{grid-template-columns:1fr auto;align-items:end}
+}
+@media (min-width:1000px){
+  .nav{display:flex}
+  .tcall{margin-left:10px}
+  .hero{padding-top:56px}
+  .hgrid{grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+  .screen{order:2}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .drops{display:none}
+  .js [data-r]{opacity:1;transform:none}
+}
+</style>
+</head>
+<body id="top">
+<div class="demo"><b>Демо-концепт.</b> Не официальный сайт «Конфетти». Сделан для показа владельцу, удалим по первой просьбе.</div>
+<header class="top"><div class="w">
+  <a class="brand" href="#top"><i aria-hidden="true"></i>Конфетти</a>
+  <nav class="nav" aria-label="Разделы"><a href="#order">Выбрать мойку</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+  <a class="tcall" href="tel:+79780050870" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>+7 (978) 005-08-70</span></a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="w hgrid">
+    <div class="screen" id="screen">
+      <img src="https://avatars.mds.yandex.net/get-altay/22251957/2a000001a0fba902ae0a3ed728a63084aa86/XXL" alt="Конфетти, фото с Яндекс Карт" referrerpolicy="no-referrer" fetchpriority="high" onerror="this.remove()">
+      <div class="drops" aria-hidden="true"><span style="left:33.1%;top:17.9%;--s:10px;--k:0.33"></span><span style="left:6.6%;top:79.6%;--s:3px;--k:0.07"></span><span style="left:37.1%;top:9.3%;--s:8px;--k:0.37"></span><span style="left:22.6%;top:11.9%;--s:6px;--k:0.23"></span><span style="left:8.7%;top:12.3%;--s:6px;--k:0.09"></span><span style="left:7.7%;top:56.0%;--s:4px;--k:0.08"></span><span style="left:62.5%;top:57.6%;--s:3px;--k:0.63"></span><span style="left:57.4%;top:40.5%;--s:4px;--k:0.57"></span><span style="left:6.5%;top:83.0%;--s:5px;--k:0.06"></span><span style="left:42.2%;top:53.7%;--s:8px;--k:0.42"></span><span style="left:31.6%;top:79.1%;--s:4px;--k:0.32"></span><span style="left:11.9%;top:56.6%;--s:4px;--k:0.12"></span><span style="left:37.8%;top:54.4%;--s:3px;--k:0.38"></span><span style="left:56.2%;top:60.9%;--s:6px;--k:0.56"></span><span style="left:67.3%;top:43.3%;--s:5px;--k:0.67"></span><span style="left:46.7%;top:89.0%;--s:5px;--k:0.47"></span><span style="left:30.8%;top:77.1%;--s:10px;--k:0.31"></span><span style="left:76.9%;top:11.5%;--s:5px;--k:0.77"></span><span style="left:52.4%;top:84.5%;--s:10px;--k:0.52"></span><span style="left:45.1%;top:60.0%;--s:3px;--k:0.45"></span><span style="left:13.3%;top:42.5%;--s:12px;--k:0.13"></span><span style="left:34.8%;top:89.9%;--s:6px;--k:0.35"></span><span style="left:5.8%;top:65.5%;--s:12px;--k:0.06"></span><span style="left:55.6%;top:76.6%;--s:12px;--k:0.56"></span><span style="left:32.1%;top:68.0%;--s:8px;--k:0.32"></span><span style="left:49.7%;top:77.3%;--s:3px;--k:0.50"></span><span style="left:82.6%;top:90.9%;--s:6px;--k:0.83"></span><span style="left:68.9%;top:10.0%;--s:10px;--k:0.69"></span><span style="left:69.3%;top:63.5%;--s:10px;--k:0.69"></span><span style="left:80.9%;top:30.2%;--s:6px;--k:0.81"></span><span style="left:87.2%;top:35.9%;--s:6px;--k:0.87"></span><span style="left:36.1%;top:60.2%;--s:6px;--k:0.36"></span><span style="left:7.7%;top:74.7%;--s:4px;--k:0.08"></span><span style="left:72.9%;top:40.6%;--s:12px;--k:0.73"></span><span style="left:49.7%;top:19.3%;--s:6px;--k:0.50"></span><span style="left:54.7%;top:85.3%;--s:12px;--k:0.55"></span><span style="left:43.3%;top:54.6%;--s:10px;--k:0.43"></span><span style="left:41.9%;top:37.0%;--s:6px;--k:0.42"></span><span style="left:93.9%;top:17.9%;--s:4px;--k:0.94"></span><span style="left:16.5%;top:64.6%;--s:3px;--k:0.17"></span><span style="left:48.6%;top:58.2%;--s:5px;--k:0.49"></span><span style="left:29.1%;top:17.4%;--s:8px;--k:0.29"></span><span style="left:37.4%;top:56.1%;--s:4px;--k:0.37"></span><span style="left:68.3%;top:51.4%;--s:8px;--k:0.68"></span><span style="left:64.9%;top:72.1%;--s:6px;--k:0.65"></span><span style="left:88.4%;top:75.8%;--s:12px;--k:0.88"></span></div>
+      <div class="wiper" aria-hidden="true"><i></i></div>
+      <span class="cap">фото из карточки на картах</span>
+      <button type="button" class="wipe" id="wipe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 20 4 7M12 20l8-13M4 7c5-3 11-3 16 0"/></svg>Протереть</button>
+    </div>
+    <div class="htext">
+      <p class="hk">Автомойка и детейлинг, Большевистская ул., 10А, Ялта</p>
+      <h1 class="mid">Конфетти</h1>
+      <p class="tag">Мойка и уход за машиной в центре, на Большевистской</p>
+      <div class="cta"><a class="btn acc" href="tel:+79780050870"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a><a class="btn line" href="#order">Выбрать мойку</a></div>
+      <div style="margin-top:18px"><span class="status" data-status><i aria-hidden="true"></i><span class="stt">Ежедневно 09:00–19:00</span><span class="stl"></span></span></div>
+      <a class="rmini" href="https://yandex.ru/maps/org/1938570491/reviews/" target="_blank" rel="noopener"><b>4,8</b><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>181 оценка на Яндекс Картах</span></a>
+    </div>
+  </div>
+  <svg class="sea" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c120-26 240-26 360 0s240 26 360 0 240-26 360 0 240 26 360 0v30H0z"/></svg>
+</section>
+
+<section class="order" id="order"><div class="w"><div class="o-head sh" data-r><span class="kick">Выбор мойки</span><h2>Соберите свою мойку</h2><p class="lead">Отметьте, что нужно машине. Сообщение соберётся само, останется отправить или позвонить.</p></div><div class="o-grid" data-r><div class="o-form"><div class="o-step"><b class="o-t">Что сделать</b><div class="mcs"><button type="button" class="mc" data-add="Ручная мойка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Ручная мойка</b><span>Моют вручную, аккуратно по всему кузову.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Бесконтактная мойка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Бесконтактная мойка</b><span>Активная пена и вода под давлением, без касания кузова.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Комплексная мойка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Комплексная мойка</b><span>Кузов и салон за один заезд.</span><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Мойка салона, двигателя и колёс" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h5a2 2 0 0 1 2 2l-1 8H9.5L7 5a1.6 1.6 0 0 1 1-2z"/><path d="M9.5 13h8a1.5 1.5 0 0 1 1.5 1.7l-.5 3.3H7.5l2-5zM9 18v3M17 18v3"/></svg><b>Мойка салона, двигателя и колёс</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Мойка мотоциклов" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3M12 2v4M17 3v3"/><path d="M3 15l2-5h14l2 5v4H3z"/><path d="M6.5 19v2M17.5 19v2M6 15h2M16 15h2"/></svg><b>Мойка мотоциклов</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Химчистка салона и потолка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h5a2 2 0 0 1 2 2l-1 8H9.5L7 5a1.6 1.6 0 0 1 1-2z"/><path d="M9.5 13h8a1.5 1.5 0 0 1 1.5 1.7l-.5 3.3H7.5l2-5zM9 18v3M17 18v3"/></svg><b>Химчистка салона и потолка</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Полировка" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5a4.5 4.5 0 1 1-4.5 4.5M12 10a2 2 0 1 1-2 2"/><path d="M18.5 3.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg><b>Полировка</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Озонирование" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.8 6 11a6 6 0 0 1-12 0c0-4.2 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg><b>Озонирование</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Антидождь и кварцевое покрытие" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.8 6 11a6 6 0 0 1-12 0c0-4.2 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg><b>Антидождь и кварцевое покрытие</b><i class="ck" aria-hidden="true"></i></button><button type="button" class="mc" data-add="Оклейка антигравийной плёнкой" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg><b>Оклейка антигравийной плёнкой</b><i class="ck" aria-hidden="true"></i></button></div></div><div class="o-step"><b class="o-t">Машина</b><input id="ob-car" type="text" maxlength="60" autocomplete="off" placeholder="Марка, модель, цвет"></div><div class="o-step"><b class="o-t">Когда удобно</b><div class="o-chips"><button type="button" class="oc" data-when="сегодня" aria-pressed="false">Сегодня</button><button type="button" class="oc" data-when="завтра" aria-pressed="false">Завтра</button><button type="button" class="oc" data-when="на выходных" aria-pressed="false">На выходных</button><button type="button" class="oc" data-when="подберём время вместе" aria-pressed="false">Подберём время вместе</button></div></div></div><div class="o-out"><span class="o-lbl">Ваше сообщение</span><div class="o-bubble" id="ob-msg" aria-live="polite"></div><div class="o-acts"><a class="btn acc" data-copy href="https://t.me/KonfettyBot" target="_blank" rel="noopener">Скопировать и открыть Telegram</a><a class="btn line" data-copy href="https://vk.ru/avtomojka_konfetti" target="_blank" rel="noopener">Скопировать и открыть ВКонтакте</a><a class="btn line" href="tel:+79780050870">Позвонить</a></div><p class="o-note">Telegram и ВКонтакте не умеют подставлять текст сами: мы скопируем его, останется вставить в чат.</p></div></div></div></section><script type="application/json" id="bd">{"name": "Конфетти"}</script>
+
+<section class="info" id="prices"><div class="w igrid">
+  <div class="menu" data-r><h3>Цены из карточки</h3><ul><li><span class="pn">Мойка кузова</span><i aria-hidden="true"></i><b>600–3000 ₽</b></li><li><span class="pn">Уход за кузовом</span><i aria-hidden="true"></i><b>от 1300 ₽</b></li><li><span class="pn">Комплексный уход</span><i aria-hidden="true"></i><b>от 1900 ₽</b></li><li><span class="pn">Комплексный уход «Премиум»</span><i aria-hidden="true"></i><b>от 2500 ₽</b></li><li><span class="pn">Детейлинг-мойка кузова</span><i aria-hidden="true"></i><b>от 2200 ₽</b></li><li><span class="pn">Уборка салона</span><i aria-hidden="true"></i><b>от 1000 ₽</b></li><li><span class="pn">Сухой туман от запахов</span><i aria-hidden="true"></i><b>2000 ₽</b></li><li><span class="pn">Мойка мотоцикла</span><i aria-hidden="true"></i><b>2000 ₽</b></li><li><span class="pn">Лёгкая полировка</span><i aria-hidden="true"></i><b>20000 ₽</b></li></ul><p class="pnote">Так указано на картах. Итог зависит от размера машины и загрязнения.</p></div>
+  <div class="wait" data-r><h3>Пока моют машину</h3><p>Комната отдыха с удобным диваном и телевизором.</p><ul class="extras"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V9l9-5 9 5v11M7 20v-6h10v6M7 17h10"/></svg><span>4 моечных зоны</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3M12 3v3"/></svg><span>Кафе</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.2" r="1"/></svg><span>Wi-Fi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg><span>Предварительная запись</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="12" rx="2"/><path d="M3.5 12h17M12 8v12M12 8c-1.5-3-5-3.5-5-1.2C7 8 9.5 8 12 8zm0 0c1.5-3 5-3.5 5-1.2C17 8 14.5 8 12 8z"/></svg><span>Подарочный сертификат</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></svg><span>Оплата картой</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="6.5" r="1.8"/><circle cx="14" cy="6.5" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M12 11c-3 0-5.5 4-5.5 6 0 1.6 1.3 2.5 3 2.2 1-.2 1.7-.5 2.5-.5s1.5.3 2.5.5c1.7.3 3-.6 3-2.2 0-2-2.5-6-5.5-6z"/></svg><span>Можно с собакой</span></li></ul>
+    <svg class="wv" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26c33-14 67-14 100 0s67 14 100 0 67-14 100 0 67 14 100 0"/><path d="M0 38c33-12 67-12 100 0s67 12 100 0 67-12 100 0 67 12 100 0"/></svg>
+  </div>
+</div></section>
+
+<section class="reviews" id="reviews"><div class="w"><div class="rhead" data-r><h2>Что говорят клиенты</h2><p class=lead>Пишут, что моют с душой и прорабатывают каждую деталь, а цены при красивом ремонте оказались ниже, чем у соседей.</p></div><div class="rgrid" data-r><div class="score"><div class="sc-n"><b class="cu">4,8</b><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div><p>181 оценка и 94 отзыва на <a href="https://yandex.ru/maps/org/1938570491/reviews/" target="_blank" rel="noopener">Яндекс Картах</a></p><div class="abs" data-fill><div class="ab"><div class="ab-h"><b>Мойка</b><span>64 из 69 хвалят</span></div><div class="ab-t"><i style="--w:93%"></i></div></div><div class="ab"><div class="ab-h"><b>Обслуживание</b><span>66 из 71 хвалят</span></div><div class="ab-t"><i style="--w:93%"></i></div></div><div class="ab"><div class="ab-h"><b>Персонал</b><span>39 из 42 хвалят</span></div><div class="ab-t"><i style="--w:93%"></i></div></div><div class="ab"><div class="ab-h"><b>Время ожидания</b><span>17 из 21 хвалят</span></div><div class="ab-t"><i style="--w:81%"></i></div></div><small>Подсчёт Яндекс Карт по темам отзывов</small></div></div><div class="rvs"><figure class="rv"><blockquote>Кузов блестит без разводов, диски отмыли, в салоне свежо. Работали быстро и аккуратно.</blockquote></figure><figure class="rv"><blockquote>Пока ждала, сидела в комнате отдыха с диваном и телевизором. Администратор рассказал, что здесь ещё убирают запахи и полируют.</blockquote></figure><figure class="rv"><blockquote>Приехал после долгой дороги из Москвы: машину отмыли быстро и хорошо, а цена ниже московской.</blockquote></figure><p class="rsrc">Пересказ отзывов без имён. <a href="https://yandex.ru/maps/org/1938570491/reviews/" target="_blank" rel="noopener">Читать все на картах</a></p></div></div></div></section>
+<section class="photos" id="photos"><div class="w"><div class="phead" data-r><h2>Как это выглядит</h2><p class="lead">Снимки из карточки на Яндекс Картах. Нажмите, чтобы открыть крупно.</p></div></div><div class="strip" data-lb><figure><img src="https://avatars.mds.yandex.net/get-altay/22041182/2a000001a0fba902c51c4581e31a99e759f0/XL" data-full="https://avatars.mds.yandex.net/get-altay/22041182/2a000001a0fba902c51c4581e31a99e759f0/XXL" alt="Конфетти, фото 1" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/19541413/2a0000019dcdaf803b936b112eb55f12c783/XL" data-full="https://avatars.mds.yandex.net/get-altay/19541413/2a0000019dcdaf803b936b112eb55f12c783/XXL" alt="Конфетти, фото 2" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/11299266/2a0000018fdaf90b3aa9fe8f2ec7246c7a2d/XL" data-full="https://avatars.mds.yandex.net/get-altay/11299266/2a0000018fdaf90b3aa9fe8f2ec7246c7a2d/XXL" alt="Конфетти, фото 3" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/6774966/2a0000018fbe5cd544028635e86bc482b941/XL" data-full="https://avatars.mds.yandex.net/get-altay/6774966/2a0000018fbe5cd544028635e86bc482b941/XXL" alt="Конфетти, фото 4" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/13078542/2a0000018fda7f2718bbaca379dccb0d626c/XL" data-full="https://avatars.mds.yandex.net/get-altay/13078542/2a0000018fda7f2718bbaca379dccb0d626c/XXL" alt="Конфетти, фото 5" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/13267750/2a0000018fdaf64f661f67b4fdfbcf524dfe/XL" data-full="https://avatars.mds.yandex.net/get-altay/13267750/2a0000018fdaf64f661f67b4fdfbcf524dfe/XXL" alt="Конфетти, фото 6" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure></div><div class="w"><a class="more" href="https://yandex.ru/maps/org/1938570491/gallery/" target="_blank" rel="noopener">Все фото на Яндекс Картах</a></div></section>
+
+<section class="contacts" id="contacts"><div class="w">
+  <h2 data-r>Как доехать</h2>
+  <div class="cgrid" data-r>
+    <div class="cinfo">
+      <h3>Большевистская ул., 10А</h3><div class="muted">Ялта</div>
+      <div class="phs"><a href="tel:+79780050870">+7 (978) 005-08-70</a></div>
+      <table class="hours"><tbody><tr data-days="0,1,2,3,4,5,6"><td>Ежедневно</td><td>09:00–19:00</td></tr></tbody></table>
+      <div class="msgs"><a href="https://t.me/KonfettyBot" target="_blank" rel="noopener">Telegram</a><a href="https://vk.ru/avtomojka_konfetti" target="_blank" rel="noopener">ВКонтакте</a></div>
+      <a class="btn acc" href="https://yandex.ru/maps/?rtext=~44.493586%2C34.1277&amp;rtt=auto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Построить маршрут</a>
+    </div>
+    <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?ll=34.1277%2C44.493586&z=16&pt=34.1277,44.493586,pm2rdm" title="Конфетти на карте" loading="lazy"></iframe></div>
+  </div>
+</div></section>
+
+<section class="final"><div class="w">
+  <div><h2>Запишитесь через Telegram или по телефону</h2><p>Большевистская ул., 10А, Ялта. Ежедневно 09:00–19:00.</p></div>
+  <a class="btn acc" href="tel:+79780050870"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+7 (978) 005-08-70</a>
+</div></section>
+</main>
+
+<footer><div class="w">Демо-концепт сайта для «Конфетти». Данные, фото и отзывы взяты из открытых карточек: <a href="https://yandex.ru/maps/org/1938570491/" target="_blank" rel="noopener">Яндекс Карты</a>, <a href="https://2gis.ru/yalta/firm/70000001114335208" target="_blank" rel="noopener">2ГИС</a>. Если что-то изменилось, поправим за минуту.</div></footer>
+<div class="dock"><a class="btn acc" href="tel:+79780050870"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a><a class="btn line" href="https://t.me/KonfettyBot" target="_blank" rel="noopener">Telegram</a></div>
+<script type="application/json" id="hw">[["09:00", "19:00"], ["09:00", "19:00"], ["09:00", "19:00"], ["09:00", "19:00"], ["09:00", "19:00"], ["09:00", "19:00"], ["09:00", "19:00"]]</script>
+<script>(function () {
+  var d = document, R = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+
+  /* шапка: фон после прокрутки */
+  var top = d.querySelector('.top');
+  if (top) {
+    var onS = function () { top.classList.toggle('sc', scrollY > 40); };
+    addEventListener('scroll', onS, { passive: true }); onS();
+  }
+
+  /* появление блоков */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' }) : null;
+  $$('[data-r]').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  /* счётчики: в разметке уже финальное число, анимируем от нуля */
+  var cio = 'IntersectionObserver' in window && !R ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      var el = e.target, t = el.dataset.to, dec = (t.split(',')[1] || '').length, to = parseFloat(t.replace(',', '.')), t0 = 0;
+      var step = function (ts) {
+        t0 = t0 || ts; var k = Math.min(1, (ts - t0) / 1300), v = to * (1 - Math.pow(1 - k, 3));
+        el.textContent = dec ? v.toFixed(dec).replace('.', ',') : String(Math.round(v));
+        if (k < 1) requestAnimationFrame(step); else el.textContent = t;
+      };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: .4 }) : null;
+  $$('.cu').forEach(function (el) { el.dataset.to = el.textContent.trim(); if (cio && !isNaN(parseFloat(el.dataset.to))) cio.observe(el); });
+
+  /* бесконечные анимации крутятся, только пока блок виден */
+  if ('IntersectionObserver' in window) {
+    var ao = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('run', e.isIntersecting); }); });
+    $$('[data-anim]').forEach(function (el) { ao.observe(el); });
+  } else $$('[data-anim]').forEach(function (el) { el.classList.add('run'); });
+
+  /* шкалы и кольца заполняются при появлении */
+  $$('[data-fill]').forEach(function (el) { io ? (new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { el.classList.add('on'); o.disconnect(); } }, { threshold: .3 })).observe(el) : el.classList.add('on'); });
+
+  /* открыто / закрыто по московскому времени */
+  var hw = d.getElementById('hw');
+  if (hw) try {
+    var W = JSON.parse(hw.textContent);
+    var parts = new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    var dm = { 'вс': 0, 'пн': 1, 'вт': 2, 'ср': 3, 'чт': 4, 'пт': 5, 'сб': 6 }, day, h, m;
+    parts.forEach(function (x) { if (x.type === 'weekday') day = dm[x.value.replace('.', '').toLowerCase()]; if (x.type === 'hour') h = +x.value % 24; if (x.type === 'minute') m = +x.value; });
+    var mins = function (s) { var a = s.split(':'); return a[0] * 60 + +a[1]; }, now = h * 60 + m, t = W[day];
+    var open = t && now >= mins(t[0]) && now < mins(t[1]), txt, left = '';
+    if (open) { txt = 'Открыто до ' + t[1]; var l = mins(t[1]) - now; left = 'ещё ' + (l >= 60 ? Math.floor(l / 60) + ' ч ' : '') + (l % 60) + ' мин'; }
+    else for (var i = 0; i < 7; i++) { var s = W[(day + i) % 7]; if (s && (i > 0 || now < mins(s[0]))) { txt = 'Откроется ' + (i === 0 ? 'сегодня' : i === 1 ? 'завтра' : ['в вс', 'в пн', 'во вт', 'в ср', 'в чт', 'в пт', 'в сб'][(day + i) % 7]) + ' в ' + s[0]; break; } }
+    $$('[data-status]').forEach(function (el) {
+      el.classList.toggle('on', !!open);
+      var a = el.querySelector('.stt'), b = el.querySelector('.stl');
+      if (a && txt) a.textContent = txt; if (b) b.textContent = left;
+    });
+    $$('tr[data-days]').forEach(function (r) { if (r.dataset.days.split(',').indexOf(String(day)) > -1) r.classList.add('today'); });
+  } catch (e) {}
+
+  /* всплывашка */
+  var toastEl;
+  function toast(msg) {
+    if (!toastEl) { toastEl = d.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); d.body.appendChild(toastEl); }
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastEl._t); toastEl._t = setTimeout(function () { toastEl.classList.remove('show'); }, 2600);
+  }
+  function copy(t) {
+    try { if (navigator.clipboard && isSecureContext) return navigator.clipboard.writeText(t); } catch (e) {}
+    var ta = d.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    d.body.appendChild(ta); ta.select(); try { d.execCommand('copy'); } catch (e) {} ta.remove();
+  }
+
+  /* заявка: услуги, машина, время → готовый текст для мастера */
+  var bd = d.getElementById('bd');
+  if (bd) {
+    var cfg = JSON.parse(bd.textContent), sel = [], when = '', car = d.getElementById('ob-car'), out = d.getElementById('ob-msg');
+    var msg = function () {
+      var s = 'Здравствуйте! Пишу с сайта, хочу записаться в «' + cfg.name + '».';
+      if (sel.length) s += '\nНужно: ' + sel.join(', ').toLowerCase() + '.';
+      if (car && car.value.trim()) s += '\nМашина: ' + car.value.trim() + '.';
+      if (when) s += '\nКогда удобно: ' + when + '.';
+      return s;
+    };
+    var render = function () {
+      var t = msg();
+      if (out) out.textContent = t;
+      $$('[data-add]').forEach(function (b) { b.setAttribute('aria-pressed', sel.indexOf(b.dataset.add) > -1 ? 'true' : 'false'); });
+      $$('[data-when]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.when === when ? 'true' : 'false'); });
+      $$('[data-oc]').forEach(function (el) { el.textContent = sel.length; el.closest('[data-ocw]') && el.closest('[data-ocw]').classList.toggle('has', sel.length > 0); });
+      $$('[data-wa]').forEach(function (a) { a.href = a.dataset.wa + '?text=' + encodeURIComponent(t); });
+    };
+    d.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-add]');
+      if (b) {
+        var v = b.dataset.add, i = sel.indexOf(v);
+        if (i > -1) sel.splice(i, 1); else { sel.push(v); if (!b.closest('#order')) toast('«' + v + '» добавлено в заявку'); }
+        render(); return;
+      }
+      var w = e.target.closest('[data-when]');
+      if (w) { when = when === w.dataset.when ? '' : w.dataset.when; render(); return; }
+      var c = e.target.closest('[data-copy]');
+      if (c) { copy(msg()); toast('Текст заявки скопирован. Вставьте его в чат'); }
+    });
+    car && car.addEventListener('input', render);
+    render();
+  }
+
+  /* вкладки: зоны машины и любые [data-z] → [data-zp] */
+  d.addEventListener('click', function (e) {
+    var z = e.target.closest('[data-z]'); if (!z) return;
+    var k = z.dataset.z;
+    $$('[data-z]').forEach(function (x) { var on = x.dataset.z === k; x.classList.toggle('on', on); if (x.getAttribute('role') === 'tab') x.setAttribute('aria-selected', on); });
+    $$('[data-zp]').forEach(function (p) { p.hidden = p.dataset.zp !== k; });
+  });
+
+  /* карусель отзывов: точки и автопрокрутка */
+  $$('.qs').forEach(function (qs) {
+    var track = qs.querySelector('.qt'), dots = $$('.qd button', qs), n = dots.length, cur = 0, user = false;
+    if (!track || n < 2) return;
+    var go = function (i) { cur = (i + n) % n; track.scrollTo({ left: track.children[cur].offsetLeft - track.offsetLeft, behavior: R ? 'auto' : 'smooth' }); };
+    dots.forEach(function (b, i) { b.addEventListener('click', function () { user = true; go(i); }); });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    }, { passive: true });
+    track.addEventListener('pointerdown', function () { user = true; });
+    if (!R) setInterval(function () { if (!user && !d.hidden) go(cur + 1); }, 6000);
+  });
+
+  /* просмотр фото */
+  $$('[data-lb]').forEach(function (g) {
+    var imgs = $$('img', g); if (!imgs.length) return;
+    var dlg = d.createElement('dialog'); dlg.className = 'lb';
+    dlg.innerHTML = '<img alt=""><button class="lb-x" aria-label="Закрыть">✕</button><button class="lb-p" aria-label="Предыдущее фото">‹</button><button class="lb-n" aria-label="Следующее фото">›</button><span class="lb-c"></span>';
+    d.body.appendChild(dlg);
+    var im = dlg.querySelector('img'), cnt = dlg.querySelector('.lb-c'), i = 0, x0 = null;
+    var show = function (k) { var live = $$('img', g); i = (k + live.length) % live.length; im.src = live[i].dataset.full || live[i].src; im.alt = live[i].alt; im.referrerPolicy = 'no-referrer'; cnt.textContent = (i + 1) + ' / ' + live.length; };
+    imgs.forEach(function (img, k) { img.style.cursor = 'zoom-in'; img.addEventListener('click', function () { show(k); dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); }); });
+    dlg.querySelector('.lb-x').onclick = function () { dlg.close(); };
+    dlg.querySelector('.lb-p').onclick = function () { show(i - 1); };
+    dlg.querySelector('.lb-n').onclick = function () { show(i + 1); };
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+    dlg.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+    dlg.addEventListener('pointerup', function (e) { if (x0 !== null && Math.abs(e.clientX - x0) > 50) show(i + (e.clientX < x0 ? 1 : -1)); x0 = null; });
+  });
+})();
+</script>
+<script>
+(function(){var s=document.getElementById('screen'),b=document.getElementById('wipe');if(!s)return;
+function go(){s.classList.remove('go');void s.offsetWidth;s.classList.add('go')}
+setTimeout(go,500);b&&b.addEventListener('click',go);})();
+</script>
+</body>
+</html>

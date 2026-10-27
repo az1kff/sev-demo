@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>АвтобанСервис: автосервис и шиномонтаж в Ялте</title>
+<meta name="description" content="Автосервис, шиномонтаж и запчасти на Блюхера">
+<meta name="theme-color" content="#e4e8e2">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* «Указатель»: язык дорожных знаков Южного берега. Синий указатель с названием, белые таблички, предупреждающие треугольники
+   для выбора поломки. Известняк и асфальт; цвет бренда только на действиях. */
+:root{
+  --accent:#f5c400; --ink:#0b0b0d;
+  --lime:#e4e8e2; --chalk:#f8f9f6; --white:#fff; --asph:#272d33; --asph2:#353c44; --tx:#1d2227; --mu:#59636c; --line:#c7cec6;
+  --sign:#1d5ba8; --sign2:#164b8d; --warn:#d42a2a; --ok:#1f9d55;
+  --r:14px; --gut:max(18px,env(safe-area-inset-left)); --gutr:max(18px,env(safe-area-inset-right));
+  --nar:"PT Sans Narrow","Arial Narrow",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:64px}
+body{font:400 17px/1.55 "PT Sans",system-ui,sans-serif;color:var(--tx);background:var(--lime);overflow-x:hidden}
+img{display:block;max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--sign);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--nar);font-weight:700;line-height:1.02;letter-spacing:.005em}
+h2{font-size:clamp(34px,8.6vw,58px)}
+h3{font-size:24px}
+.w{max-width:1160px;margin:0 auto;padding:0 var(--gutr) 0 var(--gut)}
+.lead{color:var(--mu);font-size:18px;max-width:58ch;margin-top:12px}
+section{padding:72px 0}
+.demo{background:var(--asph);color:#b7c0c9;font-size:12.5px;line-height:1.4;padding:8px var(--gutr) 8px var(--gut);text-align:center}
+.demo b{color:#fff}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 22px;border-radius:12px;font:700 17px/1 "PT Sans",sans-serif;text-decoration:none;transition:transform .15s,background .15s,box-shadow .15s;text-align:center}
+.btn svg{width:19px;height:19px;flex:none}
+.btn:active{transform:scale(.97)}
+.btn.acc{background:var(--accent);color:var(--ink);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.btn.line{border:2px solid var(--tx);color:var(--tx)}
+.btn.line:hover{background:var(--tx);color:#fff}
+.btn.sign{background:var(--sign);color:#fff}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:30;background:rgba(228,232,226,.96);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.sc{border-color:var(--line)}
+.top .w{display:flex;align-items:center;gap:16px;height:58px}
+.brand{font:700 22px/1 var(--nar);text-decoration:none;display:flex;align-items:center;gap:10px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand i{width:22px;height:22px;border-radius:5px;background:var(--sign);box-shadow:inset 0 0 0 2px var(--sign),inset 0 0 0 3.5px #fff;flex:none}
+.nav{display:none;gap:22px;margin-left:auto;font-size:15.5px}
+.nav a{text-decoration:none;color:var(--mu)}
+.nav a:hover{color:var(--tx)}
+.tcall{margin-left:auto;display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;background:var(--asph);color:#fff;border-radius:10px;height:40px;padding:0 13px}
+.tcall svg{width:17px;height:17px}
+.tcall span{display:none}
+
+/* первый экран */
+.hero{position:relative;padding:0 0 64px;overflow:hidden}
+.road{display:none;position:absolute;left:-10%;right:-10%;bottom:-20px;height:320px;pointer-events:none}
+.road .band{fill:none;stroke:#cfd5ce;stroke-width:64;stroke-linecap:round}
+.road .mid{fill:none;stroke:#fff;stroke-width:3.5;stroke-dasharray:22 20;stroke-linecap:round}
+.road.run .mid{animation:drive 2.4s linear infinite}
+@keyframes drive{to{stroke-dashoffset:-84}}
+.hgrid{position:relative;display:grid;gap:0}
+.hphoto{position:relative;margin:0 calc(-1*var(--gutr)) 0 calc(-1*var(--gut));height:min(58vh,440px);background:var(--asph2);overflow:hidden}
+.hphoto img{width:100%;height:100%;object-fit:cover}
+.hphoto figcaption{position:absolute;right:10px;top:10px;font-size:12px;color:#fff;background:rgba(0,0,0,.45);padding:3px 8px;border-radius:6px}
+.htext{position:relative;margin-top:-92px}
+.board{position:relative;background:var(--sign);color:#fff;border-radius:16px;padding:8px;box-shadow:0 10px 30px rgba(15,40,80,.25)}
+.board-in{border:3px solid #fff;border-radius:10px;padding:18px 18px 16px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-items:start}
+.arrow{width:52px;height:64px;grid-row:1/3}
+.board h1{font-size:clamp(40px,12vw,76px);line-height:.95;word-break:break-word;hyphens:auto}
+.board.mid h1{font-size:clamp(34px,9.6vw,64px)}
+.board.small h1{font-size:clamp(28px,7.6vw,52px)}
+.board .kind{font:700 19px/1.15 var(--nar);color:#d6e4f6}
+.plates{grid-column:1/3;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.plate{background:#fff;color:var(--sign2);font:700 16px/1 var(--nar);padding:7px 10px;border-radius:6px}
+.plate.ghost{background:none;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:16px;background:#fff;border-radius:10px;padding:10px 14px;font-weight:700;font-size:16px;box-shadow:inset 0 0 0 2px var(--tx)}
+.status i{width:11px;height:11px;border-radius:50%;background:#9aa3ab;flex:none}
+.status.on i{background:var(--ok);box-shadow:0 0 0 4px rgba(31,157,85,.2)}
+.status .stl{color:var(--mu);font-weight:400}
+.tag{font-size:20px;line-height:1.45;margin-top:18px;max-width:34ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cta .btn{flex:1 1 180px}
+.rmini{display:inline-flex;align-items:center;gap:10px;margin-top:20px;text-decoration:none;color:var(--mu);font-size:15px;flex-wrap:wrap}
+.rmini b{font:700 26px/1 var(--nar);color:var(--tx)}
+.stars{display:inline-flex;gap:2px}
+.stars i{width:15px;height:15px;background:#f2a900;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.stars i.off{background:#c7ccd1}
+
+/* выбор поломки */
+.sym{background:var(--chalk);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.symg{margin-top:30px;display:grid;gap:22px}
+.signs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--gutr) 12px var(--gut);margin:0 calc(-1*var(--gutr)) 0 calc(-1*var(--gut));scrollbar-width:none}
+.signs::-webkit-scrollbar{display:none}
+.sg{flex:0 0 118px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px 6px 14px;border-radius:14px;text-align:center;transition:background .15s}
+.sg b{font:700 16.5px/1.1 var(--nar);color:var(--mu)}
+.tri{position:relative;width:86px;height:76px;display:grid;place-items:center;transition:transform .2s}
+.tri::before{content:"";position:absolute;inset:0;background:var(--warn);clip-path:path("M43 2c3 0 5 1.6 6.6 4.3l35 61c1.6 2.9-.3 6.7-3.6 6.7H8c-3.3 0-5.2-3.8-3.6-6.7l35-61C41 3.6 40 2 43 2z")}
+.tri::after{content:"";position:absolute;inset:11px 12px 6px;background:#fff;clip-path:polygon(50% 0,100% 100%,0 100%);border-radius:2px}
+.tri svg{position:relative;z-index:1;width:30px;height:30px;margin-top:20px;color:var(--tx)}
+.sg:hover .tri{transform:translateY(-2px)}
+.sg.on{background:#fff;box-shadow:0 0 0 2px var(--tx)}
+.sg.on b{color:var(--tx)}
+.sg.on .tri{transform:scale(1.06)}
+.sps{min-height:220px}
+.sp{background:#fff;border-radius:18px;padding:24px 20px;box-shadow:0 0 0 1px var(--line)}
+.sp h3{font-size:30px}
+.sp-l{color:var(--mu);margin-top:6px}
+.sp ul,.slist{list-style:none;margin-top:14px;display:grid;gap:2px}
+.sp li,.slist li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.sp li:last-child,.slist li:last-child{border-bottom:0}
+.sp li>svg,.slist li>svg{width:24px;height:24px;flex:none;color:var(--sign)}
+.sp li span,.slist li span{flex:1;font-size:17px}
+.sp blockquote{margin-top:18px;padding:16px 18px;background:var(--lime);border-radius:12px;font-style:italic;line-height:1.5}
+.sp cite{display:block;font-style:normal;font-size:13px;color:var(--mu);margin-top:8px}
+.add{flex:none;display:inline-flex;align-items:center;min-height:38px;padding:0 13px;border-radius:9px;border:2px solid var(--tx);font-weight:700;font-size:14.5px;white-space:nowrap}
+.add em{font-style:normal}
+.add .a2{display:none}
+.add[aria-pressed=true]{background:var(--tx);color:#fff}
+.add[aria-pressed=true] .a1{display:none}
+.add[aria-pressed=true] .a2{display:inline}
+
+/* в поездке */
+.trip{padding:0 0 8px;background:var(--chalk)}
+.isign{background:var(--sign);color:#fff;border-radius:18px;padding:8px}
+.isign>*{position:relative}
+.isign{display:grid;gap:16px;padding:22px 20px;box-shadow:inset 0 0 0 3px var(--sign),inset 0 0 0 6px #fff}
+.ii{width:58px;height:58px;border-radius:10px;background:#fff;color:var(--sign);font:700 46px/58px Georgia,serif;text-align:center}
+.isign h2{font-size:clamp(30px,7vw,44px)}
+.isign p{font-size:19px;margin-top:8px;max-width:46ch}
+.isign small{display:block;margin-top:8px;color:#c7d8ef;font-size:13.5px}
+.isign .btn{justify-self:start;background:#fff;color:var(--sign2)}
+
+/* отзывы */
+.rgrid{display:grid;gap:22px;margin-top:30px}
+.score{background:#fff;border-radius:18px;padding:22px 20px;box-shadow:inset 0 0 0 2px var(--tx)}
+.sc-n{display:flex;align-items:center;gap:14px}
+.sc-n b{font:700 72px/1 var(--nar)}
+.sc-n .stars i{width:22px;height:22px}
+.score>p{color:var(--mu);margin-top:6px}
+.abs{margin-top:20px;display:grid;gap:14px}
+.ab-h{display:flex;justify-content:space-between;gap:10px;font-size:15.5px}
+.ab-h span{color:var(--mu)}
+.ab-t{height:8px;border-radius:5px;background:var(--lime);margin-top:6px;overflow:hidden}
+.ab-t i{display:block;height:100%;width:0;background:var(--sign);border-radius:5px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.abs.on .ab-t i{width:var(--w)}
+.abs small{color:var(--mu);font-size:13px}
+.rvs{display:grid;gap:0}
+.rv{padding:20px 0 20px 46px;position:relative;border-top:1px solid var(--line)}
+.rv:first-child{border-top:0;padding-top:4px}
+.rv::before{content:"«";position:absolute;left:0;top:-6px;font:700 64px/1 var(--nar);color:var(--sign)}
+.rv:first-child::before{top:-22px}
+.rv blockquote{font-size:19px;line-height:1.5}
+.rsrc{color:var(--mu);font-size:14px;margin-top:6px}
+
+/* фото */
+.photos{padding-bottom:56px}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px var(--gutr) 8px max(var(--gut),calc((100vw - 1160px)/2 + 18px));scroll-padding-left:max(var(--gut),calc((100vw - 1160px)/2 + 18px));scrollbar-width:thin}
+.strip figure{flex:0 0 min(78vw,380px);height:min(62vw,290px);scroll-snap-align:start;border-radius:14px;overflow:hidden;background:var(--asph2)}
+.strip img{width:100%;height:100%;object-fit:cover}
+.more{display:inline-block;margin-top:14px;color:var(--sign2);font-weight:700}
+
+/* услуги и цены */
+.services{background:var(--chalk);border-top:1px solid var(--line)}
+.sgrid{display:grid;gap:26px;margin-top:26px}
+.slist{margin-top:0}
+.plist{background:#fff;border-radius:18px;padding:22px 20px;box-shadow:0 0 0 1px var(--line)}
+.plist ul{list-style:none;margin-top:12px}
+.plist li,.ws-l li{display:flex;align-items:baseline;gap:8px;padding:9px 0}
+.pn{display:flex;flex-direction:column}
+.pn small{color:var(--mu);font-size:13.5px;line-height:1.3}
+.plist li i{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px);min-width:16px}
+.plist li b{font:700 19px/1.1 var(--nar);white-space:nowrap}
+.pnote,.pnone{color:var(--mu);font-size:14.5px;margin-top:10px}
+.extras{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.extras li{display:flex;align-items:center;gap:7px;background:#fff;border-radius:8px;padding:8px 11px;font-size:15px;box-shadow:inset 0 0 0 1px var(--line)}
+.extras svg{width:18px;height:18px;color:var(--sign)}
+
+/* заявка */
+.order{background:var(--asph);color:#eef1f3}
+.order .lead{color:#aab4bd}
+.o-head .kick{display:none}
+.o-grid{display:grid;gap:22px;margin-top:28px}
+.o-step+.o-step{margin-top:22px}
+.o-t{display:block;font:700 20px/1 var(--nar);margin-bottom:12px}
+.o-chips{display:flex;flex-wrap:wrap;gap:8px}
+.oc{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 14px;border-radius:10px;background:var(--asph2);color:#e6eaee;font-size:15.5px;box-shadow:inset 0 0 0 1px #48515b}
+.oc svg{width:18px;height:18px;color:#9fb6d4}
+.oc[aria-pressed=true]{background:#fff;color:var(--tx);box-shadow:none}
+.oc[aria-pressed=true] svg{color:var(--sign)}
+#ob-car{width:100%;height:52px;border-radius:10px;border:0;background:var(--asph2);color:#fff;font:inherit;padding:0 16px;box-shadow:inset 0 0 0 1px #48515b}
+#ob-car::placeholder{color:#8792a0}
+.o-out{background:#fff;color:var(--tx);border-radius:18px;padding:20px}
+.o-lbl{font:700 18px/1 var(--nar);color:var(--mu)}
+.o-bubble{margin-top:12px;background:var(--lime);border-radius:4px 14px 14px 14px;padding:14px 16px;white-space:pre-line;min-height:96px;font-size:16px}
+.o-acts{display:grid;gap:8px;margin-top:16px}
+.o-acts .btn.line{border-color:var(--tx)}
+.o-note{color:var(--mu);font-size:14px;margin-top:10px}
+
+/* контакты */
+.cgrid{display:grid;gap:22px;margin-top:26px}
+.cinfo h3{font-size:30px}
+.cinfo .muted{color:var(--mu)}
+.phs{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.phs a{font:700 24px/1.1 var(--nar);text-decoration:none}
+.hours{margin-top:16px;border-collapse:collapse;font-size:16px}
+.hours td{padding:6px 18px 6px 0}
+.hours tr.today td{font-weight:700}
+.hours tr.today td:first-child::after{content:" · сегодня";font-weight:400;color:var(--mu)}
+.msgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.msgs a{padding:9px 14px;border-radius:9px;box-shadow:inset 0 0 0 2px var(--tx);text-decoration:none;font-weight:700;font-size:15px}
+.msgs:empty{display:none}
+.cinfo .btn{margin-top:20px}
+.map{position:relative;min-height:320px;border-radius:18px;overflow:hidden;background:#d5dbd4}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* финал */
+.final{background:var(--sign);color:#fff;text-align:left}
+.final .w{display:grid;gap:18px}
+.final h2{max-width:16ch}
+.final p{color:#cfdcf0;font-size:18px}
+.final .btn.acc{justify-self:start}
+footer{padding:28px 0 110px;color:var(--mu);font-size:14px;line-height:1.5}
+footer a{color:var(--tx)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px var(--gutr) calc(10px + env(safe-area-inset-bottom)) var(--gut);background:rgba(248,249,246,.97);border-top:1px solid var(--line)}
+.dock .btn{min-height:48px}
+.dock .btn.line{background:#fff}
+.toast{position:fixed;left:50%;bottom:86px;transform:translate(-50%,20px);background:var(--asph);color:#fff;padding:12px 16px;border-radius:12px;font-size:15px;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh}
+.lb::backdrop{background:rgba(10,12,14,.92)}
+.lb img{position:absolute;inset:0;margin:auto;max-width:94vw;max-height:84vh;object-fit:contain;border-radius:8px}
+.lb button{position:absolute;color:#fff;font-size:30px;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12)}
+.lb-x{top:14px;right:14px}.lb-p{left:10px;top:50%}.lb-n{right:10px;top:50%}
+.lb-c{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ccc;font-size:14px}
+
+/* появление */
+.js [data-r]{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.js [data-r].in{opacity:1;transform:none}
+.js .board{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{transform:translateY(26px);opacity:0}}
+
+@media (min-width:760px){
+  section{padding:96px 0}
+  .tcall span{display:inline}
+  .symg{grid-template-columns:1fr}
+  .signs{flex-wrap:wrap;overflow:visible;margin:0;padding:0}
+  .sg{flex:0 0 132px}
+  .rgrid{grid-template-columns:minmax(300px,.8fr) 1.2fr;gap:44px;align-items:start}
+  .sgrid{grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+  .slist{columns:1}
+  .o-grid{grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+  .o-out{position:sticky;top:80px}
+  .cgrid{grid-template-columns:.9fr 1.1fr;gap:36px}
+  .map{min-height:420px}
+  .isign{grid-template-columns:auto 1fr auto;align-items:center;padding:28px 30px}
+  .dock{display:none}
+  footer{padding-bottom:40px}
+  .final .w{grid-template-columns:1fr auto;align-items:end}
+}
+@media (min-width:1000px){
+  .nav{display:flex}
+  .tcall{margin-left:10px}
+  .hero{padding:44px 0 96px}
+  .hgrid{grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+  .htext{margin-top:0;order:-1}
+  .hphoto{margin:0;height:560px;border-radius:22px}
+  .road{display:block;height:360px;bottom:-40px}
+  .symg{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:36px;align-items:start}
+  .signs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .sg{flex:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js [data-r]{opacity:1;transform:none}
+}
+</style>
+</head>
+<body id="top">
+<div class="demo"><b>Демо-концепт.</b> Не официальный сайт «АвтобанСервис». Сделан для показа владельцу, удалим по первой просьбе.</div>
+<header class="top"><div class="w">
+  <a class="brand" href="#top"><i aria-hidden="true"></i>АвтобанСервис</a>
+  <nav class="nav" aria-label="Разделы"><a href="#help">Что случилось</a><a href="#reviews">Отзывы</a><a href="#services">Цены</a><a href="#contacts">Контакты</a></nav>
+  <a class="tcall" href="tel:+79782285589" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>+7 (978) 228-55-89</span></a>
+</div></header>
+
+<main>
+<section class="hero">
+  <svg class="road" data-anim viewBox="0 0 1400 320" preserveAspectRatio="none" aria-hidden="true">
+    <path class="band" d="M-40 280C160 280 220 120 420 140S700 300 900 230 1180 40 1460 70"/>
+    <path class="mid" d="M-40 280C160 280 220 120 420 140S700 300 900 230 1180 40 1460 70"/>
+  </svg>
+  <div class="w hgrid">
+    <figure class="hphoto">
+      <img src="https://avatars.mds.yandex.net/get-altay/3905724/2a00000175e588dd414143e5552bb7223b85/XXL" alt="АвтобанСервис, фото с Яндекс Карт" referrerpolicy="no-referrer" fetchpriority="high" onerror="this.remove()">
+      <figcaption>фото из карточки на картах</figcaption>
+    </figure>
+    <div class="htext">
+      <div class="board mid"><div class="board-in">
+        <svg class="arrow" viewBox="0 0 52 64" aria-hidden="true"><path d="M14 62V32c0-8 5-13 13-13h8V8l16 16-16 16V29h-7c-2 0-3 1-3 3v30z" fill="#fff"/></svg>
+        <h1>АвтобанСервис</h1>
+        <div class="kind">Автосервис и шиномонтаж</div>
+        <div class="plates"><span class="plate">ул. Блюхера, 23</span><span class="plate ghost">Ялта</span></div>
+      </div></div>
+      <div class="status" data-status><i aria-hidden="true"></i><span class="stt">Пн–Сб 09:00–18:00</span><span class="stl"></span></div>
+      <p class="tag">Автосервис, шиномонтаж и запчасти на Блюхера</p>
+      <div class="cta"><a class="btn acc" href="tel:+79782285589"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a><a class="btn line" href="#help">Что случилось?</a></div>
+      <a class="rmini" href="https://yandex.ru/maps/org/126916821134/reviews/" target="_blank" rel="noopener"><b>4,6</b><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>78 оценок на Яндекс Картах</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sym" id="help"><div class="w"><div class="symh" data-r><h2>Что случилось с машиной?</h2><p class="lead">Выберите, что беспокоит. Покажем, чем помогут, и добавим это в заявку.</p></div><div class="symg" data-r><div class="signs" role="tablist" aria-label="Что беспокоит"><button type="button" class="sg on" data-z="knock" role="tab" aria-selected="true"><span class="tri"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6v6m-9 3h18l-18 6h18l-18 6h18l-18 6h18M24 39v3"/></svg></span><b>Стучит подвеска</b></button><button type="button" class="sg" data-z="start" role="tab" aria-selected="false"><span class="tri"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="24" r="7"/><path d="M22 24h20m-6 0v6m-6-6v4"/></svg></span><b>Не заводится</b></button><button type="button" class="sg" data-z="check" role="tab" aria-selected="false"><span class="tri"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20h6l3-4h10l3 4h4v4h3v8h-3v4H16l-3-4h-3z"/><path d="M6 24v8"/></svg></span><b>Горит лампа «чек»</b></button><button type="button" class="sg" data-z="ac" role="tab" aria-selected="false"><span class="tri"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6v36M8.4 15l31.2 18M8.4 33l31.2-18M19 9l5 5 5-5M19 39l5-5 5 5"/></svg></span><b>Не холодит кондиционер</b></button><button type="button" class="sg" data-z="tire" role="tab" aria-selected="false"><span class="tri"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="26" r="15"/><circle cx="24" cy="26" r="6"/><path d="M33 6l-4 10"/></svg></span><b>Пробито колесо</b></button><button type="button" class="sg" data-z="gear" role="tab" aria-selected="false"><span class="tri"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10v28M24 10v28M36 10v14M12 24h24"/><circle cx="12" cy="10" r="2"/><circle cx="24" cy="10" r="2"/><circle cx="36" cy="10" r="2"/></svg></span><b>Не переключается коробка</b></button><button type="button" class="sg" data-z="body" role="tab" aria-selected="false"><span class="tri"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 30l5-9 9-3h11l8 6 5 2v6h-4M5 30v4h5M17 34h14"/><circle cx="13" cy="34" r="3.5"/><circle cx="35" cy="34" r="3.5"/><path d="M22 22c2 2 4 2 6 0"/></svg></span><b>Вмятина или царапина</b></button></div><div class="sps" aria-live="polite"><div class="sp" data-zp="knock"><h3>Стучит подвеска</h3><p class="sp-l">Что с этим делают в «АвтобанСервис»:</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M9 6h6v2l-6 2 6 2-6 2 6 2v2H9"/></svg><span>Ходовая и рулевые рейки</span><button type="button" class="add" data-add="Ходовая и рулевые рейки" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg><span>Развал-схождение</span><button type="button" class="add" data-add="Развал-схождение" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul></div><div class="sp" data-zp="start" hidden><h3>Не заводится</h3><p class="sp-l">Что с этим делают в «АвтобанСервис»:</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg><span>Стартеры и генераторы</span><button type="button" class="add" data-add="Стартеры и генераторы" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul></div><div class="sp" data-zp="check" hidden><h3>Горит лампа «чек»</h3><p class="sp-l">Что с этим делают в «АвтобанСервис»:</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg><span>Компьютерная диагностика</span><button type="button" class="add" data-add="Компьютерная диагностика" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg><span>Ремонт двигателя, АКПП и МКПП</span><button type="button" class="add" data-add="Ремонт двигателя, АКПП и МКПП" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><blockquote>Двигатель глох на холостых: приняли сразу, провели полную диагностику и понятно объяснили причину.<cite>Пересказ отзыва с Яндекс Карт</cite></blockquote></div><div class="sp" data-zp="ac" hidden><h3>Не холодит кондиционер</h3><p class="sp-l">Что с этим делают в «АвтобанСервис»:</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg><span>Кондиционер</span><button type="button" class="add" data-add="Кондиционер" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul></div><div class="sp" data-zp="tire" hidden><h3>Пробито колесо</h3><p class="sp-l">Что с этим делают в «АвтобанСервис»:</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6"/><path d="M12 5.5l1.5 4.6M18.2 10l-4.4 1.5M15.9 17.4l-2.8-3.9M8.1 17.4l2.8-3.9M5.8 10l4.4 1.5"/></svg><span>Шиномонтаж и правка дисков</span><button type="button" class="add" data-add="Шиномонтаж и правка дисков" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><blockquote>Чистая зона ожидания, никаких навязанных услуг, и машина теперь едет идеально.<cite>Пересказ отзыва с Яндекс Карт</cite></blockquote></div><div class="sp" data-zp="gear" hidden><h3>Не переключается коробка</h3><p class="sp-l">Что с этим делают в «АвтобанСервис»:</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg><span>Ремонт двигателя, АКПП и МКПП</span><button type="button" class="add" data-add="Ремонт двигателя, АКПП и МКПП" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul></div><div class="sp" data-zp="body" hidden><h3>Вмятина или царапина</h3><p class="sp-l">Что с этим делают в «АвтобанСервис»:</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg><span>Кузовной ремонт и покраска</span><button type="button" class="add" data-add="Кузовной ремонт и покраска" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul></div></div></div></div></section>
+
+<section class="reviews" id="reviews"><div class="w"><div class="rhead" data-r><h2>Что говорят клиенты</h2><p class=lead>Пишут, что запчасти, масла и фильтры почти всегда в наличии — никуда бегать не надо.</p></div><div class="rgrid" data-r><div class="score"><div class="sc-n"><b class="cu">4,6</b><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div><p>78 оценок и 47 отзывов на <a href="https://yandex.ru/maps/org/126916821134/reviews/" target="_blank" rel="noopener">Яндекс Картах</a></p><div class="abs" data-fill><div class="ab"><div class="ab-h"><b>Ремонт</b><span>19 из 25 хвалят</span></div><div class="ab-t"><i style="--w:76%"></i></div></div><div class="ab"><div class="ab-h"><b>Персонал</b><span>16 из 19 хвалят</span></div><div class="ab-t"><i style="--w:84%"></i></div></div><div class="ab"><div class="ab-h"><b>Время ожидания</b><span>18 из 20 хвалят</span></div><div class="ab-t"><i style="--w:90%"></i></div></div><small>Подсчёт Яндекс Карт по темам отзывов</small></div></div><div class="rvs"><figure class="rv"><blockquote>Двигатель глох на холостых: приняли сразу, провели полную диагностику и понятно объяснили причину.</blockquote></figure><figure class="rv"><blockquote>Приехал к назначенному времени, сразу взялись, а заодно переобули и сделали развал-схождение.</blockquote></figure><figure class="rv"><blockquote>Чистая зона ожидания, никаких навязанных услуг, и машина теперь едет идеально.</blockquote></figure><p class="rsrc">Пересказ отзывов без имён. <a href="https://yandex.ru/maps/org/126916821134/reviews/" target="_blank" rel="noopener">Читать все на картах</a></p></div></div></div></section>
+<section class="photos" id="photos"><div class="w"><div class="phead" data-r><h2>Как это выглядит</h2><p class="lead">Снимки из карточки на Яндекс Картах. Нажмите, чтобы открыть крупно.</p></div></div><div class="strip" data-lb><figure><img src="https://avatars.mds.yandex.net/get-altay/15487932/2a000001987583909a7ec565f2c7e038eef8/XL" data-full="https://avatars.mds.yandex.net/get-altay/15487932/2a000001987583909a7ec565f2c7e038eef8/XXL" alt="АвтобанСервис, фото 1" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/2355061/2a00000175e58930279c53b8baf47e0fb040/XL" data-full="https://avatars.mds.yandex.net/get-altay/2355061/2a00000175e58930279c53b8baf47e0fb040/XXL" alt="АвтобанСервис, фото 2" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/14813057/2a00000194ffb89a81eb9ba646e02a0bd7c2/XL" data-full="https://avatars.mds.yandex.net/get-altay/14813057/2a00000194ffb89a81eb9ba646e02a0bd7c2/XXL" alt="АвтобанСервис, фото 3" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/7631654/2a000001849b41e7305bdceaac1975b1dd45/XL" data-full="https://avatars.mds.yandex.net/get-altay/7631654/2a000001849b41e7305bdceaac1975b1dd45/XXL" alt="АвтобанСервис, фото 4" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/15286626/2a00000198bd5243bf920ad7073f442ac40e/XL" data-full="https://avatars.mds.yandex.net/get-altay/15286626/2a00000198bd5243bf920ad7073f442ac40e/XXL" alt="АвтобанСервис, фото 5" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure><figure><img src="https://avatars.mds.yandex.net/get-altay/3923004/2a00000175e5888bfcf9aa541bceedc71245/XL" data-full="https://avatars.mds.yandex.net/get-altay/3923004/2a00000175e5888bfcf9aa541bceedc71245/XXL" alt="АвтобанСервис, фото 6" loading=lazy decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"></figure></div><div class="w"><a class="more" href="https://yandex.ru/maps/org/126916821134/gallery/" target="_blank" rel="noopener">Все фото на Яндекс Картах</a></div></section>
+<section class="services" id="services"><div class="w"><h2 data-r>Услуги и цены</h2><div class="sgrid"><ul class="slist" data-r><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg><span>Компьютерная диагностика</span><button type="button" class="add" data-add="Компьютерная диагностика" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg><span>Ремонт двигателя, АКПП и МКПП</span><button type="button" class="add" data-add="Ремонт двигателя, АКПП и МКПП" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M9 6h6v2l-6 2 6 2-6 2 6 2v2H9"/></svg><span>Ходовая и рулевые рейки</span><button type="button" class="add" data-add="Ходовая и рулевые рейки" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg><span>Развал-схождение</span><button type="button" class="add" data-add="Развал-схождение" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6"/><path d="M12 5.5l1.5 4.6M18.2 10l-4.4 1.5M15.9 17.4l-2.8-3.9M8.1 17.4l2.8-3.9M5.8 10l4.4 1.5"/></svg><span>Шиномонтаж и правка дисков</span><button type="button" class="add" data-add="Шиномонтаж и правка дисков" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg><span>Кондиционер</span><button type="button" class="add" data-add="Кондиционер" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg><span>Кузовной ремонт и покраска</span><button type="button" class="add" data-add="Кузовной ремонт и покраска" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg><span>Стартеры и генераторы</span><button type="button" class="add" data-add="Стартеры и генераторы" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg><span>Магазин запчастей</span><button type="button" class="add" data-add="Магазин запчастей" aria-pressed="false"><span class="a1">+<em> В заявку</em></span><span class="a2">✓<em> В заявке</em></span></button></li></ul><div class="sside"><div class="plist" data-r><h3>Цены</h3><p class="pnone">Стоимость скажут по телефону, сразу под вашу машину и задачу.</p></div><ul class=extras data-r><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg><span>Предварительная запись</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></svg><span>Оплата картой</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.2" r="1"/></svg><span>Wi-Fi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span>Парковка</span></li></ul></div></div></div></section>
+<section class="order" id="order"><div class="w"><div class="o-head sh" data-r><span class="kick">Заявка</span><h2>Соберите заявку за полминуты</h2><p class="lead">Отметьте, что нужно. Текст для мастера соберётся сам, останется отправить.</p></div><div class="o-grid" data-r><div class="o-form"><div class="o-step"><b class="o-t">Что сделать</b><div class="o-chips"><button type="button" class="oc" data-add="Компьютерная диагностика" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>Компьютерная диагностика</button><button type="button" class="oc" data-add="Ремонт двигателя, АКПП и МКПП" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>Ремонт двигателя, АКПП и МКПП</button><button type="button" class="oc" data-add="Ходовая и рулевые рейки" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M9 6h6v2l-6 2 6 2-6 2 6 2v2H9"/></svg>Ходовая и рулевые рейки</button><button type="button" class="oc" data-add="Развал-схождение" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg>Развал-схождение</button><button type="button" class="oc" data-add="Шиномонтаж и правка дисков" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6"/><path d="M12 5.5l1.5 4.6M18.2 10l-4.4 1.5M15.9 17.4l-2.8-3.9M8.1 17.4l2.8-3.9M5.8 10l4.4 1.5"/></svg>Шиномонтаж и правка дисков</button><button type="button" class="oc" data-add="Кондиционер" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg>Кондиционер</button><button type="button" class="oc" data-add="Кузовной ремонт и покраска" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5.3 5.3L3.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5.7-5.7a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.3-.4-.4-2.3z"/></svg>Кузовной ремонт и покраска</button><button type="button" class="oc" data-add="Стартеры и генераторы" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>Стартеры и генераторы</button><button type="button" class="oc" data-add="Магазин запчастей" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg>Магазин запчастей</button></div></div><div class="o-step"><b class="o-t">Машина</b><input id="ob-car" type="text" maxlength="60" autocomplete="off" placeholder="Марка, модель, цвет"></div><div class="o-step"><b class="o-t">Когда удобно</b><div class="o-chips"><button type="button" class="oc" data-when="сегодня" aria-pressed="false">Сегодня</button><button type="button" class="oc" data-when="завтра" aria-pressed="false">Завтра</button><button type="button" class="oc" data-when="на выходных" aria-pressed="false">На выходных</button><button type="button" class="oc" data-when="подберём время вместе" aria-pressed="false">Подберём время вместе</button></div></div></div><div class="o-out"><span class="o-lbl">Так увидит мастер</span><div class="o-bubble" id="ob-msg" aria-live="polite"></div><div class="o-acts"><a class="btn acc" data-wa="https://wa.me/79782285589" href="https://wa.me/79782285589" target="_blank" rel="noopener">Отправить в WhatsApp</a><a class="btn line" href="tel:+79782285589">Позвонить</a></div><p class="o-note">Текст подставится в чат сам, останется нажать «Отправить».</p></div></div></div></section><script type="application/json" id="bd">{"name": "АвтобанСервис"}</script>
+
+<section class="contacts" id="contacts"><div class="w">
+  <h2 data-r>Как доехать</h2>
+  <div class="cgrid" data-r>
+    <div class="cinfo">
+      <h3>ул. Блюхера, 23</h3><div class="muted">Ялта</div>
+      <div class="phs"><a href="tel:+79782285589">+7 (978) 228-55-89</a></div>
+      <table class="hours"><tbody><tr data-days="1,2,3,4,5,6"><td>Пн–Сб</td><td>09:00–18:00</td></tr></tbody></table>
+      <div class="msgs"><a href="https://wa.me/79782285589" target="_blank" rel="noopener">WhatsApp</a></div>
+      <a class="btn acc" href="https://yandex.ru/maps/?rtext=~44.483069%2C34.134405&amp;rtt=auto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Построить маршрут</a>
+    </div>
+    <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?ll=34.134405%2C44.483069&z=16&pt=34.134405,44.483069,pm2rdm" title="АвтобанСервис на карте" loading="lazy"></iframe></div>
+  </div>
+</div></section>
+
+<section class="final"><div class="w">
+  <div><h2>Напишите в WhatsApp или позвоните</h2><p>ул. Блюхера, 23, Ялта. Пн–Сб 09:00–18:00.</p></div>
+  <a class="btn acc" href="tel:+79782285589"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+7 (978) 228-55-89</a>
+</div></section>
+</main>
+
+<footer><div class="w">Демо-концепт сайта для «АвтобанСервис». Данные, фото и отзывы взяты из открытых карточек: <a href="https://yandex.ru/maps/org/126916821134/" target="_blank" rel="noopener">Яндекс Карты</a>, <a href="https://2gis.ru/yalta/firm/70000001050920351" target="_blank" rel="noopener">2ГИС</a>. Если что-то изменилось, поправим за минуту.</div></footer>
+<div class="dock"><a class="btn acc" href="tel:+79782285589"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a><a class="btn line" href="https://wa.me/79782285589" target="_blank" rel="noopener">WhatsApp</a></div>
+<script type="application/json" id="hw">[null, ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "18:00"], ["09:00", "18:00"]]</script>
+<script>(function () {
+  var d = document, R = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+
+  /* шапка: фон после прокрутки */
+  var top = d.querySelector('.top');
+  if (top) {
+    var onS = function () { top.classList.toggle('sc', scrollY > 40); };
+    addEventListener('scroll', onS, { passive: true }); onS();
+  }
+
+  /* появление блоков */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' }) : null;
+  $$('[data-r]').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  /* счётчики: в разметке уже финальное число, анимируем от нуля */
+  var cio = 'IntersectionObserver' in window && !R ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      var el = e.target, t = el.dataset.to, dec = (t.split(',')[1] || '').length, to = parseFloat(t.replace(',', '.')), t0 = 0;
+      var step = function (ts) {
+        t0 = t0 || ts; var k = Math.min(1, (ts - t0) / 1300), v = to * (1 - Math.pow(1 - k, 3));
+        el.textContent = dec ? v.toFixed(dec).replace('.', ',') : String(Math.round(v));
+        if (k < 1) requestAnimationFrame(step); else el.textContent = t;
+      };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: .4 }) : null;
+  $$('.cu').forEach(function (el) { el.dataset.to = el.textContent.trim(); if (cio && !isNaN(parseFloat(el.dataset.to))) cio.observe(el); });
+
+  /* бесконечные анимации крутятся, только пока блок виден */
+  if ('IntersectionObserver' in window) {
+    var ao = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('run', e.isIntersecting); }); });
+    $$('[data-anim]').forEach(function (el) { ao.observe(el); });
+  } else $$('[data-anim]').forEach(function (el) { el.classList.add('run'); });
+
+  /* шкалы и кольца заполняются при появлении */
+  $$('[data-fill]').forEach(function (el) { io ? (new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { el.classList.add('on'); o.disconnect(); } }, { threshold: .3 })).observe(el) : el.classList.add('on'); });
+
+  /* открыто / закрыто по московскому времени */
+  var hw = d.getElementById('hw');
+  if (hw) try {
+    var W = JSON.parse(hw.textContent);
+    var parts = new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    var dm = { 'вс': 0, 'пн': 1, 'вт': 2, 'ср': 3, 'чт': 4, 'пт': 5, 'сб': 6 }, day, h, m;
+    parts.forEach(function (x) { if (x.type === 'weekday') day = dm[x.value.replace('.', '').toLowerCase()]; if (x.type === 'hour') h = +x.value % 24; if (x.type === 'minute') m = +x.value; });
+    var mins = function (s) { var a = s.split(':'); return a[0] * 60 + +a[1]; }, now = h * 60 + m, t = W[day];
+    var open = t && now >= mins(t[0]) && now < mins(t[1]), txt, left = '';
+    if (open) { txt = 'Открыто до ' + t[1]; var l = mins(t[1]) - now; left = 'ещё ' + (l >= 60 ? Math.floor(l / 60) + ' ч ' : '') + (l % 60) + ' мин'; }
+    else for (var i = 0; i < 7; i++) { var s = W[(day + i) % 7]; if (s && (i > 0 || now < mins(s[0]))) { txt = 'Откроется ' + (i === 0 ? 'сегодня' : i === 1 ? 'завтра' : ['в вс', 'в пн', 'во вт', 'в ср', 'в чт', 'в пт', 'в сб'][(day + i) % 7]) + ' в ' + s[0]; break; } }
+    $$('[data-status]').forEach(function (el) {
+      el.classList.toggle('on', !!open);
+      var a = el.querySelector('.stt'), b = el.querySelector('.stl');
+      if (a && txt) a.textContent = txt; if (b) b.textContent = left;
+    });
+    $$('tr[data-days]').forEach(function (r) { if (r.dataset.days.split(',').indexOf(String(day)) > -1) r.classList.add('today'); });
+  } catch (e) {}
+
+  /* всплывашка */
+  var toastEl;
+  function toast(msg) {
+    if (!toastEl) { toastEl = d.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); d.body.appendChild(toastEl); }
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastEl._t); toastEl._t = setTimeout(function () { toastEl.classList.remove('show'); }, 2600);
+  }
+  function copy(t) {
+    try { if (navigator.clipboard && isSecureContext) return navigator.clipboard.writeText(t); } catch (e) {}
+    var ta = d.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    d.body.appendChild(ta); ta.select(); try { d.execCommand('copy'); } catch (e) {} ta.remove();
+  }
+
+  /* заявка: услуги, машина, время → готовый текст для мастера */
+  var bd = d.getElementById('bd');
+  if (bd) {
+    var cfg = JSON.parse(bd.textContent), sel = [], when = '', car = d.getElementById('ob-car'), out = d.getElementById('ob-msg');
+    var msg = function () {
+      var s = 'Здравствуйте! Пишу с сайта, хочу записаться в «' + cfg.name + '».';
+      if (sel.length) s += '\nНужно: ' + sel.join(', ').toLowerCase() + '.';
+      if (car && car.value.trim()) s += '\nМашина: ' + car.value.trim() + '.';
+      if (when) s += '\nКогда удобно: ' + when + '.';
+      return s;
+    };
+    var render = function () {
+      var t = msg();
+      if (out) out.textContent = t;
+      $$('[data-add]').forEach(function (b) { b.setAttribute('aria-pressed', sel.indexOf(b.dataset.add) > -1 ? 'true' : 'false'); });
+      $$('[data-when]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.when === when ? 'true' : 'false'); });
+      $$('[data-oc]').forEach(function (el) { el.textContent = sel.length; el.closest('[data-ocw]') && el.closest('[data-ocw]').classList.toggle('has', sel.length > 0); });
+      $$('[data-wa]').forEach(function (a) { a.href = a.dataset.wa + '?text=' + encodeURIComponent(t); });
+    };
+    d.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-add]');
+      if (b) {
+        var v = b.dataset.add, i = sel.indexOf(v);
+        if (i > -1) sel.splice(i, 1); else { sel.push(v); if (!b.closest('#order')) toast('«' + v + '» добавлено в заявку'); }
+        render(); return;
+      }
+      var w = e.target.closest('[data-when]');
+      if (w) { when = when === w.dataset.when ? '' : w.dataset.when; render(); return; }
+      var c = e.target.closest('[data-copy]');
+      if (c) { copy(msg()); toast('Текст заявки скопирован. Вставьте его в чат'); }
+    });
+    car && car.addEventListener('input', render);
+    render();
+  }
+
+  /* вкладки: зоны машины и любые [data-z] → [data-zp] */
+  d.addEventListener('click', function (e) {
+    var z = e.target.closest('[data-z]'); if (!z) return;
+    var k = z.dataset.z;
+    $$('[data-z]').forEach(function (x) { var on = x.dataset.z === k; x.classList.toggle('on', on); if (x.getAttribute('role') === 'tab') x.setAttribute('aria-selected', on); });
+    $$('[data-zp]').forEach(function (p) { p.hidden = p.dataset.zp !== k; });
+  });
+
+  /* карусель отзывов: точки и автопрокрутка */
+  $$('.qs').forEach(function (qs) {
+    var track = qs.querySelector('.qt'), dots = $$('.qd button', qs), n = dots.length, cur = 0, user = false;
+    if (!track || n < 2) return;
+    var go = function (i) { cur = (i + n) % n; track.scrollTo({ left: track.children[cur].offsetLeft - track.offsetLeft, behavior: R ? 'auto' : 'smooth' }); };
+    dots.forEach(function (b, i) { b.addEventListener('click', function () { user = true; go(i); }); });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    }, { passive: true });
+    track.addEventListener('pointerdown', function () { user = true; });
+    if (!R) setInterval(function () { if (!user && !d.hidden) go(cur + 1); }, 6000);
+  });
+
+  /* просмотр фото */
+  $$('[data-lb]').forEach(function (g) {
+    var imgs = $$('img', g); if (!imgs.length) return;
+    var dlg = d.createElement('dialog'); dlg.className = 'lb';
+    dlg.innerHTML = '<img alt=""><button class="lb-x" aria-label="Закрыть">✕</button><button class="lb-p" aria-label="Предыдущее фото">‹</button><button class="lb-n" aria-label="Следующее фото">›</button><span class="lb-c"></span>';
+    d.body.appendChild(dlg);
+    var im = dlg.querySelector('img'), cnt = dlg.querySelector('.lb-c'), i = 0, x0 = null;
+    var show = function (k) { var live = $$('img', g); i = (k + live.length) % live.length; im.src = live[i].dataset.full || live[i].src; im.alt = live[i].alt; im.referrerPolicy = 'no-referrer'; cnt.textContent = (i + 1) + ' / ' + live.length; };
+    imgs.forEach(function (img, k) { img.style.cursor = 'zoom-in'; img.addEventListener('click', function () { show(k); dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); }); });
+    dlg.querySelector('.lb-x').onclick = function () { dlg.close(); };
+    dlg.querySelector('.lb-p').onclick = function () { show(i - 1); };
+    dlg.querySelector('.lb-n').onclick = function () { show(i + 1); };
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+    dlg.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+    dlg.addEventListener('pointerup', function (e) { if (x0 !== null && Math.abs(e.clientX - x0) > 50) show(i + (e.clientX < x0 ? 1 : -1)); x0 = null; });
+  });
+})();
+</script>
+</body>
+</html>
