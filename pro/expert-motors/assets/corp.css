@@ -285,6 +285,16 @@ body{padding-bottom:72px}
 .lb-x{top:14px;right:14px}.lb-p{left:10px;top:50%}.lb-n{right:10px;top:50%}
 .lb-c{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ccc;font-size:14px}
 
+/* один момент при загрузке: фото чуть отъезжает, текст и форма поднимаются */
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+@keyframes settle{from{transform:scale(1.07)}}
+.js .hero-img img{animation:settle 1.8s cubic-bezier(.2,.7,.2,1) both}
+.js .hero .w>div:first-child>*{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.js .hero .w>div:first-child>*:nth-child(2){animation-delay:.08s}
+.js .hero .w>div:first-child>*:nth-child(3){animation-delay:.16s}
+.js .hero .w>div:first-child>*:nth-child(4){animation-delay:.24s}
+.js .hero .book{animation:up .9s .3s cubic-bezier(.2,.7,.2,1) both}
+
 .js [data-r]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .js [data-r].in{opacity:1;transform:none}
 
@@ -301,6 +311,7 @@ body{padding-bottom:72px}
   .why{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   .why-list{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:repeat(5,1fr)}
+  .steps li:not(:last-child)::after{content:"";position:absolute;top:44px;left:72px;right:-14px;height:2px;background:repeating-linear-gradient(90deg,var(--line2) 0 6px,transparent 6px 12px)}
   .about{grid-template-columns:1fr 1fr;gap:72px}
   .rv-wrap{grid-template-columns:380px 1fr;gap:20px;align-items:start}
   .band-in{grid-template-columns:1fr auto;align-items:end}
