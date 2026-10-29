@@ -278,9 +278,9 @@ h3{font-size:20px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
 .ph .sub{color:var(--tx2);font-size:clamp(16px,1.5vw,19px);max-width:600px;margin-top:24px;line-height:1.55}
 .pg{display:grid;gap:36px}
 .wl{list-style:none;border-top:1px solid var(--line)}
-.wl li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.wl li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
 .wl .ix{font:300 13px/1 var(--disp);color:var(--mu2);width:28px}
-.wl span.t{font:300 clamp(18px,2vw,24px)/1.25 var(--disp);letter-spacing:-.03em}
+.wl span.t{font:300 clamp(16px,2vw,24px)/1.25 var(--disp);letter-spacing:-.03em}
 .wl button{height:40px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line2);font-size:14px;color:var(--tx2);white-space:nowrap;transition:.2s}
 .wl button:hover{background:rgba(255,255,255,.06);color:#fff}
 .wl button[aria-pressed=true]{background:var(--red);color:#fff;box-shadow:none}
