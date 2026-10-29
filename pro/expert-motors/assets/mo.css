@@ -160,8 +160,8 @@ h3{font-size:20px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
 .xp-pin{position:relative;height:100svh;overflow:hidden}
 .xp-media{position:absolute;inset:0;overflow:hidden}
 .xp-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.06) brightness(.72)}
-.xp-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,11,.1) 30%,rgba(9,9,11,.85))}
-.xp-txt{position:absolute;left:0;right:0;bottom:11svh;z-index:2}
+.xp-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,11,.05) 25%,rgba(9,9,11,.94) 88%),linear-gradient(90deg,rgba(9,9,11,.6),transparent 65%)}
+.xp-txt{position:absolute;left:0;right:0;bottom:max(11svh,96px);z-index:2}
 .xp blockquote{font:300 clamp(24px,3.6vw,52px)/1.2 var(--disp);letter-spacing:-.04em;max-width:22ch}
 .xp cite{display:block;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-top:22px}
 .mo .xp{height:190svh}
@@ -351,7 +351,7 @@ h3{font-size:20px;font-weight:500;letter-spacing:-.02em;line-height:1.2}
 .js [data-r].in{opacity:1;transform:none}
 .ben [data-r]:nth-child(2){transition-delay:.08s}.ben [data-r]:nth-child(3){transition-delay:.16s}.ben [data-r]:nth-child(4){transition-delay:.24s}
 
-@media (max-width:699px){.hero-cta .btn{padding:0 20px}}
+@media (max-width:699px){.hero-cta{gap:10px}.hero-cta .btn{padding:0 18px;font-size:15px}}
 @media (min-width:700px){
   .ben{grid-template-columns:1fr 1fr}
   .oth{grid-template-columns:repeat(3,1fr)}
