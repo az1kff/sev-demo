@@ -147,3 +147,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 @media(prefers-reduced-motion:no-preference){.snow{animation:snow 16s linear infinite}}
 @keyframes snow{to{background-position:70px 260px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* полоса ключевых цифр под героем услуги */
+.facts{background:var(--ink);color:#fff}
+.facts-in{display:grid;grid-template-columns:repeat(2,1fr);margin:0}
+@media(min-width:900px){.facts-in{grid-template-columns:repeat(4,1fr)}}
+.facts-in div{padding:22px 16px 22px 0;border-bottom:1px solid #2b303a}
+@media(min-width:900px){.facts-in div{border-bottom:0;border-right:1px solid #2b303a;padding:26px 20px}.facts-in div:first-child{padding-left:0}.facts-in div:last-child{border-right:0}}
+.facts dt{font:800 clamp(22px,2.6vw,32px)/1.1 var(--disp);color:var(--c);letter-spacing:-.02em}
+.c-host .facts dt{color:#8fa6ff}
+.facts dd{margin:6px 0 0;color:#c3c8d1;font-size:15px}
