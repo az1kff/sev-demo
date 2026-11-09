@@ -22,7 +22,7 @@ a{color:inherit}
 h1,h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;line-height:1.02;letter-spacing:-.01em}
 h2{font-size:clamp(21px,3.1vw,38px);margin-bottom:14px;overflow-wrap:anywhere}
 h1,h2,h3,.rates b,.stepper output,.stk-price,.r-total,.receipt-h,.dims dt,.tag i,.bags-out b,.parcel-tel,.wb-h,.tapeline span{word-spacing:-.34em}
-.r{font-family:var(--body);font-weight:700;font-size:.92em}
+.r{font-family:var(--body);font-weight:700}
 .lead{font-size:clamp(18px,1.7vw,21px);line-height:1.45;max-width:34em}
 
 /* кнопки */
