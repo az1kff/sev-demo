@@ -5,6 +5,7 @@ if (shop) {
   const search = shop.querySelector('[type="search"]');
   const notice = shop.querySelector('.food-notice');
   const dialog = document.querySelector('.dish-view');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const normalize = text => text.toLocaleLowerCase('ru').replaceAll('ё', 'е').trim();
   const initial = shelves[0].id;
   let selected = initial;
@@ -30,18 +31,30 @@ if (shop) {
     }
     notice.textContent = query ? (total ? 'Найдено блюд: ' + total : 'Ничего не найдено. Измените название или ингредиент.') : '';
   }
+  let entrance = [];
   function restore() {
     const url = new URL(window.location.href);
     const requested = url.hash.slice(1);
     selected = shelves.some(item => item.id === requested) ? requested : initial;
     search.value = url.searchParams.get('q') || '';
     render();
+    for (const animation of entrance) animation.cancel();
+    entrance = [];
+    if (!search.value && !reduced.matches && typeof shop.animate === 'function') {
+      const active = shelves.find(shelf => shelf.id === selected);
+      entrance = [...active.querySelectorAll('.dish:not([hidden])')].slice(0, 6).map((dish, index) =>
+        dish.animate([
+          { opacity: .2, transform: 'translateY(16px)' },
+          { opacity: 1, transform: 'translateY(0)' },
+        ], { duration: 410, delay: index * 42, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }));
+    }
   }
   for (const link of links) {
     link.addEventListener('click', event => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       const url = new URL(window.location.href);
+      if (url.hash === link.hash && !url.searchParams.has('q')) return;
       url.searchParams.delete('q');
       url.hash = link.hash;
       history.pushState(null, '', url);
@@ -49,6 +62,8 @@ if (shop) {
     });
   }
   search.addEventListener('input', () => {
+    for (const animation of entrance) animation.cancel();
+    entrance = [];
     const url = new URL(window.location.href);
     if (search.value) url.searchParams.set('q', search.value);
     else url.searchParams.delete('q');
@@ -56,17 +71,15 @@ if (shop) {
     render();
   });
   window.addEventListener('popstate', restore);
-  restore();
-
   for (const button of shop.querySelectorAll('.dish-image')) button.hidden = false;
+  restore();
   shop.addEventListener('click', event => {
     const button = event.target.closest('.dish-image');
     if (!button) return;
     const card = button.closest('.dish');
     const image = dialog.querySelector('img');
     image.src = button.querySelector('img').src;
-    image.alt = button.querySelector('img').alt;
-    dialog.querySelector('h2').textContent = card.querySelector('h3,h4').textContent;
+    dialog.querySelector('h2').textContent = card.querySelector('h3').textContent;
     dialog.querySelector('p').textContent = card.querySelector('p').textContent;
     dialog.querySelector('strong').textContent = card.querySelector('strong').textContent + ' · ' + card.querySelector('small').textContent;
     dialog.showModal();
