@@ -66,7 +66,7 @@ if (shop) {
     const image = dialog.querySelector('img');
     image.src = button.querySelector('img').src;
     image.alt = button.querySelector('img').alt;
-    dialog.querySelector('h2').textContent = card.querySelector('h3').textContent;
+    dialog.querySelector('h2').textContent = card.querySelector('h3,h4').textContent;
     dialog.querySelector('p').textContent = card.querySelector('p').textContent;
     dialog.querySelector('strong').textContent = card.querySelector('strong').textContent + ' · ' + card.querySelector('small').textContent;
     dialog.showModal();
